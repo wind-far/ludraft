@@ -1,0 +1,17 @@
+{
+  "name": "codebuddy-validation",
+  "description": "将当前仓库中的 rules 文档视为 CodeBuddy 源规则，只读引用并在隔离沙盒中验证多智能体架构。",
+  "source_roots": [
+    "rules"
+  ],
+  "read_only_roots": [
+    "rules"
+  ],
+  "sandbox_root": ".openclaw-runtime/codebuddy-validation/sandboxes",
+  "context_root": ".openclaw-runtime/codebuddy-validation/contexts",
+  "artifact_root": ".openclaw-runtime/codebuddy-validation/artifacts",
+  "report_root": ".openclaw-runtime/codebuddy-validation/reports",
+  "forbidden_write_roots": [
+    "rules"
+  ]
+}

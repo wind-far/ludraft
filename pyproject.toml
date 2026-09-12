@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "openclaw-multi-agent-studio"
+version = "0.1.0"
+description = "基于现有 rules/agents/skills 规则库构建的 OpenClaw 多智能体游戏开发团队系统"
+readme = "README.md"
+requires-python = ">=3.11"
+authors = [
+  { name = "CodeBuddy" }
+]
+dependencies = []
+
+[project.scripts]
+openclaw-team = "openclaw_team.cli:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]

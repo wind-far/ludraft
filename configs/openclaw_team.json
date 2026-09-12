@@ -1,0 +1,44 @@
+{
+  "project": {
+    "name": "OpenClaw Multi-Agent Studio",
+    "rule_root": "rules",
+    "runtime_root": ".openclaw-runtime",
+    "default_target": "codebuddy-validation"
+  },
+  "workflow": {
+    "scale_modes": {
+      "XS": {"flow_mode": "standard", "parallel": false},
+      "S": {"flow_mode": "standard", "parallel": false},
+      "M": {"flow_mode": "standard", "parallel": false},
+      "L": {"flow_mode": "hierarchical", "parallel": true},
+      "XL": {
+        "flow_mode": "deep-hierarchical",
+        "parallel": true,
+        "forced_reviews": [
+          "smart_probe",
+          "architecture_review",
+          "adversarial_review",
+          "test_strategy"
+        ]
+      }
+    },
+    "default_role_order": [
+      "producer",
+      "project_manager",
+      "planner",
+      "lead_programmer",
+      "programmer",
+      "qa"
+    ]
+  },
+  "roles": {
+    "producer": {"source": "rules/agents/00_制作人Agent.md", "mutable": false},
+    "project_manager": {"source": "rules/agents/01_项目管理Agent.md", "mutable": false},
+    "planner": {"source": "rules/agents/02_策划Agent.md", "mutable": false},
+    "lead_programmer": {"source": "rules/agents/03_主程Agent.md", "mutable": false},
+    "programmer": {"source": "rules/agents/04_程序Agent.md", "mutable": false},
+    "artist": {"source": "rules/agents/05_美术Agent.md", "mutable": false},
+    "qa": {"source": "rules/agents/06_QAAgent.md", "mutable": false},
+    "ux": {"source": "rules/agents/07_UXAgent.md", "mutable": false}
+  }
+}

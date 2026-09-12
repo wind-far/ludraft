@@ -1,0 +1,181 @@
+# OpenClaw Multi-Agent GameDev System Configuration
+# Version: 1.0.0
+# 系统核心配置文件
+
+system:
+  name: "OpenClaw Multi-Agent GameDev"
+  version: "1.0.0"
+  description: "基于OpenClaw的多智能体并行游戏开发团队系统"
+  
+# 多智能体并行架构配置
+parallel_architecture:
+  # 最大并行Agent数
+  max_parallel_agents: 4
+  # 上下文隔离模式: sandbox | shared | hybrid
+  context_isolation: "sandbox"
+  # 沙盒工作目录根路径
+  sandbox_root: ".sandboxes"
+  # Agent间通信方式: message_queue | file_based | event_driven
+  communication_mode: "message_queue"
+  # 消息队列路径
+  message_queue_path: ".sandboxes/_message_queue"
+  
+# Agent定义注册表
+agents:
+  producer:
+    id: "00_producer"
+    name: "制作人Agent"
+    persona: "老梁"
+    icon: "🎬"
+    role: "需求入口与分类路由"
+    parallel_group: "control"  # 控制组，串行执行
+    sandbox: false  # 控制Agent不需要独立沙盒
+    
+  project_manager:
+    id: "01_pm"
+    name: "项目管理Agent"
+    persona: "PM小李"
+    icon: "📊"
+    role: "需求管理与进度监控"
+    parallel_group: "control"
+    sandbox: false
+    
+  planner:
+    id: "02_planner"
+    name: "策划Agent"
+    persona: "小张"
+    icon: "📋"
+    role: "策划案编写与验收标准定义"
+    parallel_group: "design"  # 设计组，可并行
+    sandbox: true
+    
+  ux_designer:
+    id: "07_ux"
+    name: "UXAgent"
+    persona: "小林"
+    icon: "✨"
+    role: "交互设计与界面布局"
+    parallel_group: "design"
+    sandbox: true
+    
+  tech_lead:
+    id: "03_tech_lead"
+    name: "主程Agent"
+    persona: "老陈"
+    icon: "🔧"
+    role: "技术评审与架构设计"
+    parallel_group: "architecture"
+    sandbox: true
+    
+  programmer:
+    id: "04_programmer"
+    name: "程序Agent"
+    persona: "小赵"
+    icon: "💻"
+    role: "代码实现与Bug修复"
+    parallel_group: "implementation"  # 实现组，可并行
+    sandbox: true
+    
+  artist:
+    id: "05_artist"
+    name: "美术Agent"
+    persona: "小周"
+    icon: "🎨"
+    role: "UI设计与美术需求"
+    parallel_group: "design"
+    sandbox: true
+    
+  qa:
+    id: "06_qa"
+    name: "QAAgent"
+    persona: "小吴"
+    icon: "🧪"
+    role: "自动化测试与Bug报告"
+    parallel_group: "verification"  # 验证组
+    sandbox: true
+
+# 并行组定义 - 同组内的Agent可以并行工作
+parallel_groups:
+  control:
+    description: "控制层 - 串行执行，负责需求路由与监控"
+    execution: "sequential"
+    members: ["00_producer", "01_pm"]
+    
+  design:
+    description: "设计层 - 可并行执行策划、UX和美术设计"
+    execution: "parallel"
+    members: ["02_planner", "07_ux", "05_artist"]
+    
+  architecture:
+    description: "架构层 - 技术评审与架构设计"
+    execution: "sequential"
+    members: ["03_tech_lead"]
+    
+  implementation:
+    description: "实现层 - 可并行执行多个编码任务"
+    execution: "parallel"
+    members: ["04_programmer"]
+    
+  verification:
+    description: "验证层 - 测试与质量保障"
+    execution: "parallel"
+    members: ["06_qa"]
+
+# 沙盒隔离配置
+sandbox:
+  # 每个Agent的沙盒结构
+  structure:
+    - "context/"      # Agent独立上下文存储
+    - "workspace/"    # Agent工作目录
+    - "output/"       # Agent产出物目录
+    - "logs/"         # Agent执行日志
+    - "inbox/"        # 接收的消息
+    - "outbox/"       # 发送的消息
+    
+  # 上下文隔离规则
+  isolation_rules:
+    # Agent只能读写自己的沙盒
+    strict_boundary: true
+    # 允许通过消息队列跨沙盒通信
+    cross_sandbox_messaging: true
+    # 共享只读区域（规则文件、全局文档）
+    shared_readonly:
+      - "rules/"
+      - ".GameDev/_ProjectManagement/"
+      - ".GameDev/全局策划案.md"
+      - ".GameDev/全局技术文档.md"
+
+# 工作流配置
+workflow:
+  # 需求类型与流转路径
+  pipelines:
+    FEATURE:
+      path: ["producer", "project_manager", "planner", "tech_lead", "programmer", "qa", "planner"]
+      parallel_steps:
+        - step: "design"
+          agents: ["planner", "ux_designer"]  # 策划完成后UX可并行
+        - step: "implementation"
+          agents: ["programmer", "artist"]  # 编码与美术可并行
+          
+    BUGFIX:
+      path: ["producer", "project_manager", "programmer", "qa", "planner"]
+      parallel_steps: []
+      
+    OPTIMIZE:
+      path: ["producer", "project_manager", "tech_lead", "programmer", "qa", "planner"]
+      parallel_steps: []
+      
+    TEST:
+      path: ["producer", "project_manager", "qa", "planner"]
+      parallel_steps: []
+
+# 源文档保护配置（CodeBuddy项目验证时的隔离策略）
+source_protection:
+  enabled: true
+  # 受保护的源文档路径（不可修改）
+  protected_paths:
+    - "rules/**"
+  # 工作副本路径
+  working_copy_path: ".sandboxes/_working_copies"
+  # 产出物路径
+  artifacts_path: ".GameDev"

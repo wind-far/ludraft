@@ -1,0 +1,1154 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OpenClaw | 多智能体游戏开发团队系统</title>
+    <style>
+        /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+           CSS 变量 - 企业级深色主题
+           ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+        :root {
+            --bg-primary: #0f1117;
+            --bg-secondary: #1a1d28;
+            --bg-card: #21243199;
+            --bg-card-solid: #212431;
+            --bg-hover: #2a2d3a;
+            --border: #2d3148;
+            --border-light: #363a52;
+            --text-primary: #e8eaed;
+            --text-secondary: #9ca3b4;
+            --text-dim: #6b7280;
+            --accent-blue: #4f8ff7;
+            --accent-green: #34d399;
+            --accent-yellow: #fbbf24;
+            --accent-red: #f87171;
+            --accent-purple: #a78bfa;
+            --accent-cyan: #22d3ee;
+            --accent-orange: #fb923c;
+            --accent-pink: #f472b6;
+            --gradient-blue: linear-gradient(135deg, #4f8ff7 0%, #6366f1 100%);
+            --gradient-green: linear-gradient(135deg, #34d399 0%, #06b6d4 100%);
+            --gradient-purple: linear-gradient(135deg, #a78bfa 0%, #ec4899 100%);
+            --gradient-orange: linear-gradient(135deg, #fb923c 0%, #f43f5e 100%);
+            --shadow-sm: 0 1px 3px rgba(0,0,0,0.3);
+            --shadow-md: 0 4px 12px rgba(0,0,0,0.4);
+            --shadow-lg: 0 8px 30px rgba(0,0,0,0.5);
+            --shadow-glow-blue: 0 0 20px rgba(79,143,247,0.15);
+            --shadow-glow-green: 0 0 20px rgba(52,211,153,0.15);
+            --radius-sm: 8px;
+            --radius-md: 12px;
+            --radius-lg: 16px;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        /* ━━━ 基础样式 ━━━ */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        /* ━━━ 滚动条 ━━━ */
+        ::-webkit-scrollbar { width: 6px; height: 6px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+        ::-webkit-scrollbar-thumb:hover { background: var(--border-light); }
+
+        /* ━━━ 布局 ━━━ */
+        .app-container { display: flex; min-height: 100vh; }
+
+        /* ━━━ 侧边栏 ━━━ */
+        .sidebar {
+            width: 260px;
+            background: var(--bg-secondary);
+            border-right: 1px solid var(--border);
+            display: flex;
+            flex-direction: column;
+            position: fixed;
+            top: 0; left: 0; bottom: 0;
+            z-index: 100;
+            transition: var(--transition);
+        }
+        .sidebar-header {
+            padding: 20px;
+            border-bottom: 1px solid var(--border);
+        }
+        .sidebar-logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .sidebar-logo .logo-icon {
+            width: 40px; height: 40px;
+            background: var(--gradient-blue);
+            border-radius: var(--radius-sm);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+        }
+        .sidebar-logo .logo-text h2 {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+        .sidebar-logo .logo-text span {
+            font-size: 11px;
+            color: var(--text-dim);
+        }
+        .sidebar-nav {
+            flex: 1;
+            padding: 12px;
+            overflow-y: auto;
+        }
+        .nav-section {
+            margin-bottom: 20px;
+        }
+        .nav-section-title {
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+            color: var(--text-dim);
+            padding: 0 12px;
+            margin-bottom: 8px;
+        }
+        .nav-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 12px;
+            border-radius: var(--radius-sm);
+            cursor: pointer;
+            transition: var(--transition);
+            color: var(--text-secondary);
+            font-size: 14px;
+            text-decoration: none;
+        }
+        .nav-item:hover {
+            background: var(--bg-hover);
+            color: var(--text-primary);
+        }
+        .nav-item.active {
+            background: rgba(79,143,247,0.12);
+            color: var(--accent-blue);
+        }
+        .nav-item .nav-icon { font-size: 18px; width: 24px; text-align: center; }
+        .nav-item .nav-badge {
+            margin-left: auto;
+            background: var(--accent-blue);
+            color: #fff;
+            font-size: 10px;
+            padding: 2px 6px;
+            border-radius: 10px;
+            font-weight: 600;
+        }
+        .sidebar-footer {
+            padding: 16px 20px;
+            border-top: 1px solid var(--border);
+        }
+        .system-status {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 12px;
+            color: var(--text-dim);
+        }
+        .status-dot {
+            width: 8px; height: 8px;
+            background: var(--accent-green);
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        /* ━━━ 主内容区 ━━━ */
+        .main-content {
+            flex: 1;
+            margin-left: 260px;
+            padding: 24px;
+            min-height: 100vh;
+        }
+
+        /* ━━━ 头部栏 ━━━ */
+        .topbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 24px;
+        }
+        .topbar h1 {
+            font-size: 22px;
+            font-weight: 600;
+            background: var(--gradient-blue);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .topbar-actions {
+            display: flex;
+            gap: 8px;
+        }
+        .btn {
+            padding: 8px 16px;
+            border: 1px solid var(--border);
+            border-radius: var(--radius-sm);
+            background: var(--bg-card-solid);
+            color: var(--text-primary);
+            cursor: pointer;
+            font-size: 13px;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .btn:hover {
+            background: var(--bg-hover);
+            border-color: var(--border-light);
+        }
+        .btn-primary {
+            background: var(--gradient-blue);
+            border: none;
+            color: #fff;
+        }
+        .btn-primary:hover { opacity: 0.9; }
+
+        /* ━━━ 卡片系统 ━━━ */
+        .card {
+            background: var(--bg-card-solid);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+            transition: var(--transition);
+        }
+        .card:hover {
+            border-color: var(--border-light);
+            box-shadow: var(--shadow-md);
+        }
+        .card-header {
+            padding: 16px 20px;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .card-title {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--text-primary);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .card-body { padding: 20px; }
+
+        /* ━━━ 概览指标卡片 ━━━ */
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+        .metric-card {
+            background: var(--bg-card-solid);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+            padding: 20px;
+            position: relative;
+            overflow: hidden;
+            transition: var(--transition);
+        }
+        .metric-card:hover {
+            border-color: var(--border-light);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+        .metric-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 3px;
+        }
+        .metric-card.blue::before { background: var(--gradient-blue); }
+        .metric-card.green::before { background: var(--gradient-green); }
+        .metric-card.purple::before { background: var(--gradient-purple); }
+        .metric-card.orange::before { background: var(--gradient-orange); }
+        .metric-icon {
+            width: 44px; height: 44px;
+            border-radius: var(--radius-sm);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+            margin-bottom: 12px;
+        }
+        .metric-icon.blue { background: rgba(79,143,247,0.15); }
+        .metric-icon.green { background: rgba(52,211,153,0.15); }
+        .metric-icon.purple { background: rgba(167,139,250,0.15); }
+        .metric-icon.orange { background: rgba(251,146,60,0.15); }
+        .metric-value {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 4px;
+        }
+        .metric-label {
+            font-size: 12px;
+            color: var(--text-dim);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* ━━━ 两栏布局 ━━━ */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 24px;
+        }
+        .grid-3 {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 24px;
+        }
+
+        /* ━━━ Agent 卡片 ━━━ */
+        .agent-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 16px;
+        }
+        .agent-card {
+            background: var(--bg-card-solid);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+            padding: 20px;
+            transition: var(--transition);
+            cursor: pointer;
+        }
+        .agent-card:hover {
+            border-color: var(--accent-blue);
+            box-shadow: var(--shadow-glow-blue);
+            transform: translateY(-2px);
+        }
+        .agent-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 12px;
+        }
+        .agent-avatar {
+            width: 44px; height: 44px;
+            border-radius: var(--radius-sm);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+        }
+        .agent-info h3 {
+            font-size: 14px;
+            font-weight: 600;
+        }
+        .agent-info .agent-role {
+            font-size: 11px;
+            color: var(--text-dim);
+        }
+        .agent-meta {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+        .tag {
+            font-size: 11px;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-weight: 500;
+        }
+        .tag-blue { background: rgba(79,143,247,0.15); color: var(--accent-blue); }
+        .tag-green { background: rgba(52,211,153,0.15); color: var(--accent-green); }
+        .tag-purple { background: rgba(167,139,250,0.15); color: var(--accent-purple); }
+        .tag-yellow { background: rgba(251,191,36,0.15); color: var(--accent-yellow); }
+        .tag-orange { background: rgba(251,146,60,0.15); color: var(--accent-orange); }
+        .tag-cyan { background: rgba(34,211,238,0.15); color: var(--accent-cyan); }
+
+        /* ━━━ 流水线可视化 ━━━ */
+        .pipeline-flow {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            flex-wrap: wrap;
+            padding: 12px 0;
+        }
+        .pipeline-step {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+        .step-node {
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-size: 12px;
+            font-weight: 500;
+            background: var(--bg-hover);
+            border: 1px solid var(--border);
+            white-space: nowrap;
+        }
+        .step-node.active {
+            background: rgba(79,143,247,0.2);
+            border-color: var(--accent-blue);
+            color: var(--accent-blue);
+        }
+        .step-node.completed {
+            background: rgba(52,211,153,0.15);
+            border-color: var(--accent-green);
+            color: var(--accent-green);
+        }
+        .step-arrow {
+            color: var(--text-dim);
+            font-size: 14px;
+        }
+
+        /* ━━━ 消息列表 ━━━ */
+        .message-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            padding: 12px;
+            border-bottom: 1px solid var(--border);
+            transition: var(--transition);
+        }
+        .message-item:last-child { border-bottom: none; }
+        .message-item:hover { background: var(--bg-hover); }
+        .msg-icon {
+            width: 32px; height: 32px;
+            border-radius: var(--radius-sm);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            flex-shrink: 0;
+        }
+        .msg-content { flex: 1; }
+        .msg-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 4px;
+        }
+        .msg-from {
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+        .msg-time {
+            font-size: 10px;
+            color: var(--text-dim);
+        }
+        .msg-body {
+            font-size: 12px;
+            color: var(--text-secondary);
+        }
+
+        /* ━━━ 质量门禁 ━━━ */
+        .gate-list { display: flex; flex-direction: column; gap: 12px; }
+        .gate-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 14px 16px;
+            background: var(--bg-hover);
+            border-radius: var(--radius-sm);
+        }
+        .gate-info h4 {
+            font-size: 13px;
+            font-weight: 600;
+            margin-bottom: 2px;
+        }
+        .gate-info span {
+            font-size: 11px;
+            color: var(--text-dim);
+        }
+        .gate-status {
+            font-size: 11px;
+            font-weight: 600;
+            padding: 4px 10px;
+            border-radius: 12px;
+        }
+        .gate-status.passed { background: rgba(52,211,153,0.15); color: var(--accent-green); }
+        .gate-status.pending { background: rgba(251,191,36,0.15); color: var(--accent-yellow); }
+
+        /* ━━━ 进度条 ━━━ */
+        .progress-bar {
+            width: 100%;
+            height: 6px;
+            background: var(--bg-hover);
+            border-radius: 3px;
+            overflow: hidden;
+        }
+        .progress-fill {
+            height: 100%;
+            border-radius: 3px;
+            transition: width 0.5s ease;
+        }
+        .progress-fill.blue { background: var(--gradient-blue); }
+        .progress-fill.green { background: var(--gradient-green); }
+
+        /* ━━━ 表格 ━━━ */
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .data-table th {
+            text-align: left;
+            padding: 10px 16px;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--text-dim);
+            border-bottom: 1px solid var(--border);
+        }
+        .data-table td {
+            padding: 12px 16px;
+            font-size: 13px;
+            border-bottom: 1px solid var(--border);
+        }
+        .data-table tbody tr:hover { background: var(--bg-hover); }
+
+        /* ━━━ 页面切换区域 ━━━ */
+        .page { display: none; }
+        .page.active { display: block; }
+
+        /* ━━━ 空状态 ━━━ */
+        .empty-state {
+            text-align: center;
+            padding: 40px;
+            color: var(--text-dim);
+        }
+        .empty-state .empty-icon { font-size: 48px; margin-bottom: 12px; }
+        .empty-state h3 { font-size: 16px; margin-bottom: 8px; color: var(--text-secondary); }
+        .empty-state p { font-size: 13px; }
+
+        /* ━━━ 加载动画 ━━━ */
+        .spinner {
+            width: 24px; height: 24px;
+            border: 2px solid var(--border);
+            border-top-color: var(--accent-blue);
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+        }
+        @keyframes spin { to { transform: rotate(360deg); } }
+
+        /* ━━━ 并行组可视化 ━━━ */
+        .group-flow {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding: 16px 0;
+            overflow-x: auto;
+        }
+        .group-box {
+            padding: 14px 18px;
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+            min-width: 140px;
+        }
+        .group-box h4 {
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            margin-bottom: 8px;
+        }
+        .group-members {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+        .group-member {
+            font-size: 12px;
+            color: var(--text-secondary);
+        }
+        .group-connector {
+            font-size: 20px;
+            color: var(--text-dim);
+        }
+
+        /* ━━━ 日志区域 ━━━ */
+        .log-area {
+            max-height: 400px;
+            overflow-y: auto;
+            font-family: 'SF Mono', 'Fira Code', 'Consolas', monospace;
+            font-size: 12px;
+            line-height: 1.8;
+        }
+        .log-line {
+            padding: 2px 12px;
+            border-left: 3px solid transparent;
+        }
+        .log-line:hover { background: var(--bg-hover); }
+        .log-line.info { border-left-color: var(--accent-blue); }
+        .log-line.warning { border-left-color: var(--accent-yellow); }
+        .log-line.error { border-left-color: var(--accent-red); }
+        .log-time { color: var(--text-dim); }
+        .log-event { color: var(--accent-purple); font-weight: 600; }
+        .log-msg { color: var(--text-secondary); }
+
+        /* ━━━ 响应式 ━━━ */
+        @media (max-width: 1200px) {
+            .grid-2, .grid-3 { grid-template-columns: 1fr; }
+            .metrics-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (max-width: 768px) {
+            .sidebar { transform: translateX(-100%); }
+            .main-content { margin-left: 0; }
+            .metrics-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <div class="app-container">
+        <!-- ━━━ 侧边栏 ━━━ -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="sidebar-logo">
+                    <div class="logo-icon">🎮</div>
+                    <div class="logo-text">
+                        <h2>OpenClaw</h2>
+                        <span>Multi-Agent GameDev</span>
+                    </div>
+                </div>
+            </div>
+            <nav class="sidebar-nav">
+                <div class="nav-section">
+                    <div class="nav-section-title">监控</div>
+                    <a class="nav-item active" data-page="overview" onclick="switchPage('overview')">
+                        <span class="nav-icon">📊</span> 系统概览
+                    </a>
+                    <a class="nav-item" data-page="agents" onclick="switchPage('agents')">
+                        <span class="nav-icon">🤖</span> Agent 管理
+                        <span class="nav-badge" id="nav-agent-count">8</span>
+                    </a>
+                    <a class="nav-item" data-page="pipelines" onclick="switchPage('pipelines')">
+                        <span class="nav-icon">🔧</span> 流水线
+                    </a>
+                </div>
+                <div class="nav-section">
+                    <div class="nav-section-title">系统</div>
+                    <a class="nav-item" data-page="messages" onclick="switchPage('messages')">
+                        <span class="nav-icon">📬</span> 消息队列
+                    </a>
+                    <a class="nav-item" data-page="sandbox" onclick="switchPage('sandbox')">
+                        <span class="nav-icon">📦</span> 沙盒管理
+                    </a>
+                    <a class="nav-item" data-page="inventory" onclick="switchPage('inventory')">
+                        <span class="nav-icon">📜</span> 规则资产
+                    </a>
+                </div>
+                <div class="nav-section">
+                    <div class="nav-section-title">工具</div>
+                    <a class="nav-item" data-page="logs" onclick="switchPage('logs')">
+                        <span class="nav-icon">📝</span> 系统日志
+                    </a>
+                    <a class="nav-item" data-page="team" onclick="switchPage('team')">
+                        <span class="nav-icon">🔗</span> CodeBuddy
+                    </a>
+                </div>
+            </nav>
+            <div class="sidebar-footer">
+                <div class="system-status">
+                    <div class="status-dot"></div>
+                    <span>系统运行中 | v1.0.0</span>
+                </div>
+            </div>
+        </aside>
+
+        <!-- ━━━ 主内容区 ━━━ -->
+        <main class="main-content">
+            <!-- ━━━━━━━━━━━━ 概览页面 ━━━━━━━━━━━━ -->
+            <div class="page active" id="page-overview">
+                <div class="topbar">
+                    <h1>🎮 系统概览</h1>
+                    <div class="topbar-actions">
+                        <button class="btn" onclick="refreshData()">🔄 刷新</button>
+                        <button class="btn btn-primary" onclick="switchPage('pipelines')">➕ 新建需求</button>
+                    </div>
+                </div>
+
+                <!-- 指标卡片 -->
+                <div class="metrics-grid">
+                    <div class="metric-card blue">
+                        <div class="metric-icon blue">🤖</div>
+                        <div class="metric-value" id="metric-agents">8</div>
+                        <div class="metric-label">注册 Agent</div>
+                    </div>
+                    <div class="metric-card green">
+                        <div class="metric-icon green">📦</div>
+                        <div class="metric-value" id="metric-sandboxes">0</div>
+                        <div class="metric-label">活跃沙盒</div>
+                    </div>
+                    <div class="metric-card purple">
+                        <div class="metric-icon purple">🔧</div>
+                        <div class="metric-value" id="metric-pipelines">0</div>
+                        <div class="metric-label">活跃流水线</div>
+                    </div>
+                    <div class="metric-card orange">
+                        <div class="metric-icon orange">📜</div>
+                        <div class="metric-value" id="metric-rules">0</div>
+                        <div class="metric-label">规则文件</div>
+                    </div>
+                </div>
+
+                <!-- 并行架构可视化 -->
+                <div class="card" style="margin-bottom:24px">
+                    <div class="card-header">
+                        <div class="card-title">⚡ 并行架构拓扑</div>
+                    </div>
+                    <div class="card-body">
+                        <div class="group-flow" id="architecture-flow">
+                            <div class="group-box" style="border-color:var(--accent-blue)">
+                                <h4 style="color:var(--accent-blue)">🎯 控制层</h4>
+                                <div style="font-size:10px;color:var(--text-dim);margin-bottom:6px">串行</div>
+                                <div class="group-members">
+                                    <div class="group-member">🎬 制作人老梁</div>
+                                    <div class="group-member">📊 PM小李</div>
+                                </div>
+                            </div>
+                            <div class="group-connector">→</div>
+                            <div class="group-box" style="border-color:var(--accent-green)">
+                                <h4 style="color:var(--accent-green)">🎨 设计层</h4>
+                                <div style="font-size:10px;color:var(--text-dim);margin-bottom:6px">⚡ 并行</div>
+                                <div class="group-members">
+                                    <div class="group-member">📋 策划小张</div>
+                                    <div class="group-member">✨ UX小林</div>
+                                    <div class="group-member">🎨 美术小周</div>
+                                </div>
+                            </div>
+                            <div class="group-connector">→</div>
+                            <div class="group-box" style="border-color:var(--accent-purple)">
+                                <h4 style="color:var(--accent-purple)">🏗️ 架构层</h4>
+                                <div style="font-size:10px;color:var(--text-dim);margin-bottom:6px">串行</div>
+                                <div class="group-members">
+                                    <div class="group-member">🔧 主程老陈</div>
+                                </div>
+                            </div>
+                            <div class="group-connector">→</div>
+                            <div class="group-box" style="border-color:var(--accent-orange)">
+                                <h4 style="color:var(--accent-orange)">💻 实现层</h4>
+                                <div style="font-size:10px;color:var(--text-dim);margin-bottom:6px">⚡ 并行</div>
+                                <div class="group-members">
+                                    <div class="group-member">💻 程序小赵</div>
+                                </div>
+                            </div>
+                            <div class="group-connector">→</div>
+                            <div class="group-box" style="border-color:var(--accent-cyan)">
+                                <h4 style="color:var(--accent-cyan)">🧪 验证层</h4>
+                                <div style="font-size:10px;color:var(--text-dim);margin-bottom:6px">⚡ 并行</div>
+                                <div class="group-members">
+                                    <div class="group-member">🧪 QA小吴</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid-2">
+                    <!-- 质量门禁 -->
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-title">🚧 质量门禁</div>
+                        </div>
+                        <div class="card-body">
+                            <div class="gate-list">
+                                <div class="gate-item">
+                                    <div class="gate-info">
+                                        <h4>关卡1: 策划 → 主程/UX</h4>
+                                        <span>21 项检查 (文件/格式/内容/实现泄漏/一致性)</span>
+                                    </div>
+                                    <span class="gate-status passed">✅ 通过</span>
+                                </div>
+                                <div class="gate-item">
+                                    <div class="gate-info">
+                                        <h4>关卡2: 主程 → 程序</h4>
+                                        <span>18 项检查 (架构/任务/测试/风险/兼容性)</span>
+                                    </div>
+                                    <span class="gate-status passed">✅ 通过</span>
+                                </div>
+                                <div class="gate-item">
+                                    <div class="gate-info">
+                                        <h4>关卡3: 程序 → QA</h4>
+                                        <span>27 项检查 (代码/质量/Unity/可测试性/防护)</span>
+                                    </div>
+                                    <span class="gate-status pending">⏳ 待检查</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 消息队列统计 -->
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-title">📬 消息队列</div>
+                        </div>
+                        <div class="card-body" id="mq-stats-container">
+                            <table class="data-table">
+                                <thead>
+                                    <tr>
+                                        <th>频道</th>
+                                        <th>消息数</th>
+                                        <th>状态</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td>🎯 控制通道</td><td>0</td><td><span class="tag tag-green">正常</span></td></tr>
+                                    <tr><td>🎨 设计通道</td><td>0</td><td><span class="tag tag-green">正常</span></td></tr>
+                                    <tr><td>💻 实现通道</td><td>0</td><td><span class="tag tag-green">正常</span></td></tr>
+                                    <tr><td>🧪 验证通道</td><td>0</td><td><span class="tag tag-green">正常</span></td></tr>
+                                    <tr><td>🌍 全局通道</td><td>0</td><td><span class="tag tag-green">正常</span></td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ━━━━━━━━━━━━ Agent管理页面 ━━━━━━━━━━━━ -->
+            <div class="page" id="page-agents">
+                <div class="topbar">
+                    <h1>🤖 Agent 管理</h1>
+                </div>
+                <div class="agent-grid" id="agents-grid">
+                    <!-- 由JS动态填充 -->
+                </div>
+            </div>
+
+            <!-- ━━━━━━━━━━━━ 流水线页面 ━━━━━━━━━━━━ -->
+            <div class="page" id="page-pipelines">
+                <div class="topbar">
+                    <h1>🔧 流水线管理</h1>
+                </div>
+                <div class="card" style="margin-bottom:24px">
+                    <div class="card-header">
+                        <div class="card-title">📋 需求类型与流转路径</div>
+                    </div>
+                    <div class="card-body" id="pipeline-definitions"></div>
+                </div>
+            </div>
+
+            <!-- ━━━━━━━━━━━━ 消息队列页面 ━━━━━━━━━━━━ -->
+            <div class="page" id="page-messages">
+                <div class="topbar">
+                    <h1>📬 消息队列</h1>
+                </div>
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-title">消息流</div>
+                    </div>
+                    <div class="card-body">
+                        <div class="empty-state">
+                            <div class="empty-icon">📭</div>
+                            <h3>队列空闲</h3>
+                            <p>当前没有待处理消息。启动流水线后消息将在此显示。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ━━━━━━━━━━━━ 沙盒管理页面 ━━━━━━━━━━━━ -->
+            <div class="page" id="page-sandbox">
+                <div class="topbar">
+                    <h1>📦 沙盒管理</h1>
+                </div>
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-title">活跃沙盒</div>
+                    </div>
+                    <div class="card-body" id="sandbox-list"></div>
+                </div>
+            </div>
+
+            <!-- ━━━━━━━━━━━━ 规则资产页面 ━━━━━━━━━━━━ -->
+            <div class="page" id="page-inventory">
+                <div class="topbar">
+                    <h1>📜 规则资产清单</h1>
+                    <div class="topbar-actions">
+                        <button class="btn btn-primary" onclick="rescanInventory()">🔄 重新扫描</button>
+                    </div>
+                </div>
+                <div class="metrics-grid" id="inventory-stats"></div>
+                <div class="grid-2">
+                    <div class="card">
+                        <div class="card-header"><div class="card-title">🤖 Agent 注册表</div></div>
+                        <div class="card-body" id="inventory-agents"></div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header"><div class="card-title">🎯 技能包注册表</div></div>
+                        <div class="card-body" id="inventory-skills"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ━━━━━━━━━━━━ 日志页面 ━━━━━━━━━━━━ -->
+            <div class="page" id="page-logs">
+                <div class="topbar">
+                    <h1>📝 系统日志</h1>
+                    <div class="topbar-actions">
+                        <button class="btn" onclick="loadLogs()">🔄 刷新</button>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-body">
+                        <div class="log-area" id="log-area"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ━━━━━━━━━━━━ CodeBuddy页面 ━━━━━━━━━━━━ -->
+            <div class="page" id="page-team">
+                <div class="topbar">
+                    <h1>🔗 CodeBuddy Team Mode</h1>
+                </div>
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-title">团队配置</div>
+                    </div>
+                    <div class="card-body" id="team-config"></div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+        // API 接口
+        // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+        const API_BASE = '/api';
+
+        async function apiFetch(endpoint) {
+            try {
+                const resp = await fetch(`${API_BASE}${endpoint}`);
+                const data = await resp.json();
+                return data.data || data;
+            } catch (e) {
+                console.warn(`API ${endpoint} 不可用，使用默认数据`);
+                return null;
+            }
+        }
+
+        // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+        // 页面切换
+        // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+        function switchPage(pageId) {
+            // 切换页面
+            document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+            document.getElementById(`page-${pageId}`).classList.add('active');
+
+            // 切换导航
+            document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
+            document.querySelector(`.nav-item[data-page="${pageId}"]`).classList.add('active');
+
+            // 加载页面数据
+            loadPageData(pageId);
+        }
+
+        function loadPageData(pageId) {
+            switch(pageId) {
+                case 'overview': loadOverview(); break;
+                case 'agents': loadAgents(); break;
+                case 'pipelines': loadPipelineDefinitions(); break;
+                case 'inventory': loadInventory(); break;
+                case 'logs': loadLogs(); break;
+                case 'team': loadTeamConfig(); break;
+            }
+        }
+
+        // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+        // 数据加载
+        // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+        async function loadOverview() {
+            const data = await apiFetch('/overview');
+            if (data) {
+                document.getElementById('metric-agents').textContent = data.agents?.total || 8;
+                document.getElementById('metric-sandboxes').textContent = data.agents?.active || 0;
+                document.getElementById('metric-pipelines').textContent = data.pipelines?.active || 0;
+                document.getElementById('metric-rules').textContent = data.inventory?.total_files || 0;
+            }
+        }
+
+        // Agent 数据（内置默认值，API可覆盖）
+        const DEFAULT_AGENTS = [
+            { id: '00_producer', icon: '🎬', name: '制作人老梁', role: '需求入口与分类路由', group: 'control', tags: ['串行', '只读'] },
+            { id: '01_pm', icon: '📊', name: 'PM小李', role: '需求管理与进度监控', group: 'control', tags: ['串行', '管理'] },
+            { id: '02_planner', icon: '📋', name: '策划小张', role: '策划案编写与验收标准', group: 'design', tags: ['并行', '21项质量门禁'] },
+            { id: '03_tech_lead', icon: '🔧', name: '主程老陈', role: '技术评审与架构设计', group: 'architecture', tags: ['串行', '18项质量门禁'] },
+            { id: '04_programmer', icon: '💻', name: '程序小赵', role: '代码实现与Bug修复', group: 'implementation', tags: ['并行', '对抗审查'] },
+            { id: '05_artist', icon: '🎨', name: '美术小周', role: 'UI设计与美术需求', group: 'design', tags: ['并行', '资源规格'] },
+            { id: '06_qa', icon: '🧪', name: 'QA小吴', role: '自动化测试与Bug报告', group: 'verification', tags: ['并行', '最多3轮修复'] },
+            { id: '07_ux', icon: '✨', name: 'UX小林', role: '交互设计与界面布局', group: 'design', tags: ['并行', '策划确认'] },
+        ];
+
+        const GROUP_COLORS = {
+            control: 'blue', design: 'green', architecture: 'purple',
+            implementation: 'orange', verification: 'cyan'
+        };
+
+        function loadAgents() {
+            const grid = document.getElementById('agents-grid');
+            grid.innerHTML = DEFAULT_AGENTS.map(agent => `
+                <div class="agent-card">
+                    <div class="agent-header">
+                        <div class="agent-avatar" style="background:rgba(79,143,247,0.1)">${agent.icon}</div>
+                        <div class="agent-info">
+                            <h3>${agent.name}</h3>
+                            <div class="agent-role">${agent.role}</div>
+                        </div>
+                    </div>
+                    <div class="agent-meta">
+                        <span class="tag tag-${GROUP_COLORS[agent.group] || 'blue'}">${agent.group}</span>
+                        ${agent.tags.map(t => `<span class="tag tag-yellow">${t}</span>`).join('')}
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // 流水线定义数据
+        const PIPELINE_DEFS = {
+            'FEATURE': { name: '🆕 功能开发', path: ['制作人','PM','策划','主程','程序','QA','交付'] },
+            'FEATURE_UI': { name: '🎨 功能开发(含UI)', path: ['制作人','PM','策划','UX+美术','策划确认','主程','程序','QA','交付'] },
+            'BUGFIX': { name: '🐛 Bug修复', path: ['制作人','PM','程序','QA','交付'] },
+            'OPTIMIZE': { name: '⚡ 代码优化', path: ['制作人','PM','主程','程序','QA','交付'] },
+            'TEST': { name: '🧪 测试', path: ['制作人','PM','QA','交付'] },
+            'DOC': { name: '📄 文档', path: ['制作人','PM','主程'] },
+            'REVIEW': { name: '🔍 代码审查', path: ['制作人','PM','主程','程序'] },
+            'CONFIG': { name: '⚙️ 配置调整', path: ['制作人','PM','程序','QA','交付'] },
+            'RESEARCH': { name: '🔬 方向调研', path: ['制作人','策划'] },
+        };
+
+        function loadPipelineDefinitions() {
+            const container = document.getElementById('pipeline-definitions');
+            container.innerHTML = Object.entries(PIPELINE_DEFS).map(([type, def]) => `
+                <div style="margin-bottom:20px">
+                    <div style="font-size:14px;font-weight:600;margin-bottom:8px">${def.name}
+                        <span class="tag tag-blue" style="margin-left:8px">${type}</span>
+                    </div>
+                    <div class="pipeline-flow">
+                        ${def.path.map((step, i) => `
+                            ${i > 0 ? '<span class="step-arrow">→</span>' : ''}
+                            <div class="step-node">${step}</div>
+                        `).join('')}
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        async function loadInventory() {
+            const data = await apiFetch('/inventory');
+            const stats = data?.statistics || { total_agents: 8, total_skills: 0, total_rules: 7, total_steps: 0, total_templates: 0, total_files: 0 };
+
+            document.getElementById('inventory-stats').innerHTML = `
+                <div class="metric-card blue">
+                    <div class="metric-icon blue">🤖</div>
+                    <div class="metric-value">${stats.total_agents}</div>
+                    <div class="metric-label">Agent</div>
+                </div>
+                <div class="metric-card green">
+                    <div class="metric-icon green">🎯</div>
+                    <div class="metric-value">${stats.total_skills}</div>
+                    <div class="metric-label">技能包</div>
+                </div>
+                <div class="metric-card purple">
+                    <div class="metric-icon purple">📜</div>
+                    <div class="metric-value">${stats.total_rules}</div>
+                    <div class="metric-label">全局规则</div>
+                </div>
+                <div class="metric-card orange">
+                    <div class="metric-icon orange">📝</div>
+                    <div class="metric-value">${stats.total_steps}</div>
+                    <div class="metric-label">步骤文件</div>
+                </div>
+            `;
+
+            // Agent列表
+            if (data?.agents) {
+                const agentsHtml = Object.entries(data.agents).map(([id, spec]) => `
+                    <div style="padding:10px 0;border-bottom:1px solid var(--border)">
+                        <div style="font-size:13px;font-weight:600">${id}</div>
+                        <div style="font-size:11px;color:var(--text-dim)">
+                            steps=${(spec.steps||[]).length} | templates=${(spec.templates||[]).length}
+                        </div>
+                    </div>
+                `).join('');
+                document.getElementById('inventory-agents').innerHTML = agentsHtml || '<div class="empty-state"><p>等待API连接</p></div>';
+            }
+
+            // 技能列表
+            if (data?.skills) {
+                const skillsHtml = Object.entries(data.skills).map(([id, spec]) => `
+                    <div style="padding:10px 0;border-bottom:1px solid var(--border)">
+                        <div style="font-size:13px;font-weight:600">${spec.skill_name || id}</div>
+                        <div style="font-size:11px;color:var(--text-dim)">${spec.category || ''} | ${spec.title || ''}</div>
+                    </div>
+                `).join('');
+                document.getElementById('inventory-skills').innerHTML = skillsHtml || '<div class="empty-state"><p>等待API连接</p></div>';
+            }
+        }
+
+        async function loadLogs() {
+            const data = await apiFetch('/logs?count=100');
+            const area = document.getElementById('log-area');
+            if (data && data.length > 0) {
+                area.innerHTML = data.map(log => `
+                    <div class="log-line info">
+                        <span class="log-time">${(log.timestamp||'').substring(11,19)}</span>
+                        <span class="log-event"> [${log.event_type||''}]</span>
+                        <span class="log-msg"> ${log.message||''}</span>
+                    </div>
+                `).join('');
+            } else {
+                area.innerHTML = '<div class="empty-state"><div class="empty-icon">📝</div><h3>暂无日志</h3><p>启动Web服务后日志将在此显示</p></div>';
+            }
+        }
+
+        async function loadTeamConfig() {
+            const data = await apiFetch('/codebuddy/team');
+            const container = document.getElementById('team-config');
+            if (data && data.members) {
+                const html = Object.entries(data.members).map(([id, m]) => `
+                    <div style="display:flex;align-items:center;gap:12px;padding:12px 0;border-bottom:1px solid var(--border)">
+                        <div style="font-size:24px">${m.name ? m.name.slice(-2) : '❓'}</div>
+                        <div style="flex:1">
+                            <div style="font-size:13px;font-weight:600">${m.name || id}</div>
+                            <div style="font-size:11px;color:var(--text-dim)">${m.role || ''}</div>
+                        </div>
+                        <span class="tag tag-${GROUP_COLORS[m.group]||'blue'}">${m.group||''}</span>
+                        <span class="tag tag-purple">${m.mode||''}</span>
+                        <span class="tag ${m.has_agent_file ? 'tag-green' : 'tag-yellow'}">${m.has_agent_file ? '已配置' : '未配置'}</span>
+                    </div>
+                `).join('');
+                container.innerHTML = `<div style="margin-bottom:12px;font-size:14px">团队: <strong>${data.team_name}</strong> | 成员: ${data.member_count}</div>${html}`;
+            } else {
+                container.innerHTML = '<div class="empty-state"><div class="empty-icon">🔗</div><h3>连接Web后端后可查看</h3><p>运行 openclaw-team web 启动服务</p></div>';
+            }
+        }
+
+        async function rescanInventory() {
+            await fetch(`${API_BASE}/inventory/rescan`, { method: 'POST' });
+            loadInventory();
+        }
+
+        function refreshData() { loadPageData('overview'); }
+
+        // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+        // 初始化
+        // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+        document.addEventListener('DOMContentLoaded', () => {
+            loadOverview();
+            loadAgents();
+        });
+    </script>
+</body>
+</html>
