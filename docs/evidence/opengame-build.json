@@ -1,0 +1,26 @@
+{
+  "commit": "c9bea37786af524bf3bbe802f2b67d23816fa5c0",
+  "node": "24.18.0",
+  "install": {
+    "status": "passed",
+    "scripts_disabled": true,
+    "retry": "--prefer-offline --maxsockets 3 --fetch-timeout 120000 --fetch-retries 2",
+    "initial_error": "EIDLETIMEOUT"
+  },
+  "build": {
+    "command": "npm run build",
+    "exit_code": 0,
+    "cli_sha256": "10d1201f0b1ad1415360c1d7cd9ca3ac307deef4c9e10d696931abc174e6b0bb"
+  },
+  "native_dependencies": {
+    "sharp": "npm rebuild sharp --foreground-scripts; libvips integrity check passed"
+  },
+  "startup": {
+    "isolated_home": "/private/tmp/opengame-cli-isolated",
+    "version": "0.6.0",
+    "help_exit_code": 0
+  },
+  "real_model_calls": 0,
+  "tool_authorization_verified": false,
+  "process_isolation_verified": false
+}

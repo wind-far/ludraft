@@ -1,0 +1,46 @@
+{
+  "passed": true,
+  "scenario": "empty",
+  "checks": {
+    "empty_and_unconfigured": true,
+    "mobile_no_horizontal_overflow": true,
+    "keyboard_close": true,
+    "model_settings_entry": true,
+    "no_model_test_calls_or_page_errors": true
+  },
+  "calls": [
+    {
+      "url": "/api/diagnostics",
+      "method": "GET"
+    },
+    {
+      "url": "/api/projects",
+      "method": "GET"
+    },
+    {
+      "url": "/api/settings/model",
+      "method": "GET"
+    },
+    {
+      "url": "/api/health",
+      "method": "GET"
+    },
+    {
+      "url": "/api/settings/opengame/diagnostics",
+      "method": "GET"
+    },
+    {
+      "url": "/api/settings/opengame/diagnostics",
+      "method": "GET"
+    },
+    {
+      "url": "/api/settings/connections",
+      "method": "GET"
+    },
+    {
+      "url": "/api/settings/opengame/diagnostics",
+      "method": "GET"
+    }
+  ],
+  "errors": []
+}

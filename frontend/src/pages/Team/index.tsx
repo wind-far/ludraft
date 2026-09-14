@@ -251,12 +251,12 @@ function CapabilityCard({ cap, expanded, onToggle }: { cap: CapabilityData; expa
       {expanded && (
         <div className="mt-4 rounded-lg bg-gray-50 p-4">
           <p className="text-[12px] leading-relaxed text-gray-600">{cap.detail}</p>
-          {cap.data && typeof cap.data === 'object' && Array.isArray(cap.data) && (
+          {Boolean(cap.data) && typeof cap.data === 'object' && Array.isArray(cap.data) && (
             <div className="mt-3 space-y-1">
               {(cap.data as Array<Record<string, unknown>>).map((item, i) => (
                 <div key={i} className="flex items-center gap-2 text-[11px] text-gray-500">
                   <span className="h-1 w-1 rounded-full bg-brand" />
-                  {item.name || item.group || JSON.stringify(item)}
+                  {String(item.name || item.group || JSON.stringify(item))}
                 </div>
               ))}
             </div>

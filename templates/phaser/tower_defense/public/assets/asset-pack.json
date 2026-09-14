@@ -1,0 +1,21 @@
+{
+  "game": {
+    "files": [
+      {
+        "type": "image",
+        "key": "tower_basic",
+        "url": "assets/tower_basic.png"
+      },
+      {
+        "type": "image",
+        "key": "enemy_basic",
+        "url": "assets/enemy_basic.png"
+      },
+      {
+        "type": "image",
+        "key": "tower_cannon",
+        "url": "assets/tower_cannon.png"
+      }
+    ]
+  }
+}

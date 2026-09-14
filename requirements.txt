@@ -8,3 +8,7 @@ uvicorn[standard]>=0.24.0
 
 # 开发工具（可选）
 pytest>=7.4.0
+
+# Real LLM calls and uploads
+httpx>=0.28.1
+python-multipart>=0.0.20

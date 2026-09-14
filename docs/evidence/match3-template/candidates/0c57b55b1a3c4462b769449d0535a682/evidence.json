@@ -1,0 +1,45 @@
+{
+  "passed": false,
+  "build": true,
+  "checks": [
+    {
+      "name": "TypeScript 构建",
+      "passed": true
+    },
+    {
+      "name": "三消参数边界",
+      "passed": true
+    },
+    {
+      "name": "开始游戏",
+      "passed": true
+    },
+    {
+      "name": "棋盘初始可玩",
+      "passed": true
+    },
+    {
+      "name": "无效交换回退",
+      "passed": false
+    }
+  ],
+  "console_errors": [],
+  "started_at": "2026-09-12T15:31:25.517Z",
+  "build_log": "",
+  "config": {
+    "title": "五色花园",
+    "mode": "match3",
+    "moves": 25,
+    "targetScore": 1500,
+    "gemTypes": 5,
+    "background": "#edf6f0",
+    "playerColor": "#63bda4",
+    "targetColor": "#efb855",
+    "hazardColor": "#ef8699"
+  },
+  "error": "检查失败: 无效交换回退",
+  "finished_at": "2026-09-12T15:31:27.771Z",
+  "exit_code": 1,
+  "log": "{\"passed\":false,\"build\":true,\"checks\":[{\"name\":\"TypeScript 构建\",\"passed\":true},{\"name\":\"三消参数边界\",\"passed\":true},{\"name\":\"开始游戏\",\"passed\":true},{\"name\":\"棋盘初始可玩\",\"passed\":true},{\"name\":\"无效交换回退\",\"passed\":false}],\"console_errors\":[],\"started_at\":\"2026-09-12T15:31:25.517Z\",\"build_log\":\"\",\"config\":{\"title\":\"五色花园\",\"mode\":\"match3\",\"moves\":25,\"targetScore\":1500,\"gemTypes\":5,\"background\":\"#edf6f0\",\"playerColor\":\"#63bda4\",\"targetColor\":\"#efb855\",\"hazardColor\":\"#ef8699\"},\"error\":\"检查失败: 无效交换回退\",\"finished_at\":\"2026-09-12T15:31:27.771Z\"}\n",
+  "runner": "gamedev-runner:1"
+}

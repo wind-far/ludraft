@@ -39,3 +39,10 @@ desktop.ini
 .idea/
 *.suo
 *.user
+
+# Game Studio
+.studio-venv/
+.studio/
+node_modules/
+*.tsbuildinfo
+**/.*.edit.lock

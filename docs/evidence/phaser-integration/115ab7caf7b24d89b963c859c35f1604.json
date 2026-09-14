@@ -1,0 +1,54 @@
+{
+  "passed": false,
+  "build": true,
+  "scope": "phaser-integration-smoke",
+  "gameplay_verified": false,
+  "checks": [
+    {
+      "name": "固定 Phaser TypeScript/Vite 构建",
+      "passed": true
+    },
+    {
+      "name": "开始画面显示",
+      "passed": true
+    },
+    {
+      "name": "点击建塔扣除 40 金币",
+      "passed": true
+    },
+    {
+      "name": "点击升级扣除 30 金币",
+      "passed": true
+    },
+    {
+      "name": "Phaser 图片资源已加载",
+      "passed": true
+    },
+    {
+      "name": "地图场景渲染",
+      "passed": true
+    },
+    {
+      "name": "资源加载无错误",
+      "passed": false
+    }
+  ],
+  "console_errors": [],
+  "resource_failures": [
+    {
+      "url": "blob:http://127.0.0.1:36013/0cfce0c7-4bd9-411b-9fc3-8c88a87c3daf",
+      "error": "net::ERR_FILE_NOT_FOUND"
+    },
+    {
+      "url": "blob:http://127.0.0.1:36013/951f8e52-d447-4d87-b861-dda66cf34cad",
+      "error": "net::ERR_FILE_NOT_FOUND"
+    }
+  ],
+  "started_at": "2026-09-13T13:42:01.779Z",
+  "build_log": "vite v6.4.1 building for production...\ntransforming...\n✓ 25 modules transformed.\nrendering chunks...\ncomputing gzip size...\ndist/index.html                     0.38 kB │ gzip:   0.30 kB\ndist/assets/index-COeHopFf.css     13.24 kB │ gzip:   3.31 kB\ndist/assets/index-BojFUcJr.js   1,537.83 kB │ gzip: 354.45 kB\n✓ built in 13.67s\n\n(!) Some chunks are larger than 500 kB after minification. Consider:\n- Using dynamic import() to code-split the application\n- Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks\n- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.\n",
+  "error": "检查失败: 资源加载无错误",
+  "finished_at": "2026-09-13T13:42:34.588Z",
+  "exit_code": 1,
+  "runner": "gamedev-phaser-runner:1",
+  "candidate": "115ab7caf7b24d89b963c859c35f1604"
+}

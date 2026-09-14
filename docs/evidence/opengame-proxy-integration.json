@@ -1,0 +1,171 @@
+{
+  "passed": true,
+  "scope": "fixed-response-cli-proxy-tools-docker",
+  "upstream_commit": "c9bea37786af524bf3bbe802f2b67d23816fa5c0",
+  "live_model_verified": false,
+  "process_isolation_verified": false,
+  "gameplay_verified": false,
+  "workspace": "/Users/wind/Documents/gamedev/.studio/opengame-proxy-integration/0beaf731b85e4708a39fcd7131d5596d",
+  "paid_model_calls": 0,
+  "image_calls": 0,
+  "execution": {
+    "subtype": "success",
+    "num_turns": 7,
+    "usage": {
+      "input_tokens": 700,
+      "output_tokens": 140,
+      "cache_read_input_tokens": 0,
+      "total_tokens": 840
+    },
+    "permission_denials": 0,
+    "exit_code": 0,
+    "tool_calls": [
+      "project_inventory",
+      "project_read",
+      "project_apply",
+      "project_verify",
+      "project_apply",
+      "project_verify"
+    ],
+    "tool_errors": 0,
+    "events": 15,
+    "execution_completed": true,
+    "gameplay_verified": false,
+    "upstream_commit": "c9bea37786af524bf3bbe802f2b67d23816fa5c0"
+  },
+  "fixture_steps": [
+    "project_inventory",
+    "project_read",
+    "project_apply",
+    "project_verify",
+    "project_apply",
+    "project_verify",
+    "final_response"
+  ],
+  "exposed_tools": [
+    "project_apply",
+    "project_inventory",
+    "project_read",
+    "project_verify"
+  ],
+  "fixture_ledger": {
+    "enabled": true,
+    "currency": "CNY",
+    "cap_cny": 100.0,
+    "settled_cny": 0.00098,
+    "held_cny": 0.0,
+    "remaining_cny": 99.99902,
+    "over_budget": false,
+    "calls": 7,
+    "image_attempts": 0,
+    "image_limit": 10,
+    "unsettled_calls": 0
+  },
+  "diagnostics": [
+    {
+      "passed": false,
+      "build": false,
+      "scope": "phaser-integration-smoke",
+      "gameplay_verified": false,
+      "checks": [
+        {
+          "name": "固定 Phaser TypeScript/Vite 构建",
+          "passed": false
+        }
+      ],
+      "console_errors": [],
+      "resource_failures": [],
+      "started_at": "2026-09-13T16:25:26.292Z",
+      "build_log": "file:///opt/runner/phaser/build.mjs:29\n  if(checked.status!==0)throw new Error((checked.stdout||'')+(checked.stderr||'')+(checked.error?.message||''));\n                              ^\n\nError: ../../../tmp/phaser-build-XLdg7q/src/config.ts(1,24): error TS1109: Expression expected.\n\n    at file:///opt/runner/phaser/build.mjs:29:31\n    at ModuleJob.run (node:internal/modules/esm/module_job:343:25)\n    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:681:26)\n    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:117:5)\n\nNode.js v22.23.2\n",
+      "error": "检查失败: 固定 Phaser TypeScript/Vite 构建",
+      "finished_at": "2026-09-13T16:25:28.327Z",
+      "exit_code": 1,
+      "log": "{\"passed\":false,\"build\":false,\"scope\":\"phaser-integration-smoke\",\"gameplay_verified\":false,\"checks\":[{\"name\":\"固定 Phaser TypeScript/Vite 构建\",\"passed\":false}],\"console_errors\":[],\"resource_failures\":[],\"started_at\":\"2026-09-13T16:25:26.292Z\",\"build_log\":\"file:///opt/runner/phaser/build.mjs:29\\n  if(checked.status!==0)throw new Error((checked.stdout||'')+(checked.stderr||'')+(checked.error?.message||''));\\n                              ^\\n\\nError: ../../../tmp/phaser-build-XLdg7q/src/config.ts(1,24): error TS1109: Expression expected.\\n\\n    at file:///opt/runner/phaser/build.mjs:29:31\\n    at ModuleJob.run (node:internal/modules/esm/module_job:343:25)\\n    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:681:26)\\n    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:117:5)\\n\\nNode.js v22.23.2\\n\",\"error\":\"检查失败: 固定 Phaser TypeScript/Vite 构建\",\"finished_at\":\"2026-09-13T16:25:28.327Z\"}\n",
+      "runner": "gamedev-phaser-runner:1"
+    },
+    {
+      "passed": true,
+      "build": true,
+      "scope": "phaser-integration-smoke",
+      "gameplay_verified": false,
+      "checks": [
+        {
+          "name": "固定 Phaser TypeScript/Vite 构建",
+          "passed": true
+        },
+        {
+          "name": "开始画面显示",
+          "passed": true
+        },
+        {
+          "name": "点击建塔扣除 40 金币",
+          "passed": true
+        },
+        {
+          "name": "点击升级扣除 30 金币",
+          "passed": true
+        },
+        {
+          "name": "Phaser 图片资源已加载",
+          "passed": true
+        },
+        {
+          "name": "地图场景渲染",
+          "passed": true
+        },
+        {
+          "name": "返回标题后重新开始恢复初始金币",
+          "passed": true
+        },
+        {
+          "name": "重开后波次与监听器重置",
+          "passed": true
+        },
+        {
+          "name": "重开后同位置可重新建塔",
+          "passed": true
+        },
+        {
+          "name": "资源加载无错误",
+          "passed": true
+        },
+        {
+          "name": "页面无未处理异常",
+          "passed": true
+        }
+      ],
+      "console_errors": [],
+      "resource_failures": [],
+      "started_at": "2026-09-13T16:25:28.875Z",
+      "build_log": "vite v6.4.1 building for production...\ntransforming...\n✓ 26 modules transformed.\nrendering chunks...\ncomputing gzip size...\ndist/index.html                     0.38 kB │ gzip:   0.30 kB\ndist/assets/index-COeHopFf.css     13.24 kB │ gzip:   3.31 kB\ndist/assets/index-CjAaxj-q.js   1,538.63 kB │ gzip: 354.66 kB\n✓ built in 11.79s\n\n(!) Some chunks are larger than 500 kB after minification. Consider:\n- Using dynamic import() to code-split the application\n- Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks\n- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.\n",
+      "finished_at": "2026-09-13T16:26:18.469Z",
+      "exit_code": 0,
+      "log": "{\"passed\":true,\"build\":true,\"scope\":\"phaser-integration-smoke\",\"gameplay_verified\":false,\"checks\":[{\"name\":\"固定 Phaser TypeScript/Vite 构建\",\"passed\":true},{\"name\":\"开始画面显示\",\"passed\":true},{\"name\":\"点击建塔扣除 40 金币\",\"passed\":true},{\"name\":\"点击升级扣除 30 金币\",\"passed\":true},{\"name\":\"Phaser 图片资源已加载\",\"passed\":true},{\"name\":\"地图场景渲染\",\"passed\":true},{\"name\":\"返回标题后重新开始恢复初始金币\",\"passed\":true},{\"name\":\"重开后波次与监听器重置\",\"passed\":true},{\"name\":\"重开后同位置可重新建塔\",\"passed\":true},{\"name\":\"资源加载无错误\",\"passed\":true},{\"name\":\"页面无未处理异常\",\"passed\":true}],\"console_errors\":[],\"resource_failures\":[],\"started_at\":\"2026-09-13T16:25:28.875Z\",\"build_log\":\"vite v6.4.1 building for production...\\ntransforming...\\n✓ 26 modules transformed.\\nrendering chunks...\\ncomputing gzip size...\\ndist/index.html                     0.38 kB │ gzip:   0.30 kB\\ndist/assets/index-COeHopFf.css     13.24 kB │ gzip:   3.31 kB\\ndist/assets/index-CjAaxj-q.js   1,538.63 kB │ gzip: 354.66 kB\\n✓ built in 11.79s\\n\\n(!) Some chunks are larger than 500 kB after minification. Consider:\\n- Using dynamic import() to code-split the application\\n- Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks\\n- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.\\n\",\"finished_at\":\"2026-09-13T16:26:18.469Z\"}\n",
+      "runner": "gamedev-phaser-runner:1",
+      "source_digest": "9773057a6009a8031543bbfe31531414b7d742cf5d5c5264e839b04362aa9396",
+      "artifact_digest": "b9c37f704ca6f6d8d9d5fe4712806b544f5ec2588abba6bdb66f18b3f0446c2a"
+    }
+  ],
+  "date": "2026-09-14",
+  "fixture_ledger_notice": "Synthetic responses and prices in isolated test ledger; not provider usage or actual spending.",
+  "unit_checks": {
+    "command": ".studio-venv/bin/python -m pytest -q tests/test_opengame_proxy.py tests/test_opengame_tools.py tests/test_budget.py tests/test_opengame_protocol.py",
+    "passed": 84,
+    "seconds": 2.64
+  },
+  "limits": {
+    "model_attempts": 20,
+    "request_bytes": 1000000,
+    "response_bytes": 8000000,
+    "model_timeout_seconds": 120,
+    "session_seconds": 600
+  },
+  "last_patch_scope": "Real CLI probe preceded final SSE CR/BOM and pre-dispatch cancellation fixes; final targeted tests cover those changes.",
+  "full_regression": {
+    "command": ".studio-venv/bin/python -m pytest -q",
+    "passed": 449,
+    "skipped": 13,
+    "seconds": 44.92,
+    "scope": "full Python regression after model proxy, SSE framing and early cancellation fixes"
+  }
+}

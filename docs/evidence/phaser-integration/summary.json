@@ -1,0 +1,93 @@
+{
+  "scope": "fixed Phaser integration; no live model",
+  "latest_candidate": "765240c4083b44bc8957bbd3305e072a",
+  "latest_source_digest": "9773057a6009a8031543bbfe31531414b7d742cf5d5c5264e839b04362aa9396",
+  "latest_artifact_digest": "b9c37f704ca6f6d8d9d5fe4712806b544f5ec2588abba6bdb66f18b3f0446c2a",
+  "attempts": [
+    {
+      "candidate": "5b02f49e680f43e687995f88bf2b5a20",
+      "started_at": "2026-09-13T11:49:40.189Z",
+      "passed": false,
+      "checks": 1,
+      "error": "检查失败: 固定 Phaser TypeScript/Vite 构建"
+    },
+    {
+      "candidate": "a767990e067440d6a76536824ff6d7b3",
+      "started_at": "2026-09-13T11:55:20.635Z",
+      "passed": false,
+      "checks": 1,
+      "error": "检查失败: 固定 Phaser TypeScript/Vite 构建"
+    },
+    {
+      "candidate": "115ab7caf7b24d89b963c859c35f1604",
+      "started_at": "2026-09-13T13:42:01.779Z",
+      "passed": false,
+      "checks": 7,
+      "error": "检查失败: 资源加载无错误"
+    },
+    {
+      "candidate": "4b6350cf32034bd48d70e4feb49dcbf9",
+      "started_at": "2026-09-13T13:43:29.535Z",
+      "passed": true,
+      "checks": 8,
+      "error": null
+    },
+    {
+      "candidate": "6f37a666a09241a0a632edcff1c68c53",
+      "started_at": "2026-09-13T14:12:03.744Z",
+      "passed": false,
+      "checks": 6,
+      "error": "locator.waitFor: Timeout 10000ms exceeded.\nCall log:\n  - waiting for locator('#title-screen-container') to be visible\n"
+    },
+    {
+      "candidate": "41f56b0ecf454f1e90cb27110c433545",
+      "started_at": "2026-09-13T14:13:38.723Z",
+      "passed": true,
+      "checks": 9,
+      "error": null
+    },
+    {
+      "candidate": "3ea46b87918e4abaa8953cd99149aab5",
+      "started_at": "2026-09-13T14:16:27.845Z",
+      "passed": true,
+      "checks": 11,
+      "error": null
+    },
+    {
+      "candidate": "765240c4083b44bc8957bbd3305e072a",
+      "started_at": "2026-09-13T15:40:28.190Z",
+      "passed": true,
+      "checks": 11,
+      "error": null
+    }
+  ],
+  "workbench_iframe": {
+    "frontend": "built current React workbench",
+    "data_dir": ".studio/phaser-workbench-test",
+    "version_id": "0f647ca8fe214a09a9db48a628ed617d",
+    "sandbox": "allow-scripts; no allow-same-origin",
+    "actions": [
+      "open project",
+      "start game",
+      "pause",
+      "back to menu",
+      "start again",
+      "pause again"
+    ],
+    "observed_after_restart": {
+      "gold": 100,
+      "lives": 20,
+      "wave": "1/5"
+    },
+    "previous_failure": "group.clear after Phaser group destruction",
+    "current_version_errors_observed": 0,
+    "scope_limit": "Did not verify complete win/loss rules or model generation. Final candidate also removes an inaccurate Sell hint; that text-only change was rerun in Docker."
+  },
+  "remaining": [
+    "live OpenGame tool calls and isolation",
+    "per-request model proxy budgeting",
+    "full tower rules and loss/restart cases",
+    "continuous modification and exported-source rebuild",
+    "asset workflows and other four Phaser types"
+  ]
+}

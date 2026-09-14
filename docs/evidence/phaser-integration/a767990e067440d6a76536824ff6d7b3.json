@@ -1,0 +1,21 @@
+{
+  "passed": false,
+  "build": false,
+  "scope": "phaser-integration-smoke",
+  "gameplay_verified": false,
+  "checks": [
+    {
+      "name": "固定 Phaser TypeScript/Vite 构建",
+      "passed": false
+    }
+  ],
+  "console_errors": [],
+  "resource_failures": [],
+  "started_at": "2026-09-13T11:55:20.635Z",
+  "build_log": "vite v6.4.1 building for production...\ntransforming...\n✓ 22 modules transformed.\n✗ Build failed in 2.93s\nnode:internal/modules/run_main:123\n    triggerUncaughtException(\n    ^\n\n../../../tmp/phaser-build-NeoJAo/src/utils.ts (1:7): \"default\" is not exported by \"node_modules/phaser/dist/phaser.esm.js\", imported by \"../../../tmp/phaser-build-NeoJAo/src/utils.ts\".\nfile: /tmp/phaser-build-NeoJAo/src/utils.ts:1:7\n\n1: import Phaser from 'phaser';\n          ^\n2: \n3: // ============================================================================\n\n    at getRollupError (file:///opt/runner/phaser/node_modules/rollup/dist/es/shared/parseAst.js:317:41)\n    at error (file:///opt/runner/phaser/node_modules/rollup/dist/es/shared/parseAst.js:313:42)\n    at Module.error (file:///opt/runner/phaser/node_modules/rollup/dist/es/shared/node-entry.js:17233:16)\n    at Module.traceVariable (file:///opt/runner/phaser/node_modules/rollup/dist/es/shared/node-entry.js:17666:29)\n    at ModuleScope.findVariable (file:///opt/runner/phaser/node_modules/rollup/dist/es/shared/node-entry.js:15256:39)\n    at ReturnValueScope.findVariable (file:///opt/runner/phaser/node_modules/rollup/dist/es/shared/node-entry.js:5449:38)\n    at FunctionBodyScope.findVariable (file:///opt/runner/phaser/node_modules/rollup/dist/es/shared/node-entry.js:5449:38)\n    at MemberExpression.bind (file:///opt/runner/phaser/node_modules/rollup/dist/es/shared/node-entry.js:7174:49)\n    at BinaryExpression.bind (file:///opt/runner/phaser/node_modules/rollup/dist/es/shared/node-entry.js:2598:23)\n    at IfStatement.bind (file:///opt/runner/phaser/node_modules/rollup/dist/es/shared/node-entry.js:2598:23) {\n  binding: 'default',\n  code: 'MISSING_EXPORT',\n  exporter: '/opt/runner/phaser/node_modules/phaser/dist/phaser.esm.js',\n  id: '/tmp/phaser-build-NeoJAo/src/utils.ts',\n  url: 'https://rollupjs.org/troubleshooting/#error-name-is-not-exported-by-module',\n  pos: 7,\n  loc: { column: 7, file: '/tmp/phaser-build-NeoJAo/src/utils.ts', line: 1 },\n  frame: \"1: import Phaser from 'phaser';\\n\" +\n    '          ^\\n' +\n    '2: \\n' +\n    '3: // ============================================================================',\n  watchFiles: [\n    '/tmp/phaser-build-NeoJAo/index.html',\n    '/tmp/phaser-build-NeoJAo/package.json',\n    '/tmp/phaser-build-NeoJAo/src/main.ts',\n    '/tmp/phaser-build-NeoJAo/src/gameConfig.json',\n    '/tmp/phaser-build-NeoJAo/style.css',\n    '/tmp/phaser-build-NeoJAo/src/scenes/Preloader.ts',\n    '/tmp/phaser-build-NeoJAo/src/scenes/TitleScreen.ts',\n    '/tmp/phaser-build-NeoJAo/src/scenes/Level1Scene.ts',\n    '/tmp/phaser-build-NeoJAo/src/scenes/UIScene.ts',\n    '/tmp/phaser-build-NeoJAo/src/scenes/PauseUIScene.ts',\n    '/tmp/phaser-build-NeoJAo/src/scenes/VictoryUIScene.ts',\n    '/tmp/phaser-build-NeoJAo/src/scenes/GameCompleteUIScene.ts',\n    '/tmp/phaser-build-NeoJAo/src/scenes/GameOverUIScene.ts',\n    '/tmp/phaser-build-NeoJAo/src/LevelManager.ts',\n    '/tmp/phaser-build-NeoJAo/src/StateMachine.ts',\n    '/tmp/phaser-build-NeoJAo/src/config.ts',\n    '/tmp/phaser-build-NeoJAo/src/enemies/BaseTDEnemy.ts',\n    '/tmp/phaser-build-NeoJAo/src/entities/BaseObstacle.ts',\n    '/tmp/phaser-build-NeoJAo/src/scenes/BaseTDScene.ts',\n    '/tmp/phaser-build-NeoJAo/src/systems/EconomyManager.ts',\n    '/tmp/phaser-build-NeoJAo/src/systems/WaveManager.ts',\n    '/tmp/phaser-build-NeoJAo/src/towers/BaseTower.ts',\n    '/tmp/phaser-build-NeoJAo/src/utils.ts',\n    '/opt/runner/phaser/node_modules/phaser/dist/phaser.esm.js'\n  ],\n  [Symbol(augmented)]: true\n}\n\nNode.js v22.23.2\n",
+  "error": "检查失败: 固定 Phaser TypeScript/Vite 构建",
+  "finished_at": "2026-09-13T11:55:27.329Z",
+  "exit_code": 1,
+  "runner": "gamedev-phaser-runner:1",
+  "candidate": "a767990e067440d6a76536824ff6d7b3"
+}

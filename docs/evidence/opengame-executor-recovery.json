@@ -1,0 +1,64 @@
+{
+  "scope": "real CLI and diagnostic build resource recovery; no model or gameplay validation",
+  "real_model_calls": 0,
+  "checks": {
+    "observed_running_before_kill": true,
+    "container_survived_owner_process_kill": true,
+    "app_startup_removed_owned_orphan": true,
+    "interrupted_status_persisted": true,
+    "other_data_root_container_preserved": true,
+    "repeat_recovery_idempotent": true,
+    "real_build_survived_owner_process_kill": true,
+    "startup_removed_cli_and_build_orphans": true,
+    "startup_removed_only_owned_staging": true,
+    "mismatched_owner_preserved_and_blocks_execution": true
+  },
+  "image_id": "sha256:c6d86f55e98adc3974079acdf814da563a6e187d6133fdfb6ef4a45985049e1d",
+  "execution_summary": {
+    "pending_cleanup": 0,
+    "can_start": true,
+    "attempts": [
+      {
+        "id": "70c956ddfc674e1986c776288e6ffea7",
+        "run_id": null,
+        "kind": "cli",
+        "parent_id": null,
+        "state": "interrupted",
+        "cleanup": "removed",
+        "reason": null,
+        "created_at": "2026-09-13T17:29:20.545221+00:00",
+        "updated_at": "2026-09-13T17:29:20.962786+00:00"
+      }
+    ]
+  },
+  "build_execution_summary": {
+    "pending_cleanup": 0,
+    "can_start": true,
+    "attempts": [
+      {
+        "id": "aae61cfef9e2408db4bc7ffeb6ed2671",
+        "run_id": null,
+        "kind": "build",
+        "parent_id": "98625f55e1d34044a7fe63211d3465e4",
+        "state": "interrupted",
+        "cleanup": "removed",
+        "reason": null,
+        "created_at": "2026-09-13T17:29:21.510246+00:00",
+        "updated_at": "2026-09-13T17:29:21.906497+00:00"
+      },
+      {
+        "id": "98625f55e1d34044a7fe63211d3465e4",
+        "run_id": null,
+        "kind": "cli",
+        "parent_id": null,
+        "state": "interrupted",
+        "cleanup": "removed",
+        "reason": null,
+        "created_at": "2026-09-13T17:29:21.283177+00:00",
+        "updated_at": "2026-09-13T17:29:22.014781+00:00"
+      }
+    ]
+  },
+  "passed": true,
+  "probe_containers_remaining": []
+}

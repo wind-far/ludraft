@@ -1,307 +1,384 @@
-<div align="center">
+<h1 align="center">🎮 Ludraft · 游芽</h1>
 
-# 🎮 OpenClaw — AI Multi-Agent GameDev Platform
+<p align="center">
+  <strong>Grow a game idea into something you can play.</strong>
+</p>
 
-**基于多智能体协作的 AI 游戏开发平台**
+<p align="center">
+  An AI web game workbench for planning, building, playtesting, and iterating on 2D browser games.
+</p>
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-orange.svg)](LICENSE)
-[![Python](https://img.shields.io/badge/Python-3.10+-blue.svg)](https://python.org)
-[![React](https://img.shields.io/badge/React-18-61dafb.svg)](https://react.dev)
-[![FastAPI](https://img.shields.io/badge/FastAPI-0.104+-009688.svg)](https://fastapi.tiangolo.com)
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
+<p align="center">
+  Gameplay approval · Eight-role collaboration · Browser playtesting · Version history · Source export
+</p>
 
-> 你只需描述需求，OpenClaw 的 AI 团队自动完成从策划到交付的完整游戏开发流程。
+<p align="center">
+  <img src="https://img.shields.io/badge/Status-Local_MVP-0071E3?style=flat-square" alt="Local MVP">
+  <img src="https://img.shields.io/badge/React-18-149ECA?style=flat-square&amp;logo=react&amp;logoColor=white" alt="React 18">
+  <img src="https://img.shields.io/badge/FastAPI-Python-009688?style=flat-square&amp;logo=fastapi&amp;logoColor=white" alt="FastAPI Python">
+  <img src="https://img.shields.io/badge/SQLite-local-003B57?style=flat-square&amp;logo=sqlite&amp;logoColor=white" alt="Local SQLite storage">
+  <img src="https://img.shields.io/badge/Docker-isolated-2496ED?style=flat-square&amp;logo=docker&amp;logoColor=white" alt="Isolated Docker execution">
+  <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-7357FF?style=flat-square" alt="MIT License"></a>
+</p>
 
-[English](#english) · [快速开始](#-快速开始) · [功能状态](#-功能状态) · [参与贡献](#-参与贡献) · [许可证](#-许可证)
+<p align="center">
+  <a href="#features">✨ Features</a> ·
+  <a href="#quick-start">🚀 Quick start</a> ·
+  <a href="#usage">💬 Usage</a> ·
+  <a href="#examples">🖼️ Examples</a> ·
+  <a href="#faq">❓ FAQ</a> ·
+  <a href="#architecture">🏗️ How it works</a>
+</p>
 
-</div>
+<p align="center">
+  <strong>English</strong> · <a href="README.zh-CN.md">简体中文</a>
+</p>
+
+<p align="center">
+  <a href="docs/assets/ludraft-canvas-home.png">
+    <img src="docs/assets/ludraft-canvas-home.png" alt="Ludraft home screen with a garden banner, task shortcuts, and recent projects" width="920">
+  </a>
+  <br>
+  <sub>Local workbench screenshot. The current app interface is in Chinese. Click to enlarge.</sub>
+</p>
 
 ---
 
-## 📖 项目简介
+<a id="about"></a>
 
-OpenClaw 是一个开源的 **AI 驱动游戏开发工作台**，内置 8 个专业 AI Agent 组成完整的游戏开发团队。用户只需输入需求描述（或上传需求文档），系统自动调度 Agent 团队并行协作，完成从产品策划、技术架构、代码实现、美术指导到 QA 测试的全流程，并通过可视化工作空间实时呈现每个 Agent 的工作进展。
+## What is Ludraft?
 
-设计灵感来源于 [atoms.dev](https://atoms.dev)，致力于将 AI 协作开发的能力带入游戏领域。
+Ludraft is a local workbench that turns natural-language game requirements into changes to fixed TypeScript + Canvas templates. Describe the mechanics, review the proposed plan and acceptance criteria, then let the team build and test a candidate before publishing a playable version.
 
+The current creation flow supports **collector, dodger, clicker, and 8×8 match-three games**. After the first version, ask for changes, compare source files and parameters, replay earlier versions, roll back, or export the project as a ZIP.
+
+> **Current status:** this is a local MVP. Template builds, controlled execution, and version workflows have recorded test evidence. Real-model end-to-end quality and human playability evaluation remain pending. See the [validation record](docs/VALIDATION.md) and [delivery audit](docs/DELIVERY_AUDIT.md) for the evidence and remaining work.
+
+<a id="features"></a>
+
+## ✨ Features
+
+| | Feature |
+| --- | --- |
+| 🧭 | **Plan before building** — describe an idea or upload requirements, edit the gameplay proposal, and approve the acceptance criteria before generation. |
+| 🤝 | **Eight-role collaboration** — Producer, PM, Game Designer, Lead Programmer, Programmer, Artist, UX, and QA contribute separate deliverables with recorded handoffs and messages. |
+| 🎨 | **Canvas workspace** — arrange gameplay and reference cards alongside the playable preview; pan, zoom, and reset the desktop canvas, or use the vertical mobile layout. |
+| 🧪 | **Isolated validation** — build and run Chromium interaction checks in Docker; generation failures can trigger up to two repair rounds. |
+| 🎮 | **Play in the browser** — preview validated games in a restricted iframe served from a separate origin. |
+| 🔁 | **Iterate and recover** — request changes, compare any two versions, replay history, and roll back; failed candidates preserve the last playable version. |
+| 🎛️ | **Direct parameter editing** — change supported literal configuration values without a model call, then run container validation before saving a version. |
+| 📎 | **Reviewable source materials** — import text, PDF, DOCX, or ZIP files and check extracted text before including it in a task. |
+| 🔌 | **Role-specific model connections** — configure shared or independent connections using OpenAI-compatible or Anthropic Messages APIs; inspect available token usage and connection tests. |
+| 📦 | **Portable exports** — download source, build output, verification evidence, and collaboration records. |
+
+Task routes also cover bug fixes, visual changes, performance work, configuration changes, independent testing, documentation, code review, and direction research. Their implementation and validation boundaries are described in the [detailed Chinese guide](README.zh-CN.md) and [architecture documentation](docs/ARCHITECTURE.md).
+
+<a id="architecture"></a>
+
+## 🏗️ How it works
+
+The workbench combines role-based planning with fixed build and test tools. The scheduler enforces task dependencies, approvals, and publication checks.
+
+```text
+Idea → Producer scopes the work → PM breaks it down → Designer proposes gameplay
+                                                           ↓
+                                                     User approval
+                                                           ↓
+                                              PM updates task dependencies
+                                                           ↓
+                                         Lead Programmer / Artist / UX designs
+                                                           ↓
+                                                  Programmer implementation
+                                                           ↓
+                                              Code review + QA test strategy
+                                                           ↓
+                                             Docker build + browser tests
+                                                           ↓
+                                            QA analysis + Producer acceptance
+                                                           ↓
+                                               Publish → Play → Iterate
 ```
-你的一句话需求
-       ↓
-┌──────────────────────────────────────────┐
-│  🎬 制作人  →  📊 PM  →  📋 策划         │
-│       ↓              ↓                   │
-│  🎨 美术  ←→  💻 程序  ←→  🔧 主程       │
-│       ↓              ↓                   │
-│  ✨ UX设计  →  🧪 QA  →  📦 交付         │
-└──────────────────────────────────────────┘
-       ↓
-  可运行的游戏功能
-```
 
----
+Blocking review findings, tool failures, or rejected delivery prevent publication. Revisions return to the responsible roles; code changes are reviewed and tested again. Clarification requests pause work and require a new plan confirmation after the user replies.
 
-## ✅ 功能状态
+| Layer | Stack | Responsibility |
+| --- | --- | --- |
+| Workbench | React 18, TypeScript, Vite 6 | Planning, approvals, canvas, preview, source, versions, and settings |
+| API and orchestration | Python 3.12, FastAPI, asyncio | Task state, dependencies, cancellation, handoffs, and repairs |
+| Local storage | SQLite and filesystem | Projects, runs, events, candidates, and version snapshots |
+| Model gateway | HTTPX, Pydantic | Provider connections, structured output validation, and available usage records |
+| Game templates | TypeScript, Canvas 2D | Four supported game modes and their parameters |
+| Validation | Docker, Playwright, Chromium | Controlled builds, interaction checks, and evidence collection |
+| Game preview | Separate FastAPI service, iframe, CSP | Static game preview separated from the management API |
 
-> 最后更新：2026-04-01
+Role rules and selected skills are captured with each invocation, including content, settings version, and SHA-256. Editing a rule does not rewrite historical records. The Artist currently produces visual specifications; AI image generation is not integrated.
 
-### 已完成 (Implemented)
+<a id="quick-start"></a>
 
-#### 后端核心
-- [x] **Pipeline 流水线引擎** — 9 种需求类型（功能开发、Bug修复、优化等）的自动化流转
-- [x] **多 Agent 编排器** — 串行/并行调度，支持 Bug 修复循环
-- [x] **沙盒隔离环境** — 每个 Agent 拥有独立工作目录，源文档受保护
-- [x] **消息队列系统** — Agent 间异步通信
-- [x] **上下文管理器** — Agent 跨步骤状态共享
-- [x] **SQLite 持久化数据库** — Pipeline、步骤、日志、Agent 快照、消息队列全部落盘，重启不丢失
-- [x] **文件上传 API** — 支持 `.md/.pdf/.docx/.zip` 文本提取，文件夹批量上传
-- [x] **RESTful API 服务** — FastAPI 提供完整的管理接口（Pipeline CRUD、Agent 配置、沙盒管理等）
-- [x] **LLM 适配器（真实调用）** — 支持 OpenAI / Anthropic / DeepSeek / 自定义 Provider，每个 Agent 独立配置模型；`invoke_sync` 有 API Key 时真实发起 HTTP 请求
-- [x] **LLM 注入到 Agent** — `BaseAgent` 注入 `llm_invoker`，提供 `call_llm()` 便利方法，子类一行代码调用 LLM
-- [x] **用户消息投递 API** — `POST /api/pipelines/{id}/message`，将用户输入广播给活跃 Agent
-- [x] **决策响应 API** — `POST /api/pipelines/{id}/decision`，打通前端审批卡片与后端流水线
+## 🚀 Quick start
 
-#### 8 个专业 Agent
-| Agent | 职责 | 框架 | LLM 接入 |
-|-------|------|------|----------|
-| 🎬 制作人 (Producer) | 需求分析、流程总控 | ✅ | ✅ 已注入 |
-| 📊 项目管理 (PM) | 任务拆解、进度跟踪 | ✅ | ✅ 已注入 |
-| 📋 策划 (Planner) | 游戏设计文档、玩法规划 | ✅ | ✅ 已注入 |
-| 🔧 主程 (Tech Lead) | 技术架构、代码审查 | ✅ | ✅ 已注入 |
-| 💻 程序 (Programmer) | 代码实现 | ✅ | ✅ 已注入 |
-| 🎨 美术 (Artist) | 美术需求文档、资源规划 | ✅ | ✅ 已注入 |
-| ✨ UX 设计师 | 交互设计、界面规范 | ✅ | ✅ 已注入 |
-| 🧪 QA | 测试方案、Bug 报告 | ✅ | ✅ 已注入 |
+### Prerequisites
 
-> **说明**：Agent 框架与步骤定义完整，LLM 已注入并可真实调用。各 Agent 的业务逻辑（策划案内容、代码生成等）目前输出结构化骨架，LLM 填充内容欢迎社区贡献。
+- Python 3.12 and `uv`.
+- Node.js 22+ and npm.
+- Docker Desktop or a compatible running Docker environment.
+- A reachable model endpoint for AI planning and generation. Model-free examples can be imported first.
 
-#### 前端工作空间
-- [x] **Dashboard 首页** — 项目创建、历史列表、快速操作
-- [x] **全屏工作空间** — 左侧 Agent 过程可视化 + 右侧工具面板双栏布局
-- [x] **Agent 消息流** — 实时展示每个 Agent 的工作进展与思考过程
-- [x] **决策门禁 (Human-in-the-Loop)** — 关键节点人工审批，前后端均已打通
-- [x] **阶段交付物展示** — 代码/文档/设计/测试产出物卡片
-- [x] **文件上传 UI** — 文件/文件夹选择、拖拽上传、本地预览标签，发送时真实调用后端 API
-- [x] **用户消息发送** — 工作空间输入框消息广播给活跃 Agent
-- [x] **项目概览 Tab** — 流水线进度、阶段时间线、Agent 分工展示
-- [x] **项目文件树（真实数据）** — 从沙盒 API 拉取真实目录，刷新按钮可用
-- [x] **代码查看器** — 从 Agent 规则 API 加载真实内容
-- [x] **活动日志 Tab** — 真实调用后端 `GET /api/pipelines/{id}/logs`
-- [x] **项目管理** — 重命名、删除（含确认弹窗）、搜索
-- [x] **热更新开发模式** — Vite dev server + API 代理
+The recorded test environment is macOS on Apple Silicon. Native Windows operation has not been verified. Initial setup requires network access to download dependencies, images, and Chromium; game validation containers run without network access.
 
----
+### 1. Install dependencies
 
-### 🚧 待完成 / 欢迎贡献 (In Progress / Help Wanted)
-
-#### 高优先级
-- [ ] **Agent 业务逻辑 LLM 化** — 各 Agent 的步骤方法（策划案、代码生成等）目前返回结构化骨架，需接入 `call_llm()` 生成真实内容 `[difficulty: high]` `[good first PR]`
-- [ ] **WebSocket 实时推送** — 目前前端 5 秒轮询，改为 WebSocket 后可真正实时展示 Agent 工作流 `[difficulty: medium]`
-- [ ] **GitHub 仓库 Clone 解析** — URL 输入后自动 clone 并提取需求文本 `[difficulty: medium]`
-- [ ] **Monaco 在线代码编辑器** — 右侧 Tab 集成 Monaco Editor，支持在线查看/编辑 Agent 产出代码 `[difficulty: medium]`
-
-#### 中优先级
-- [ ] **应用沙盒预览** — iframe 安全隔离预览 Agent 生成的 Web 应用（AppViewer Tab） `[difficulty: high]`
-- [ ] **Agent 输出结构化解析** — 将 LLM 输出自动解析为文档/代码/任务卡片 `[difficulty: high]`
-- [ ] **决策门禁暂停/恢复流水线** — 用户拒绝时真正暂停 Pipeline 等待重新输入 `[difficulty: medium]`
-
-#### 低优先级 / 功能增强
-- [ ] **用户认证系统** — 多用户支持、项目权限管理 `[difficulty: medium]`
-- [ ] **Agent 规则可视化编辑器** — 在 UI 中直接编辑 Agent 行为规则 `[difficulty: medium]`
-- [ ] **项目导出功能** — 将 Agent 产出物打包导出 `[difficulty: easy]`
-- [ ] **Unity / Unreal 引擎集成** — Agent 直接操作引擎 SDK `[difficulty: high]`
-- [ ] **多语言支持 (i18n)** — 英文界面 `[difficulty: easy]`
-- [ ] **移动端适配** — 响应式布局优化 `[difficulty: easy]`
-
----
-
-## 🚀 快速开始
-
-### 环境要求
-
-- Python 3.10+
-- Node.js 18+
-
-### 安装
+Run from the repository root:
 
 ```bash
-# 克隆项目
-git clone https://github.com/LinHao-city/openclaw-multi-agent-gamedev.git
-cd openclaw-multi-agent-gamedev
-
-# 安装 Python 依赖
-pip install -r requirements.txt
-
-# 安装前端依赖
-cd frontend && npm install && cd ..
+uv venv --python 3.12 .studio-venv
+uv pip install --python .studio-venv/bin/python -r requirements-studio.txt
+npm ci --prefix frontend
+npm run build --prefix frontend
 ```
 
-### 启动
+### 2. Build the validation image
 
 ```bash
-# 方式一：生产模式（先构建前端）
-cd frontend && npm run build && cd ..
-python _start_web.py
-# 访问 http://127.0.0.1:8080
-
-# 方式二：开发模式（前端热更新）
-# 终端 1 — 启动后端
-python _start_web.py
-
-# 终端 2 — 启动前端 dev server
-cd frontend && npm run dev
-# 访问 http://localhost:5173
+./scripts/build-runner.sh
 ```
 
-### 配置 LLM
+The default base image comes from AWS's public mirror of the official Node image. To use Docker Hub instead:
 
-编辑 `config/agent_models.json`（首次运行会自动生成），配置你的 API Key：
-
-```json
-{
-  "00_producer": {
-    "provider": "openai",
-    "model": "gpt-4o",
-    "api_key": "sk-...",
-    "base_url": "https://api.openai.com/v1"
-  }
-}
+```bash
+docker build --build-arg NODE_IMAGE=node:22-bookworm-slim -t gamedev-runner:1 runner
 ```
 
-支持 OpenAI、Claude、DeepSeek、本地 Ollama 等任意兼容 OpenAI 格式的 Provider。
+### 3. Start the workbench
 
----
-
-## 🏗️ 项目结构
-
-```
-openclaw-multi-agent-gamedev/
-├── src/
-│   ├── core/                   # 核心引擎
-│   │   ├── pipeline.py         # 流水线引擎（需求流转）
-│   │   ├── orchestrator.py     # 多 Agent 编排调度
-│   │   ├── database.py         # SQLite 持久化层
-│   │   ├── sandbox.py          # 沙盒隔离管理
-│   │   ├── message_queue.py    # Agent 消息队列
-│   │   ├── context_manager.py  # 上下文管理
-│   │   └── llm_adapter.py      # LLM 多 Provider 适配
-│   ├── agents/                 # 8 个专业 Agent 实现
-│   ├── adapters/               # CodeBuddy / 规则加载适配器
-│   ├── utils/                  # 工具函数
-│   └── web/
-│       └── app.py              # FastAPI 服务（全部 API）
-├── frontend/                   # React + Vite + Tailwind 前端
-│   └── src/
-│       ├── pages/              # Dashboard / ProjectDetail
-│       ├── components/         # 工作空间组件体系
-│       ├── api/                # API 客户端
-│       └── stores/             # Zustand 状态管理
-├── rules/                      # 🔒 Agent 行为规则文档（只读）
-│   ├── agents/                 # 各 Agent 规则定义
-│   └── skills/                 # 技能包（Unity/C#/架构等）
-├── config/                     # 系统配置
-├── docs/                       # 项目文档
-└── data/                       # 运行时数据库（自动生成，已 gitignore）
+```bash
+.studio-venv/bin/python scripts/start.py
 ```
 
----
+Open [http://127.0.0.1:8080](http://127.0.0.1:8080). The database and runtime directories are initialized automatically. The startup script also starts the separate game preview service on port `8081`.
 
-## 🤝 参与贡献
+The first-run guide checks the API, Docker CLI and daemon, runner image, preview service, and saved model connection evidence. Environment checks do not automatically call a model.
 
-**我们非常欢迎社区的参与！** 无论你是 AI 工程师、游戏开发者、前端开发者还是产品设计师，都可以在这个项目中找到适合你的切入点。
-
-### 如何贡献
-
-1. **Fork** 本仓库
-2. 创建功能分支：`git checkout -b feature/你的功能名`
-3. 提交代码：`git commit -m "feat: 描述你的改动"`
-4. 推送分支：`git push origin feature/你的功能名`
-5. 提交 **Pull Request**，描述你的改动和动机
-
-### 贡献方向
-
-| 方向 | 适合人群 | 参考 Issue |
-|------|----------|------------|
-| WebSocket 实时推送 | 后端 / 全栈 | `[help wanted]` |
-| LLM 调用链路完善 | AI 工程师 | `[help wanted]` |
-| Monaco 编辑器集成 | 前端开发 | `[help wanted]` |
-| Agent 规则优化 | 游戏策划 / AI Prompt | `[help wanted]` |
-| 文档 / 测试完善 | 任何人 | `[good first issue]` |
-| 英文 i18n | 任何人 | `[good first issue]` |
-
-### 行为准则
-
-请保持友善和尊重。我们致力于打造一个开放、包容的开源社区。
-
----
-
-## 📐 技术栈
-
-| 层次 | 技术 |
-|------|------|
-| 后端框架 | FastAPI + Uvicorn |
-| 数据持久化 | SQLite（标准库 sqlite3） |
-| 前端框架 | React 18 + TypeScript |
-| 构建工具 | Vite 6 |
-| UI 样式 | Tailwind CSS |
-| 状态管理 | Zustand |
-| HTTP 客户端 | Axios |
-| LLM 接入 | 自研 LLM Adapter（兼容 OpenAI 格式） |
-
----
-
-## 📜 许可证
-
-Copyright © 2026 [LinHao-city](https://github.com/LinHao-city)
-
-本项目基于 **MIT License** 开源。你可以自由使用、修改和分发，但须保留原始版权声明。
-
-```
-MIT License
-
-Copyright (c) 2026 LinHao-city
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+```bash
+curl http://127.0.0.1:8080/api/health
 ```
 
----
+Use `GET /api/diagnostics` for individual checks. Health status and saved configuration do not replace a real model connection test.
 
-## ⭐ Star History
+### 4. Configure a model
 
-如果这个项目对你有帮助，请给我们一个 Star ⭐，这是对我们最大的鼓励！
+Open **模型与连接** (Models & Connections), enter the API base URL, provider model ID, and API key, then save and test the connection. Expand **八角色独立连接** (Role Connections) to configure and test individual roles. Connection tests call the configured service; they verify connectivity and structured responses, not game-generation quality.
 
-**[https://github.com/LinHao-city/openclaw-multi-agent-gamedev](https://github.com/LinHao-city/openclaw-multi-agent-gamedev)**
+Alternatively, set these variables before starting the service:
 
----
+| Variable | Purpose | Default |
+| --- | --- | --- |
+| `STUDIO_MODEL_URL` | Compatible API base URL | `https://api.openai.com/v1` |
+| `STUDIO_MODEL` | Model ID | Empty; configuration required |
+| `STUDIO_API_KEY` | Model credentials | Empty; some local endpoints do not require a key |
+| `STUDIO_DATA_DIR` | Runtime data directory | `.studio` in the repository root |
 
-<div align="center">
+Saved UI settings take precedence where configured. Retest connections after changing settings or restarting the service. Missing models, invalid responses, and tool failures are reported as errors.
 
-Made with ❤️ by [LinHao-city](https://github.com/LinHao-city) and contributors
+### Local budget mode
 
-</div>
+To remove local spending and image-attempt limits while keeping accounting, run:
 
----
+```bash
+.studio-venv/bin/python scripts/budget.py unlimited
+.studio-venv/bin/python scripts/budget.py status
+```
 
-<a name="english"></a>
-## English Summary
+This persistent setting applies to both role-model calls and the OpenGame proxy. Missing prices do not block requests: reported token usage is retained, while cost remains unknown until reconciled. Existing spending and reservations are preserved. Provider billing and service limits still apply.
 
-**OpenClaw** is an open-source AI-powered game development platform. It orchestrates a team of 8 specialized AI Agents (Producer, PM, Planner, Tech Lead, Programmer, Artist, UX Designer, QA) to automatically handle the full game development workflow from requirements to delivery.
+To explicitly restore local limits, use `scripts/budget.py configure --cap-cny 100 --image-limit 10`. In limited mode, register model rates with `scripts/budget.py price --help` before calling models. Changing modes never clears the ledger.
 
-Built with **FastAPI** backend + **React/TypeScript** frontend, featuring a real-time workspace UI, file upload, human-in-the-loop decision gates, and SQLite persistence.
+<a id="usage"></a>
 
-**We welcome contributions!** See the [In Progress / Help Wanted](#-待完成--欢迎贡献-in-progress--help-wanted) section for areas where you can help.
+## 💬 Usage
+
+### Create a game
+
+Describe a supported game in the workbench, for example:
+
+```text
+Create an 8×8 match-three game with six gem colors, 20 moves,
+and a target score of 1,200. Show the score and remaining moves,
+and let the player restart after winning or losing.
+```
+
+Review and edit the plan, approve it, follow the role deliverables and test results, then play the published version. The standard template flow permits model changes to `src/config.ts`, `src/game.ts`, and `style.css`; generated code cannot change the tests, dependencies, or build commands.
+
+### Iterate, compare, and export
+
+```text
+Increase the move limit to 30, lower the target score to 1,000,
+and change the gem palette to softer colors.
+```
+
+Approve the revised plan and inspect the resulting differences. Use **对比** (Compare) to compare two versions, or **参数** (Parameters) for supported direct edits. Parameter edits also require successful container validation. A historical preview does not change the active version; rollback is an explicit action.
+
+Exports include source, build output, verification evidence, licenses, and `RUN_GAME.md`. Follow that file to serve the exported game locally. An existing build can be played without the workbench or a model key; editing TypeScript requires rebuilding.
+
+### Add materials and references
+
+Upload requirements, inspect the extracted content, then choose **核对并用于本轮需求** (Confirm and use for this task). Each file may be up to 8 MB, with up to eight materials per task. Scanned PDFs require text conversion first; OCR is not supported.
+
+Canvas reference images stay in the current browser's IndexedDB. They are not automatically sent to the model or included in game exports. Put visual requirements the team should follow into the task text.
+
+<a id="examples"></a>
+
+## 🖼️ Examples
+
+Import four hand-authored examples. Each is published only after real container validation; the import does not call a model.
+
+```bash
+.studio-venv/bin/python scripts/seed_examples.py
+```
+
+| Example | Mode | Gameplay |
+| --- | --- | --- |
+| Gem Garden · 宝石花园 | `match3` | Six gem colors, 20 moves, target score of 1,200 |
+| Starlight Collector · 星光收集站 | `collector` | Catch coins and avoid bombs; three lives, 60 seconds |
+| Meteor Dodge · 流星闪避 | `dodger` | Score by surviving; three lives, 60 seconds |
+| Light Up the Stars · 点亮星星 | `clicker` | Click targets and avoid hazards; three lives, 30 seconds |
+
+<p align="center">
+  <a href="docs/assets/ludraft-canvas-project.png">
+    <img src="docs/assets/ludraft-canvas-project.png" alt="Ludraft project canvas with gameplay cards, a game preview, and the editing input" width="920">
+  </a>
+  <br>
+  <sub>Project canvas. Screenshots illustrate the interface, not real-model generation quality.</sub>
+</p>
+
+[Mobile workspace](docs/assets/ludraft-canvas-mobile.png) · [Team panel](docs/assets/ludraft-team.png) · [Setup guide](docs/assets/ludraft-setup.png) · [Example walkthrough](docs/examples/DEMO.md)
+
+<a id="faq"></a>
+
+## ❓ FAQ
+
+**How does this differ from asking a chatbot to write a game?**
+
+Ludraft adds an approved gameplay plan, separate role deliverables, controlled file edits, real build and browser checks, and persistent versions. You can inspect what changed and recover the previous playable build when an iteration fails.
+
+**Can I try it without a model API key?**
+
+Yes. Run the local services and import the examples to explore previews, source, comparison, and exports. Docker and the runner image are still required for import and parameter validation. Natural-language planning and generation require a working model connection.
+
+**Is there a public online demo?**
+
+There is currently no public hosted demo. The complete workbench needs the local API, SQLite, and Docker; publishing only the frontend does not provide the full workflow.
+
+**Does it support other engines or arbitrary games?**
+
+The current creation flow supports the four Canvas modes listed above. A Phaser tower-defense template is undergoing integration and is not open for natural-language creation. Unity, Unreal, arbitrary dependency installation, AI art generation, and online multiplayer are outside the current scope. See the [integration plan](docs/OPENGAME-INTEGRATION-PLAN.md).
+
+**Does a passing test report mean the game is good?**
+
+It means the recorded checks passed. Template regression, fixed model-response integration tests, real-model evaluation, and human playability ratings are separate evidence categories. Custom gameplay and overall quality still need manual playtesting.
+
+<a id="structure"></a>
+
+## 📁 Project structure
+
+```text
+frontend/                  React workbench and retained upstream pages
+  src/Studio.tsx           Current workbench entry
+  src/TeamPanels.tsx       Role status, deliverables, and model assignments
+studio/                    FastAPI, model gateway, workflow, and versions
+templates/canvas/          Collector, dodger, and clicker templates
+templates/match3/          Dedicated 8×8 match-three template
+templates/phaser/          Engine integration work, not a released creation flow
+runner/                    Docker images and fixed validation tools
+scripts/                   Startup, example import, and evaluation commands
+tests/                     Protocol, workflow, failure, and integration checks
+docs/                      Architecture, evidence, screenshots, and provenance
+src/                       Upstream role-based reference implementation
+rules/                     Upstream role rules, skills, and workflow materials
+.studio/                   Local runtime data; excluded from version control
+```
+
+| Documentation | Contents |
+| --- | --- |
+| [中文完整说明](README.zh-CN.md) | Detailed Chinese setup, usage, task routes, and API reference |
+| [Architecture and API](docs/ARCHITECTURE.md) | Task states, model protocols, version management, and endpoints |
+| [Validation record](docs/VALIDATION.md) | Recorded checks, evidence boundaries, and pending validation |
+| [Delivery audit](docs/DELIVERY_AUDIT.md) | Delivered scope and remaining acceptance work |
+| [Provenance](docs/PROVENANCE.md) | Upstream reuse, additions, and adaptations |
+| [Upstream README](docs/UPSTREAM_README.md) | Preserved original project documentation |
+
+The detailed supporting documents are currently in Chinese.
+
+<a id="tests"></a>
+
+## 🧪 Tests and evaluation
+
+### Development checks
+
+```bash
+.studio-venv/bin/python -m pytest tests -q
+npm run typecheck --prefix frontend
+npm run build --prefix frontend
+```
+
+Enable real Docker integration checks explicitly:
+
+```bash
+STUDIO_DOCKER_TESTS=1 .studio-venv/bin/python -m pytest tests/test_docker_integration.py -q
+```
+
+Unit tests use model and runner doubles where indicated. Docker integration tests use fixed model responses with real containers. Neither measures real-model generation quality.
+
+### Template and real-model evaluation
+
+```bash
+# Five fixed requirements, three container runs each; no model calls
+.studio-venv/bin/python scripts/evaluate.py --output .studio/evaluation-template
+
+# Real-model evaluation; requires a configured model and consumes API quota
+.studio-venv/bin/python scripts/evaluate.py --live --output .studio/evaluation-live
+```
+
+Use a new output directory for each evaluation. The default suite covers two match-three requirements and one each for collector, dodger, and clicker. Reports include build and interaction results, parameter checks, repair rounds, version evidence, and available model usage. Missing usage remains unknown, and human playability ratings remain empty until manually supplied.
+
+The stored [cross-mode template regression](docs/evidence/mixed-template-regression.json) records **15/15 successful build, interaction, and parameter checks**. This is template evidence, not an AI generation success rate or a human quality score. See the [validation record](docs/VALIDATION.md) for context.
+
+<a id="preview"></a>
+
+### Local development
+
+Keep the backend running and start Vite in a second terminal:
+
+```bash
+npm run dev --prefix frontend
+```
+
+| Address | Purpose |
+| --- | --- |
+| `http://127.0.0.1:8080` | Built workbench and management API |
+| `http://127.0.0.1:5173` | Vite development frontend |
+| `http://127.0.0.1:8081/v/{version_id}/index.html` | Separate game preview, loaded by the workbench |
+
+The current entry points are `frontend/src/Studio.tsx` and `scripts/start.py`. The upstream `_start_web.py` is retained for reference. Restart the service after backend changes; running tasks are marked failed on restart, while pending approvals and playable versions are preserved.
+
+<a id="security"></a>
+
+## 🔒 Data and execution boundaries
+
+- Runtime data stays under `.studio/`, including SQLite, candidates, versions, and model settings. Use one management process per data directory.
+- API keys saved through the UI are stored in `.studio/model.json` with `0600` file permissions. This is a local configuration file, not an encrypted credential vault. Configuration responses do not return raw keys, and the runner does not receive them.
+- With remote models, requirements, selected material text, relevant code, and test context are sent to the configured provider. Local storage does not imply local inference.
+- Uploaded originals remain local. Exported requirements include the checked text and provenance, not the original binary uploads. Document parsing runs in a separate process and does not have the build container's filesystem and network isolation.
+- Management and preview services bind to loopback by default. The local API validates Host and Origin.
+- Validation containers have no network access, a read-only root filesystem, dropped capabilities, and resource/time limits. Only a temporary copy of the candidate project is mounted.
+- Game previews use a separate origin, a restricted iframe, and CSP. Published snapshots are application-immutable and read-only, although the local file owner can still alter them outside the app.
+
+For detailed limits, see [architecture and security documentation](docs/ARCHITECTURE.md).
+
+<a id="license"></a>
+
+## 📄 License and acknowledgments
+
+The experimental Phaser tower-defense template also includes Apache-2.0-licensed OpenGame code. Its pinned source revision, file attribution, and licenses are kept in [the template's licenses directory](templates/phaser/tower_defense/licenses/).
+
+When reporting a problem, include your platform, Python / Node.js / Docker versions, reproduction steps, and redacted logs. Do not include API keys, model configuration files, or the runtime database.

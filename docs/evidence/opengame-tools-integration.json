@@ -1,0 +1,28 @@
+{
+  "passed": true,
+  "scope": "mcp-sdk-and-fixed-phaser-integration",
+  "workspace": "/Users/wind/Documents/gamedev/.studio/opengame-tool-integration/5707b6b84d7549b1b3aaf30504d9e8c1",
+  "upstream_commit": "c9bea37786af524bf3bbe802f2b67d23816fa5c0",
+  "live_model_verified": false,
+  "gameplay_verified": false,
+  "steps": [
+    "sdk_initialize_and_list_four_tools",
+    "inventory_and_read",
+    "deny_path_escape_and_protected_edit",
+    "real_typescript_failure_feedback",
+    "repair_and_real_phaser_smoke"
+  ],
+  "diagnostic_attempts": 2,
+  "date": "2026-09-14",
+  "model_calls": 0,
+  "image_calls": 0,
+  "cli_model_loop_verified": false,
+  "process_isolation_verified": false,
+  "cancel_coverage": "unit fixtures; actual SDK and Docker repair path verified separately",
+  "sdk_version": "1.29.0",
+  "unit_tests": {
+    "command": ".studio-venv/bin/python -m pytest -q tests/test_opengame_tools.py",
+    "passed": 17,
+    "seconds": 1.05
+  }
+}

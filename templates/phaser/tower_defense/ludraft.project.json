@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "template_id": "phaser-tower_defense",
+  "template_version": "1",
+  "assets": [
+    {
+      "id": "tower_basic",
+      "path": "public/assets/tower_basic.png",
+      "source": "builtin",
+      "sha256": "decba4e78b729db6408c6962aa1967a7513c7fe365a3f93a9943c9baf1beb186"
+    },
+    {
+      "id": "enemy_basic",
+      "path": "public/assets/enemy_basic.png",
+      "source": "builtin",
+      "sha256": "61e0c1c7cbd6fc7b396d85e1730feff167a56e026bb457085ea3f8acc35cc7e4"
+    },
+    {
+      "id": "tower_cannon",
+      "path": "public/assets/tower_cannon.png",
+      "source": "builtin",
+      "sha256": "ed73759dc030521612fb1dbe32b4deaf717175ad4d28ec1dcae5c7e664d8042b"
+    }
+  ]
+}

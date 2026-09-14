@@ -1,0 +1,1075 @@
+{
+  "mode": "template-regression",
+  "created_at": "2026-09-12T08:07:43.570598+00:00",
+  "records": [
+    {
+      "status": "succeeded",
+      "repairs": 0,
+      "evidence": {
+        "passed": true,
+        "build": true,
+        "checks": [
+          {
+            "name": "TypeScript 构建",
+            "passed": true
+          },
+          {
+            "name": "参数边界",
+            "passed": true
+          },
+          {
+            "name": "开始游戏",
+            "passed": true
+          },
+          {
+            "name": "键盘移动",
+            "passed": true
+          },
+          {
+            "name": "真实得分及界面更新",
+            "passed": true
+          },
+          {
+            "name": "危险目标扣命",
+            "passed": true
+          },
+          {
+            "name": "游戏结束",
+            "passed": true
+          },
+          {
+            "name": "重新开始",
+            "passed": true
+          },
+          {
+            "name": "无浏览器异常",
+            "passed": true
+          }
+        ],
+        "console_errors": [],
+        "started_at": "2026-09-12T08:07:01.511Z",
+        "build_log": "",
+        "config": {
+          "title": "星光收集站",
+          "mode": "collector",
+          "speed": 320,
+          "lives": 3,
+          "spawnMs": 850,
+          "fallSpeed": 130,
+          "duration": 60,
+          "background": "#10192b",
+          "playerColor": "#9cf2cd",
+          "targetColor": "#ffd875",
+          "hazardColor": "#ff7788"
+        },
+        "finished_at": "2026-09-12T08:07:03.988Z",
+        "exit_code": 0,
+        "runner": "gamedev-runner:1"
+      },
+      "model_calls": [],
+      "source": "authored-template, not LLM generated",
+      "case": "collector",
+      "repeat": 1,
+      "elapsed_seconds": 3.11,
+      "human_playability": null
+    },
+    {
+      "status": "succeeded",
+      "repairs": 0,
+      "evidence": {
+        "passed": true,
+        "build": true,
+        "checks": [
+          {
+            "name": "TypeScript 构建",
+            "passed": true
+          },
+          {
+            "name": "参数边界",
+            "passed": true
+          },
+          {
+            "name": "开始游戏",
+            "passed": true
+          },
+          {
+            "name": "键盘移动",
+            "passed": true
+          },
+          {
+            "name": "真实得分及界面更新",
+            "passed": true
+          },
+          {
+            "name": "危险目标扣命",
+            "passed": true
+          },
+          {
+            "name": "游戏结束",
+            "passed": true
+          },
+          {
+            "name": "重新开始",
+            "passed": true
+          },
+          {
+            "name": "无浏览器异常",
+            "passed": true
+          }
+        ],
+        "console_errors": [],
+        "started_at": "2026-09-12T08:07:04.650Z",
+        "build_log": "",
+        "config": {
+          "title": "星光收集站",
+          "mode": "collector",
+          "speed": 320,
+          "lives": 3,
+          "spawnMs": 850,
+          "fallSpeed": 130,
+          "duration": 60,
+          "background": "#10192b",
+          "playerColor": "#9cf2cd",
+          "targetColor": "#ffd875",
+          "hazardColor": "#ff7788"
+        },
+        "finished_at": "2026-09-12T08:07:06.861Z",
+        "exit_code": 0,
+        "runner": "gamedev-runner:1"
+      },
+      "model_calls": [],
+      "source": "authored-template, not LLM generated",
+      "case": "collector",
+      "repeat": 2,
+      "elapsed_seconds": 2.83,
+      "human_playability": null
+    },
+    {
+      "status": "succeeded",
+      "repairs": 0,
+      "evidence": {
+        "passed": true,
+        "build": true,
+        "checks": [
+          {
+            "name": "TypeScript 构建",
+            "passed": true
+          },
+          {
+            "name": "参数边界",
+            "passed": true
+          },
+          {
+            "name": "开始游戏",
+            "passed": true
+          },
+          {
+            "name": "键盘移动",
+            "passed": true
+          },
+          {
+            "name": "真实得分及界面更新",
+            "passed": true
+          },
+          {
+            "name": "危险目标扣命",
+            "passed": true
+          },
+          {
+            "name": "游戏结束",
+            "passed": true
+          },
+          {
+            "name": "重新开始",
+            "passed": true
+          },
+          {
+            "name": "无浏览器异常",
+            "passed": true
+          }
+        ],
+        "console_errors": [],
+        "started_at": "2026-09-12T08:07:07.259Z",
+        "build_log": "",
+        "config": {
+          "title": "星光收集站",
+          "mode": "collector",
+          "speed": 320,
+          "lives": 3,
+          "spawnMs": 850,
+          "fallSpeed": 130,
+          "duration": 60,
+          "background": "#10192b",
+          "playerColor": "#9cf2cd",
+          "targetColor": "#ffd875",
+          "hazardColor": "#ff7788"
+        },
+        "finished_at": "2026-09-12T08:07:09.316Z",
+        "exit_code": 0,
+        "runner": "gamedev-runner:1"
+      },
+      "model_calls": [],
+      "source": "authored-template, not LLM generated",
+      "case": "collector",
+      "repeat": 3,
+      "elapsed_seconds": 2.46,
+      "human_playability": null
+    },
+    {
+      "status": "succeeded",
+      "repairs": 0,
+      "evidence": {
+        "passed": true,
+        "build": true,
+        "checks": [
+          {
+            "name": "TypeScript 构建",
+            "passed": true
+          },
+          {
+            "name": "参数边界",
+            "passed": true
+          },
+          {
+            "name": "开始游戏",
+            "passed": true
+          },
+          {
+            "name": "键盘移动",
+            "passed": true
+          },
+          {
+            "name": "真实得分及界面更新",
+            "passed": true
+          },
+          {
+            "name": "危险目标扣命",
+            "passed": true
+          },
+          {
+            "name": "游戏结束",
+            "passed": true
+          },
+          {
+            "name": "重新开始",
+            "passed": true
+          },
+          {
+            "name": "无浏览器异常",
+            "passed": true
+          }
+        ],
+        "console_errors": [],
+        "started_at": "2026-09-12T08:07:09.717Z",
+        "build_log": "",
+        "config": {
+          "title": "慢速星光",
+          "mode": "collector",
+          "speed": 180,
+          "lives": 3,
+          "spawnMs": 850,
+          "fallSpeed": 130,
+          "duration": 60,
+          "background": "#10192b",
+          "playerColor": "#9cf2cd",
+          "targetColor": "#ffd875",
+          "hazardColor": "#ff7788"
+        },
+        "finished_at": "2026-09-12T08:07:11.825Z",
+        "exit_code": 0,
+        "runner": "gamedev-runner:1"
+      },
+      "model_calls": [],
+      "source": "authored-template, not LLM generated",
+      "case": "slow",
+      "repeat": 1,
+      "elapsed_seconds": 2.49,
+      "human_playability": null
+    },
+    {
+      "status": "succeeded",
+      "repairs": 0,
+      "evidence": {
+        "passed": true,
+        "build": true,
+        "checks": [
+          {
+            "name": "TypeScript 构建",
+            "passed": true
+          },
+          {
+            "name": "参数边界",
+            "passed": true
+          },
+          {
+            "name": "开始游戏",
+            "passed": true
+          },
+          {
+            "name": "键盘移动",
+            "passed": true
+          },
+          {
+            "name": "真实得分及界面更新",
+            "passed": true
+          },
+          {
+            "name": "危险目标扣命",
+            "passed": true
+          },
+          {
+            "name": "游戏结束",
+            "passed": true
+          },
+          {
+            "name": "重新开始",
+            "passed": true
+          },
+          {
+            "name": "无浏览器异常",
+            "passed": true
+          }
+        ],
+        "console_errors": [],
+        "started_at": "2026-09-12T08:07:12.209Z",
+        "build_log": "",
+        "config": {
+          "title": "慢速星光",
+          "mode": "collector",
+          "speed": 180,
+          "lives": 3,
+          "spawnMs": 850,
+          "fallSpeed": 130,
+          "duration": 60,
+          "background": "#10192b",
+          "playerColor": "#9cf2cd",
+          "targetColor": "#ffd875",
+          "hazardColor": "#ff7788"
+        },
+        "finished_at": "2026-09-12T08:07:14.234Z",
+        "exit_code": 0,
+        "runner": "gamedev-runner:1"
+      },
+      "model_calls": [],
+      "source": "authored-template, not LLM generated",
+      "case": "slow",
+      "repeat": 2,
+      "elapsed_seconds": 2.41,
+      "human_playability": null
+    },
+    {
+      "status": "succeeded",
+      "repairs": 0,
+      "evidence": {
+        "passed": true,
+        "build": true,
+        "checks": [
+          {
+            "name": "TypeScript 构建",
+            "passed": true
+          },
+          {
+            "name": "参数边界",
+            "passed": true
+          },
+          {
+            "name": "开始游戏",
+            "passed": true
+          },
+          {
+            "name": "键盘移动",
+            "passed": true
+          },
+          {
+            "name": "真实得分及界面更新",
+            "passed": true
+          },
+          {
+            "name": "危险目标扣命",
+            "passed": true
+          },
+          {
+            "name": "游戏结束",
+            "passed": true
+          },
+          {
+            "name": "重新开始",
+            "passed": true
+          },
+          {
+            "name": "无浏览器异常",
+            "passed": true
+          }
+        ],
+        "console_errors": [],
+        "started_at": "2026-09-12T08:07:14.625Z",
+        "build_log": "",
+        "config": {
+          "title": "慢速星光",
+          "mode": "collector",
+          "speed": 180,
+          "lives": 3,
+          "spawnMs": 850,
+          "fallSpeed": 130,
+          "duration": 60,
+          "background": "#10192b",
+          "playerColor": "#9cf2cd",
+          "targetColor": "#ffd875",
+          "hazardColor": "#ff7788"
+        },
+        "finished_at": "2026-09-12T08:07:16.919Z",
+        "exit_code": 0,
+        "runner": "gamedev-runner:1"
+      },
+      "model_calls": [],
+      "source": "authored-template, not LLM generated",
+      "case": "slow",
+      "repeat": 3,
+      "elapsed_seconds": 2.68,
+      "human_playability": null
+    },
+    {
+      "status": "succeeded",
+      "repairs": 0,
+      "evidence": {
+        "passed": true,
+        "build": true,
+        "checks": [
+          {
+            "name": "TypeScript 构建",
+            "passed": true
+          },
+          {
+            "name": "参数边界",
+            "passed": true
+          },
+          {
+            "name": "开始游戏",
+            "passed": true
+          },
+          {
+            "name": "键盘移动",
+            "passed": true
+          },
+          {
+            "name": "真实得分及界面更新",
+            "passed": true
+          },
+          {
+            "name": "危险目标扣命",
+            "passed": true
+          },
+          {
+            "name": "游戏结束",
+            "passed": true
+          },
+          {
+            "name": "重新开始",
+            "passed": true
+          },
+          {
+            "name": "无浏览器异常",
+            "passed": true
+          }
+        ],
+        "console_errors": [],
+        "started_at": "2026-09-12T08:07:17.377Z",
+        "build_log": "",
+        "config": {
+          "title": "五次机会",
+          "mode": "collector",
+          "speed": 320,
+          "lives": 5,
+          "spawnMs": 850,
+          "fallSpeed": 130,
+          "duration": 60,
+          "background": "#19213b",
+          "playerColor": "#9cf2cd",
+          "targetColor": "#ffd875",
+          "hazardColor": "#ff7788"
+        },
+        "finished_at": "2026-09-12T08:07:19.548Z",
+        "exit_code": 0,
+        "runner": "gamedev-runner:1"
+      },
+      "model_calls": [],
+      "source": "authored-template, not LLM generated",
+      "case": "five-lives",
+      "repeat": 1,
+      "elapsed_seconds": 2.64,
+      "human_playability": null
+    },
+    {
+      "status": "succeeded",
+      "repairs": 0,
+      "evidence": {
+        "passed": true,
+        "build": true,
+        "checks": [
+          {
+            "name": "TypeScript 构建",
+            "passed": true
+          },
+          {
+            "name": "参数边界",
+            "passed": true
+          },
+          {
+            "name": "开始游戏",
+            "passed": true
+          },
+          {
+            "name": "键盘移动",
+            "passed": true
+          },
+          {
+            "name": "真实得分及界面更新",
+            "passed": true
+          },
+          {
+            "name": "危险目标扣命",
+            "passed": true
+          },
+          {
+            "name": "游戏结束",
+            "passed": true
+          },
+          {
+            "name": "重新开始",
+            "passed": true
+          },
+          {
+            "name": "无浏览器异常",
+            "passed": true
+          }
+        ],
+        "console_errors": [],
+        "started_at": "2026-09-12T08:07:20.201Z",
+        "build_log": "",
+        "config": {
+          "title": "五次机会",
+          "mode": "collector",
+          "speed": 320,
+          "lives": 5,
+          "spawnMs": 850,
+          "fallSpeed": 130,
+          "duration": 60,
+          "background": "#19213b",
+          "playerColor": "#9cf2cd",
+          "targetColor": "#ffd875",
+          "hazardColor": "#ff7788"
+        },
+        "finished_at": "2026-09-12T08:07:22.450Z",
+        "exit_code": 0,
+        "runner": "gamedev-runner:1"
+      },
+      "model_calls": [],
+      "source": "authored-template, not LLM generated",
+      "case": "five-lives",
+      "repeat": 2,
+      "elapsed_seconds": 2.89,
+      "human_playability": null
+    },
+    {
+      "status": "succeeded",
+      "repairs": 0,
+      "evidence": {
+        "passed": true,
+        "build": true,
+        "checks": [
+          {
+            "name": "TypeScript 构建",
+            "passed": true
+          },
+          {
+            "name": "参数边界",
+            "passed": true
+          },
+          {
+            "name": "开始游戏",
+            "passed": true
+          },
+          {
+            "name": "键盘移动",
+            "passed": true
+          },
+          {
+            "name": "真实得分及界面更新",
+            "passed": true
+          },
+          {
+            "name": "危险目标扣命",
+            "passed": true
+          },
+          {
+            "name": "游戏结束",
+            "passed": true
+          },
+          {
+            "name": "重新开始",
+            "passed": true
+          },
+          {
+            "name": "无浏览器异常",
+            "passed": true
+          }
+        ],
+        "console_errors": [],
+        "started_at": "2026-09-12T08:07:22.856Z",
+        "build_log": "",
+        "config": {
+          "title": "五次机会",
+          "mode": "collector",
+          "speed": 320,
+          "lives": 5,
+          "spawnMs": 850,
+          "fallSpeed": 130,
+          "duration": 60,
+          "background": "#19213b",
+          "playerColor": "#9cf2cd",
+          "targetColor": "#ffd875",
+          "hazardColor": "#ff7788"
+        },
+        "finished_at": "2026-09-12T08:07:24.937Z",
+        "exit_code": 0,
+        "runner": "gamedev-runner:1"
+      },
+      "model_calls": [],
+      "source": "authored-template, not LLM generated",
+      "case": "five-lives",
+      "repeat": 3,
+      "elapsed_seconds": 2.48,
+      "human_playability": null
+    },
+    {
+      "status": "succeeded",
+      "repairs": 0,
+      "evidence": {
+        "passed": true,
+        "build": true,
+        "checks": [
+          {
+            "name": "TypeScript 构建",
+            "passed": true
+          },
+          {
+            "name": "参数边界",
+            "passed": true
+          },
+          {
+            "name": "开始游戏",
+            "passed": true
+          },
+          {
+            "name": "键盘移动",
+            "passed": true
+          },
+          {
+            "name": "真实得分及界面更新",
+            "passed": true
+          },
+          {
+            "name": "危险目标扣命",
+            "passed": true
+          },
+          {
+            "name": "游戏结束",
+            "passed": true
+          },
+          {
+            "name": "重新开始",
+            "passed": true
+          },
+          {
+            "name": "无浏览器异常",
+            "passed": true
+          }
+        ],
+        "console_errors": [],
+        "started_at": "2026-09-12T08:07:25.348Z",
+        "build_log": "",
+        "config": {
+          "title": "陨石穿梭",
+          "mode": "dodger",
+          "speed": 320,
+          "lives": 3,
+          "spawnMs": 850,
+          "fallSpeed": 130,
+          "duration": 60,
+          "background": "#12251e",
+          "playerColor": "#9cf2cd",
+          "targetColor": "#ffd875",
+          "hazardColor": "#ff7788"
+        },
+        "finished_at": "2026-09-12T08:07:28.479Z",
+        "exit_code": 0,
+        "runner": "gamedev-runner:1"
+      },
+      "model_calls": [],
+      "source": "authored-template, not LLM generated",
+      "case": "dodger",
+      "repeat": 1,
+      "elapsed_seconds": 3.55,
+      "human_playability": null
+    },
+    {
+      "status": "succeeded",
+      "repairs": 0,
+      "evidence": {
+        "passed": true,
+        "build": true,
+        "checks": [
+          {
+            "name": "TypeScript 构建",
+            "passed": true
+          },
+          {
+            "name": "参数边界",
+            "passed": true
+          },
+          {
+            "name": "开始游戏",
+            "passed": true
+          },
+          {
+            "name": "键盘移动",
+            "passed": true
+          },
+          {
+            "name": "真实得分及界面更新",
+            "passed": true
+          },
+          {
+            "name": "危险目标扣命",
+            "passed": true
+          },
+          {
+            "name": "游戏结束",
+            "passed": true
+          },
+          {
+            "name": "重新开始",
+            "passed": true
+          },
+          {
+            "name": "无浏览器异常",
+            "passed": true
+          }
+        ],
+        "console_errors": [],
+        "started_at": "2026-09-12T08:07:28.951Z",
+        "build_log": "",
+        "config": {
+          "title": "陨石穿梭",
+          "mode": "dodger",
+          "speed": 320,
+          "lives": 3,
+          "spawnMs": 850,
+          "fallSpeed": 130,
+          "duration": 60,
+          "background": "#12251e",
+          "playerColor": "#9cf2cd",
+          "targetColor": "#ffd875",
+          "hazardColor": "#ff7788"
+        },
+        "finished_at": "2026-09-12T08:07:32.116Z",
+        "exit_code": 0,
+        "runner": "gamedev-runner:1"
+      },
+      "model_calls": [],
+      "source": "authored-template, not LLM generated",
+      "case": "dodger",
+      "repeat": 2,
+      "elapsed_seconds": 3.65,
+      "human_playability": null
+    },
+    {
+      "status": "succeeded",
+      "repairs": 0,
+      "evidence": {
+        "passed": true,
+        "build": true,
+        "checks": [
+          {
+            "name": "TypeScript 构建",
+            "passed": true
+          },
+          {
+            "name": "参数边界",
+            "passed": true
+          },
+          {
+            "name": "开始游戏",
+            "passed": true
+          },
+          {
+            "name": "键盘移动",
+            "passed": true
+          },
+          {
+            "name": "真实得分及界面更新",
+            "passed": true
+          },
+          {
+            "name": "危险目标扣命",
+            "passed": true
+          },
+          {
+            "name": "游戏结束",
+            "passed": true
+          },
+          {
+            "name": "重新开始",
+            "passed": true
+          },
+          {
+            "name": "无浏览器异常",
+            "passed": true
+          }
+        ],
+        "console_errors": [],
+        "started_at": "2026-09-12T08:07:32.508Z",
+        "build_log": "",
+        "config": {
+          "title": "陨石穿梭",
+          "mode": "dodger",
+          "speed": 320,
+          "lives": 3,
+          "spawnMs": 850,
+          "fallSpeed": 130,
+          "duration": 60,
+          "background": "#12251e",
+          "playerColor": "#9cf2cd",
+          "targetColor": "#ffd875",
+          "hazardColor": "#ff7788"
+        },
+        "finished_at": "2026-09-12T08:07:35.769Z",
+        "exit_code": 0,
+        "runner": "gamedev-runner:1"
+      },
+      "model_calls": [],
+      "source": "authored-template, not LLM generated",
+      "case": "dodger",
+      "repeat": 3,
+      "elapsed_seconds": 3.64,
+      "human_playability": null
+    },
+    {
+      "status": "succeeded",
+      "repairs": 0,
+      "evidence": {
+        "passed": true,
+        "build": true,
+        "checks": [
+          {
+            "name": "TypeScript 构建",
+            "passed": true
+          },
+          {
+            "name": "参数边界",
+            "passed": true
+          },
+          {
+            "name": "开始游戏",
+            "passed": true
+          },
+          {
+            "name": "键盘移动",
+            "passed": true
+          },
+          {
+            "name": "真实得分及界面更新",
+            "passed": true
+          },
+          {
+            "name": "危险目标扣命",
+            "passed": true
+          },
+          {
+            "name": "游戏结束",
+            "passed": true
+          },
+          {
+            "name": "重新开始",
+            "passed": true
+          },
+          {
+            "name": "无浏览器异常",
+            "passed": true
+          }
+        ],
+        "console_errors": [],
+        "started_at": "2026-09-12T08:07:36.188Z",
+        "build_log": "",
+        "config": {
+          "title": "光点猎手",
+          "mode": "clicker",
+          "speed": 320,
+          "lives": 5,
+          "spawnMs": 850,
+          "fallSpeed": 130,
+          "duration": 60,
+          "background": "#231a32",
+          "playerColor": "#9cf2cd",
+          "targetColor": "#ffd875",
+          "hazardColor": "#ff7788"
+        },
+        "finished_at": "2026-09-12T08:07:38.291Z",
+        "exit_code": 0,
+        "runner": "gamedev-runner:1"
+      },
+      "model_calls": [],
+      "source": "authored-template, not LLM generated",
+      "case": "clicker",
+      "repeat": 1,
+      "elapsed_seconds": 2.51,
+      "human_playability": null
+    },
+    {
+      "status": "succeeded",
+      "repairs": 0,
+      "evidence": {
+        "passed": true,
+        "build": true,
+        "checks": [
+          {
+            "name": "TypeScript 构建",
+            "passed": true
+          },
+          {
+            "name": "参数边界",
+            "passed": true
+          },
+          {
+            "name": "开始游戏",
+            "passed": true
+          },
+          {
+            "name": "键盘移动",
+            "passed": true
+          },
+          {
+            "name": "真实得分及界面更新",
+            "passed": true
+          },
+          {
+            "name": "危险目标扣命",
+            "passed": true
+          },
+          {
+            "name": "游戏结束",
+            "passed": true
+          },
+          {
+            "name": "重新开始",
+            "passed": true
+          },
+          {
+            "name": "无浏览器异常",
+            "passed": true
+          }
+        ],
+        "console_errors": [],
+        "started_at": "2026-09-12T08:07:38.700Z",
+        "build_log": "",
+        "config": {
+          "title": "光点猎手",
+          "mode": "clicker",
+          "speed": 320,
+          "lives": 5,
+          "spawnMs": 850,
+          "fallSpeed": 130,
+          "duration": 60,
+          "background": "#231a32",
+          "playerColor": "#9cf2cd",
+          "targetColor": "#ffd875",
+          "hazardColor": "#ff7788"
+        },
+        "finished_at": "2026-09-12T08:07:41.044Z",
+        "exit_code": 0,
+        "runner": "gamedev-runner:1"
+      },
+      "model_calls": [],
+      "source": "authored-template, not LLM generated",
+      "case": "clicker",
+      "repeat": 2,
+      "elapsed_seconds": 2.76,
+      "human_playability": null
+    },
+    {
+      "status": "succeeded",
+      "repairs": 0,
+      "evidence": {
+        "passed": true,
+        "build": true,
+        "checks": [
+          {
+            "name": "TypeScript 构建",
+            "passed": true
+          },
+          {
+            "name": "参数边界",
+            "passed": true
+          },
+          {
+            "name": "开始游戏",
+            "passed": true
+          },
+          {
+            "name": "键盘移动",
+            "passed": true
+          },
+          {
+            "name": "真实得分及界面更新",
+            "passed": true
+          },
+          {
+            "name": "危险目标扣命",
+            "passed": true
+          },
+          {
+            "name": "游戏结束",
+            "passed": true
+          },
+          {
+            "name": "重新开始",
+            "passed": true
+          },
+          {
+            "name": "无浏览器异常",
+            "passed": true
+          }
+        ],
+        "console_errors": [],
+        "started_at": "2026-09-12T08:07:41.444Z",
+        "build_log": "",
+        "config": {
+          "title": "光点猎手",
+          "mode": "clicker",
+          "speed": 320,
+          "lives": 5,
+          "spawnMs": 850,
+          "fallSpeed": 130,
+          "duration": 60,
+          "background": "#231a32",
+          "playerColor": "#9cf2cd",
+          "targetColor": "#ffd875",
+          "hazardColor": "#ff7788"
+        },
+        "finished_at": "2026-09-12T08:07:43.511Z",
+        "exit_code": 0,
+        "runner": "gamedev-runner:1"
+      },
+      "model_calls": [],
+      "source": "authored-template, not LLM generated",
+      "case": "clicker",
+      "repeat": 3,
+      "elapsed_seconds": 2.47,
+      "human_playability": null
+    }
+  ],
+  "completed": 15,
+  "expected": 15,
+  "build_passed": 15,
+  "interaction_passed": 15
+}

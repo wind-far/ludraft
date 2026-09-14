@@ -349,6 +349,13 @@ class Orchestrator:
                 result = self._execute_agent_step(pipeline, step)
                 results[step.stage] = result
             
+            # A simulated, blocked, or errored agent is not a completed step.
+            outputs = parallel_results.values() if step.parallel_with else [result]
+            if any(output.get("status") != "completed" for output in outputs):
+                step.status = "failed"
+                pipeline.status = "failed"
+                return {**results, "status": "failed", "pipeline_id": pipeline.pipeline_id}
+
             # 更新步骤状态为 completed
             step.status = "completed"
             
@@ -363,7 +370,9 @@ class Orchestrator:
                                    pipeline_id=pipeline.pipeline_id)
                     # 阻断流转，返回上游
                     results["quality_gate_failure"] = step.quality_gate
-                    break
+                    step.status = "failed"
+                    pipeline.status = "failed"
+                    return {**results, "status": "failed", "pipeline_id": pipeline.pipeline_id}
                 else:
                     self._record_log("quality_gate_passed",
                                    f"🚧 质量门禁 {step.quality_gate} 通过",

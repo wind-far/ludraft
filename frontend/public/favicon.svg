@@ -1,4 +1,7 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <rect width="64" height="64" rx="12" fill="#4f8ff7"/>
-  <text x="32" y="44" font-size="36" text-anchor="middle" fill="white">🎮</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <defs><linearGradient id="a" x1="0" y1="0" x2="64" y2="64" gradientUnits="userSpaceOnUse"><stop stop-color="#54a5ff"/><stop offset="1" stop-color="#0067de"/></linearGradient></defs>
+  <rect width="64" height="64" rx="18" fill="url(#a)"/>
+  <rect x="11" y="17" width="42" height="30" rx="11" stroke="white" stroke-width="3"/>
+  <path d="M23 26v12m-6-6h12" stroke="white" stroke-width="3" stroke-linecap="round"/>
+  <circle cx="40" cy="28" r="2.5" fill="white"/><circle cx="44" cy="36" r="2.5" fill="white"/>
 </svg>

@@ -1,0 +1,43 @@
+{
+  "passed": false,
+  "build": true,
+  "scope": "phaser-integration-smoke",
+  "gameplay_verified": false,
+  "checks": [
+    {
+      "name": "固定 Phaser TypeScript/Vite 构建",
+      "passed": true
+    },
+    {
+      "name": "开始画面显示",
+      "passed": true
+    },
+    {
+      "name": "点击建塔扣除 40 金币",
+      "passed": true
+    },
+    {
+      "name": "点击升级扣除 30 金币",
+      "passed": true
+    },
+    {
+      "name": "Phaser 图片资源已加载",
+      "passed": true
+    },
+    {
+      "name": "地图场景渲染",
+      "passed": true
+    }
+  ],
+  "console_errors": [
+    "Cannot read properties of undefined (reading 'size')"
+  ],
+  "resource_failures": [],
+  "started_at": "2026-09-13T14:12:03.744Z",
+  "build_log": "vite v6.4.1 building for production...\ntransforming...\n✓ 26 modules transformed.\nrendering chunks...\ncomputing gzip size...\ndist/index.html                     0.38 kB │ gzip:   0.30 kB\ndist/assets/index-COeHopFf.css     13.24 kB │ gzip:   3.31 kB\ndist/assets/index-Xa66tUYp.js   1,538.05 kB │ gzip: 354.53 kB\n✓ built in 11.42s\n\n(!) Some chunks are larger than 500 kB after minification. Consider:\n- Using dynamic import() to code-split the application\n- Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks\n- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.\n",
+  "error": "locator.waitFor: Timeout 10000ms exceeded.\nCall log:\n  - waiting for locator('#title-screen-container') to be visible\n",
+  "finished_at": "2026-09-13T14:12:52.796Z",
+  "exit_code": 1,
+  "runner": "gamedev-phaser-runner:1",
+  "candidate": "6f37a666a09241a0a632edcff1c68c53"
+}

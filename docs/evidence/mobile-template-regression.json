@@ -1,0 +1,626 @@
+{
+  "evaluation_id": "8bf58f1bbde1411cb1fce51df5129a44",
+  "mode": "template-regression",
+  "created_at": "2026-09-13T04:29:28.191193+00:00",
+  "cases": [
+    {
+      "id": "classic",
+      "title": "宝石花园",
+      "mode": "match3",
+      "moves": 20,
+      "targetScore": 1200,
+      "gemTypes": 6,
+      "background": "#f0f4fb",
+      "text": "做 match3 宝石三消，8×8 棋盘、20 步达成 1200 分、六种宝石，支持无效交换回退、连锁和重开。"
+    },
+    {
+      "id": "collector",
+      "title": "星光收集站",
+      "mode": "collector",
+      "lives": 3,
+      "duration": 60,
+      "background": "#10192b",
+      "text": "做 collector 接物游戏，左右移动接金币躲炸弹，3 条生命、60 秒一局，金币得分、碰到炸弹扣命，支持结束和重开。"
+    },
+    {
+      "id": "dodger",
+      "title": "流星闪避",
+      "mode": "dodger",
+      "lives": 3,
+      "duration": 60,
+      "background": "#17233d",
+      "text": "做 dodger 躲避游戏，左右移动躲避落下的流星，3 条生命、60 秒一局，生存时间计分，深蓝背景，支持结束和重开。"
+    },
+    {
+      "id": "clicker",
+      "title": "点亮星星",
+      "mode": "clicker",
+      "lives": 3,
+      "duration": 30,
+      "background": "#231a32",
+      "text": "做 clicker 点击游戏，点击星星得分，误点炸弹扣命，3 条生命、30 秒一局，紫色背景，支持结束和重开。"
+    },
+    {
+      "id": "relaxed",
+      "title": "糖果连锁",
+      "mode": "match3",
+      "moves": 30,
+      "targetScore": 1000,
+      "gemTypes": 4,
+      "background": "#fcf0f3",
+      "text": "做 match3 糖果三消，30 步达成 1000 分、四种糖果、粉色背景，连锁加分。"
+    }
+  ],
+  "cases_sha256": "7971e80a591f6a200616e3d4ff3ab299c809976610ccb37e780e9e38a4339162",
+  "expected": 5,
+  "summary": {
+    "completed": 5,
+    "expected": 5,
+    "all_runs_completed": true,
+    "build_passed": 5,
+    "interaction_passed": 5,
+    "requirement_passed": 5,
+    "delivery_passed": 5,
+    "repair_rounds": 0,
+    "elapsed_seconds": 24.5,
+    "tokens": {
+      "known_tokens": 0,
+      "calls_missing_usage": 0,
+      "total_tokens": 0
+    },
+    "human_reviewed": 0
+  },
+  "records": [
+    {
+      "run_id": "d414b795f5a14bd5b7fc85ac0ce66d95",
+      "case": "classic",
+      "game_mode": "match3",
+      "repeat": 1,
+      "status": "succeeded",
+      "elapsed_seconds": 5.91,
+      "checks": {
+        "build_passed": true,
+        "interaction_passed": true,
+        "requirement_passed": true,
+        "mismatches": {},
+        "missing_roles": [],
+        "passed": true,
+        "errors": [],
+        "manual_boundary": "配色语义、难度、趣味性和完整需求符合度仍需人工评价"
+      },
+      "evidence": {
+        "passed": true,
+        "build": true,
+        "checks": [
+          {
+            "name": "TypeScript 构建",
+            "passed": true
+          },
+          {
+            "name": "三消参数边界",
+            "passed": true
+          },
+          {
+            "name": "开始游戏",
+            "passed": true
+          },
+          {
+            "name": "棋盘初始可玩",
+            "passed": true
+          },
+          {
+            "name": "无效交换回退",
+            "passed": true
+          },
+          {
+            "name": "禁止跨格交换",
+            "passed": true
+          },
+          {
+            "name": "结算期间禁止重复操作",
+            "passed": true
+          },
+          {
+            "name": "真实交换消除与步数",
+            "passed": true
+          },
+          {
+            "name": "下落补位与连锁",
+            "passed": true
+          },
+          {
+            "name": "无解棋盘重排",
+            "passed": true
+          },
+          {
+            "name": "目标达成与失败",
+            "passed": true
+          },
+          {
+            "name": "重新开始",
+            "passed": true
+          },
+          {
+            "name": "移动端布局",
+            "passed": true
+          },
+          {
+            "name": "触屏交换消除",
+            "passed": true
+          },
+          {
+            "name": "无浏览器异常",
+            "passed": true
+          }
+        ],
+        "console_errors": [],
+        "started_at": "2026-09-13T04:29:28.810Z",
+        "build_log": "",
+        "config": {
+          "title": "宝石花园",
+          "mode": "match3",
+          "moves": 20,
+          "targetScore": 1200,
+          "gemTypes": 6,
+          "background": "#f0f4fb",
+          "playerColor": "#63bda4",
+          "targetColor": "#efb855",
+          "hazardColor": "#ef8699"
+        },
+        "runtime": "match3-v1",
+        "mobile": {
+          "status": "passed",
+          "viewport": {
+            "width": 390,
+            "height": 844
+          },
+          "input": "Chromium touch events"
+        },
+        "finished_at": "2026-09-13T04:29:34.014Z",
+        "exit_code": 0,
+        "log": "{\"passed\":true,\"build\":true,\"checks\":[{\"name\":\"TypeScript 构建\",\"passed\":true},{\"name\":\"三消参数边界\",\"passed\":true},{\"name\":\"开始游戏\",\"passed\":true},{\"name\":\"棋盘初始可玩\",\"passed\":true},{\"name\":\"无效交换回退\",\"passed\":true},{\"name\":\"禁止跨格交换\",\"passed\":true},{\"name\":\"结算期间禁止重复操作\",\"passed\":true},{\"name\":\"真实交换消除与步数\",\"passed\":true},{\"name\":\"下落补位与连锁\",\"passed\":true},{\"name\":\"无解棋盘重排\",\"passed\":true},{\"name\":\"目标达成与失败\",\"passed\":true},{\"name\":\"重新开始\",\"passed\":true},{\"name\":\"移动端布局\",\"passed\":true},{\"name\":\"触屏交换消除\",\"passed\":true},{\"name\":\"无浏览器异常\",\"passed\":true}],\"console_errors\":[],\"started_at\":\"2026-09-13T04:29:28.810Z\",\"build_log\":\"\",\"config\":{\"title\":\"宝石花园\",\"mode\":\"match3\",\"moves\":20,\"targetScore\":1200,\"gemTypes\":6,\"background\":\"#f0f4fb\",\"playerColor\":\"#63bda4\",\"targetColor\":\"#efb855\",\"hazardColor\":\"#ef8699\"},\"runtime\":\"match3-v1\",\"mobile\":{\"status\":\"passed\",\"viewport\":{\"width\":390,\"height\":844},\"input\":\"Chromium touch events\"},\"finished_at\":\"2026-09-13T04:29:34.014Z\"}\n",
+        "runner": "gamedev-runner:1"
+      },
+      "artifact": {
+        "path": "artifacts/d414b795f5a14bd5b7fc85ac0ce66d95/game.zip",
+        "sha256": "62be5d1d4ddcc576f813b061453934070fd1fcb28133b2f9b1628a16ea116e89"
+      },
+      "human_playability": null
+    },
+    {
+      "run_id": "caf3525e902a4b97b56ea979e6654885",
+      "case": "collector",
+      "game_mode": "collector",
+      "repeat": 1,
+      "status": "succeeded",
+      "elapsed_seconds": 4.18,
+      "checks": {
+        "build_passed": true,
+        "interaction_passed": true,
+        "requirement_passed": true,
+        "mismatches": {},
+        "missing_roles": [],
+        "passed": true,
+        "errors": [],
+        "manual_boundary": "配色语义、难度、趣味性和完整需求符合度仍需人工评价"
+      },
+      "evidence": {
+        "passed": true,
+        "build": true,
+        "checks": [
+          {
+            "name": "TypeScript 构建",
+            "passed": true
+          },
+          {
+            "name": "参数边界",
+            "passed": true
+          },
+          {
+            "name": "开始游戏",
+            "passed": true
+          },
+          {
+            "name": "键盘移动",
+            "passed": true
+          },
+          {
+            "name": "真实得分及界面更新",
+            "passed": true
+          },
+          {
+            "name": "危险目标扣命",
+            "passed": true
+          },
+          {
+            "name": "游戏结束",
+            "passed": true
+          },
+          {
+            "name": "重新开始",
+            "passed": true
+          },
+          {
+            "name": "移动端布局",
+            "passed": true
+          },
+          {
+            "name": "触屏拖动与停止",
+            "passed": true
+          },
+          {
+            "name": "倒计时与重开",
+            "passed": true
+          },
+          {
+            "name": "无浏览器异常",
+            "passed": true
+          }
+        ],
+        "console_errors": [],
+        "started_at": "2026-09-13T04:29:34.709Z",
+        "build_log": "",
+        "config": {
+          "title": "星光收集站",
+          "mode": "collector",
+          "speed": 320,
+          "lives": 3,
+          "spawnMs": 850,
+          "fallSpeed": 130,
+          "duration": 60,
+          "background": "#10192b",
+          "playerColor": "#9cf2cd",
+          "targetColor": "#ffd875",
+          "hazardColor": "#ff7788"
+        },
+        "runtime": "canvas-input-v2",
+        "mobile": {
+          "status": "passed",
+          "viewport": {
+            "width": 390,
+            "height": 844
+          },
+          "input": "Chromium touch events"
+        },
+        "finished_at": "2026-09-13T04:29:38.207Z",
+        "exit_code": 0,
+        "log": "{\"passed\":true,\"build\":true,\"checks\":[{\"name\":\"TypeScript 构建\",\"passed\":true},{\"name\":\"参数边界\",\"passed\":true},{\"name\":\"开始游戏\",\"passed\":true},{\"name\":\"键盘移动\",\"passed\":true},{\"name\":\"真实得分及界面更新\",\"passed\":true},{\"name\":\"危险目标扣命\",\"passed\":true},{\"name\":\"游戏结束\",\"passed\":true},{\"name\":\"重新开始\",\"passed\":true},{\"name\":\"移动端布局\",\"passed\":true},{\"name\":\"触屏拖动与停止\",\"passed\":true},{\"name\":\"倒计时与重开\",\"passed\":true},{\"name\":\"无浏览器异常\",\"passed\":true}],\"console_errors\":[],\"started_at\":\"2026-09-13T04:29:34.709Z\",\"build_log\":\"\",\"config\":{\"title\":\"星光收集站\",\"mode\":\"collector\",\"speed\":320,\"lives\":3,\"spawnMs\":850,\"fallSpeed\":130,\"duration\":60,\"background\":\"#10192b\",\"playerColor\":\"#9cf2cd\",\"targetColor\":\"#ffd875\",\"hazardColor\":\"#ff7788\"},\"runtime\":\"canvas-input-v2\",\"mobile\":{\"status\":\"passed\",\"viewport\":{\"width\":390,\"height\":844},\"input\":\"Chromium touch events\"},\"finished_at\":\"2026-09-13T04:29:38.207Z\"}\n",
+        "runner": "gamedev-runner:1"
+      },
+      "artifact": {
+        "path": "artifacts/caf3525e902a4b97b56ea979e6654885/game.zip",
+        "sha256": "aad86f06767edf1bf39102d59b36adcdd375966d6765f521f787c9787b792b3c"
+      },
+      "human_playability": null
+    },
+    {
+      "run_id": "cfea11a83b154edf990bd273463f01a2",
+      "case": "dodger",
+      "game_mode": "dodger",
+      "repeat": 1,
+      "status": "succeeded",
+      "elapsed_seconds": 5.02,
+      "checks": {
+        "build_passed": true,
+        "interaction_passed": true,
+        "requirement_passed": true,
+        "mismatches": {},
+        "missing_roles": [],
+        "passed": true,
+        "errors": [],
+        "manual_boundary": "配色语义、难度、趣味性和完整需求符合度仍需人工评价"
+      },
+      "evidence": {
+        "passed": true,
+        "build": true,
+        "checks": [
+          {
+            "name": "TypeScript 构建",
+            "passed": true
+          },
+          {
+            "name": "参数边界",
+            "passed": true
+          },
+          {
+            "name": "开始游戏",
+            "passed": true
+          },
+          {
+            "name": "键盘移动",
+            "passed": true
+          },
+          {
+            "name": "真实得分及界面更新",
+            "passed": true
+          },
+          {
+            "name": "危险目标扣命",
+            "passed": true
+          },
+          {
+            "name": "游戏结束",
+            "passed": true
+          },
+          {
+            "name": "重新开始",
+            "passed": true
+          },
+          {
+            "name": "移动端布局",
+            "passed": true
+          },
+          {
+            "name": "触屏拖动与停止",
+            "passed": true
+          },
+          {
+            "name": "倒计时与重开",
+            "passed": true
+          },
+          {
+            "name": "无浏览器异常",
+            "passed": true
+          }
+        ],
+        "console_errors": [],
+        "started_at": "2026-09-13T04:29:38.763Z",
+        "build_log": "",
+        "config": {
+          "title": "流星闪避",
+          "mode": "dodger",
+          "speed": 320,
+          "lives": 3,
+          "spawnMs": 850,
+          "fallSpeed": 130,
+          "duration": 60,
+          "background": "#17233d",
+          "playerColor": "#9cf2cd",
+          "targetColor": "#ffd875",
+          "hazardColor": "#ff7788"
+        },
+        "runtime": "canvas-input-v2",
+        "mobile": {
+          "status": "passed",
+          "viewport": {
+            "width": 390,
+            "height": 844
+          },
+          "input": "Chromium touch events"
+        },
+        "finished_at": "2026-09-13T04:29:43.184Z",
+        "exit_code": 0,
+        "log": "{\"passed\":true,\"build\":true,\"checks\":[{\"name\":\"TypeScript 构建\",\"passed\":true},{\"name\":\"参数边界\",\"passed\":true},{\"name\":\"开始游戏\",\"passed\":true},{\"name\":\"键盘移动\",\"passed\":true},{\"name\":\"真实得分及界面更新\",\"passed\":true},{\"name\":\"危险目标扣命\",\"passed\":true},{\"name\":\"游戏结束\",\"passed\":true},{\"name\":\"重新开始\",\"passed\":true},{\"name\":\"移动端布局\",\"passed\":true},{\"name\":\"触屏拖动与停止\",\"passed\":true},{\"name\":\"倒计时与重开\",\"passed\":true},{\"name\":\"无浏览器异常\",\"passed\":true}],\"console_errors\":[],\"started_at\":\"2026-09-13T04:29:38.763Z\",\"build_log\":\"\",\"config\":{\"title\":\"流星闪避\",\"mode\":\"dodger\",\"speed\":320,\"lives\":3,\"spawnMs\":850,\"fallSpeed\":130,\"duration\":60,\"background\":\"#17233d\",\"playerColor\":\"#9cf2cd\",\"targetColor\":\"#ffd875\",\"hazardColor\":\"#ff7788\"},\"runtime\":\"canvas-input-v2\",\"mobile\":{\"status\":\"passed\",\"viewport\":{\"width\":390,\"height\":844},\"input\":\"Chromium touch events\"},\"finished_at\":\"2026-09-13T04:29:43.184Z\"}\n",
+        "runner": "gamedev-runner:1"
+      },
+      "artifact": {
+        "path": "artifacts/cfea11a83b154edf990bd273463f01a2/game.zip",
+        "sha256": "e16360be5bf8b037b84dc35f5e0df21f8f3c10194e7d923445d72500b9300ffa"
+      },
+      "human_playability": null
+    },
+    {
+      "run_id": "83a3d3b913db4af8b99ee819dea07a0d",
+      "case": "clicker",
+      "game_mode": "clicker",
+      "repeat": 1,
+      "status": "succeeded",
+      "elapsed_seconds": 3.32,
+      "checks": {
+        "build_passed": true,
+        "interaction_passed": true,
+        "requirement_passed": true,
+        "mismatches": {},
+        "missing_roles": [],
+        "passed": true,
+        "errors": [],
+        "manual_boundary": "配色语义、难度、趣味性和完整需求符合度仍需人工评价"
+      },
+      "evidence": {
+        "passed": true,
+        "build": true,
+        "checks": [
+          {
+            "name": "TypeScript 构建",
+            "passed": true
+          },
+          {
+            "name": "参数边界",
+            "passed": true
+          },
+          {
+            "name": "开始游戏",
+            "passed": true
+          },
+          {
+            "name": "键盘移动",
+            "passed": true
+          },
+          {
+            "name": "真实得分及界面更新",
+            "passed": true
+          },
+          {
+            "name": "危险目标扣命",
+            "passed": true
+          },
+          {
+            "name": "游戏结束",
+            "passed": true
+          },
+          {
+            "name": "重新开始",
+            "passed": true
+          },
+          {
+            "name": "移动端布局",
+            "passed": true
+          },
+          {
+            "name": "触屏点击得分",
+            "passed": true
+          },
+          {
+            "name": "倒计时与重开",
+            "passed": true
+          },
+          {
+            "name": "无浏览器异常",
+            "passed": true
+          }
+        ],
+        "console_errors": [],
+        "started_at": "2026-09-13T04:29:43.823Z",
+        "build_log": "",
+        "config": {
+          "title": "点亮星星",
+          "mode": "clicker",
+          "speed": 320,
+          "lives": 3,
+          "spawnMs": 850,
+          "fallSpeed": 130,
+          "duration": 30,
+          "background": "#231a32",
+          "playerColor": "#9cf2cd",
+          "targetColor": "#ffd875",
+          "hazardColor": "#ff7788"
+        },
+        "runtime": "canvas-input-v2",
+        "mobile": {
+          "status": "passed",
+          "viewport": {
+            "width": 390,
+            "height": 844
+          },
+          "input": "Chromium touch events"
+        },
+        "finished_at": "2026-09-13T04:29:46.554Z",
+        "exit_code": 0,
+        "log": "{\"passed\":true,\"build\":true,\"checks\":[{\"name\":\"TypeScript 构建\",\"passed\":true},{\"name\":\"参数边界\",\"passed\":true},{\"name\":\"开始游戏\",\"passed\":true},{\"name\":\"键盘移动\",\"passed\":true},{\"name\":\"真实得分及界面更新\",\"passed\":true},{\"name\":\"危险目标扣命\",\"passed\":true},{\"name\":\"游戏结束\",\"passed\":true},{\"name\":\"重新开始\",\"passed\":true},{\"name\":\"移动端布局\",\"passed\":true},{\"name\":\"触屏点击得分\",\"passed\":true},{\"name\":\"倒计时与重开\",\"passed\":true},{\"name\":\"无浏览器异常\",\"passed\":true}],\"console_errors\":[],\"started_at\":\"2026-09-13T04:29:43.823Z\",\"build_log\":\"\",\"config\":{\"title\":\"点亮星星\",\"mode\":\"clicker\",\"speed\":320,\"lives\":3,\"spawnMs\":850,\"fallSpeed\":130,\"duration\":30,\"background\":\"#231a32\",\"playerColor\":\"#9cf2cd\",\"targetColor\":\"#ffd875\",\"hazardColor\":\"#ff7788\"},\"runtime\":\"canvas-input-v2\",\"mobile\":{\"status\":\"passed\",\"viewport\":{\"width\":390,\"height\":844},\"input\":\"Chromium touch events\"},\"finished_at\":\"2026-09-13T04:29:46.554Z\"}\n",
+        "runner": "gamedev-runner:1"
+      },
+      "artifact": {
+        "path": "artifacts/83a3d3b913db4af8b99ee819dea07a0d/game.zip",
+        "sha256": "9ef44066214806ece2e14f4c36ad05c99462d2f4cfc66598b899279e8f7d487b"
+      },
+      "human_playability": null
+    },
+    {
+      "run_id": "1f53d1a64c4a43e48add41222248aa0f",
+      "case": "relaxed",
+      "game_mode": "match3",
+      "repeat": 1,
+      "status": "succeeded",
+      "elapsed_seconds": 6.07,
+      "checks": {
+        "build_passed": true,
+        "interaction_passed": true,
+        "requirement_passed": true,
+        "mismatches": {},
+        "missing_roles": [],
+        "passed": true,
+        "errors": [],
+        "manual_boundary": "配色语义、难度、趣味性和完整需求符合度仍需人工评价"
+      },
+      "evidence": {
+        "passed": true,
+        "build": true,
+        "checks": [
+          {
+            "name": "TypeScript 构建",
+            "passed": true
+          },
+          {
+            "name": "三消参数边界",
+            "passed": true
+          },
+          {
+            "name": "开始游戏",
+            "passed": true
+          },
+          {
+            "name": "棋盘初始可玩",
+            "passed": true
+          },
+          {
+            "name": "无效交换回退",
+            "passed": true
+          },
+          {
+            "name": "禁止跨格交换",
+            "passed": true
+          },
+          {
+            "name": "结算期间禁止重复操作",
+            "passed": true
+          },
+          {
+            "name": "真实交换消除与步数",
+            "passed": true
+          },
+          {
+            "name": "下落补位与连锁",
+            "passed": true
+          },
+          {
+            "name": "无解棋盘重排",
+            "passed": true
+          },
+          {
+            "name": "目标达成与失败",
+            "passed": true
+          },
+          {
+            "name": "重新开始",
+            "passed": true
+          },
+          {
+            "name": "移动端布局",
+            "passed": true
+          },
+          {
+            "name": "触屏交换消除",
+            "passed": true
+          },
+          {
+            "name": "无浏览器异常",
+            "passed": true
+          }
+        ],
+        "console_errors": [],
+        "started_at": "2026-09-13T04:29:47.069Z",
+        "build_log": "",
+        "config": {
+          "title": "糖果连锁",
+          "mode": "match3",
+          "moves": 30,
+          "targetScore": 1000,
+          "gemTypes": 4,
+          "background": "#fcf0f3",
+          "playerColor": "#63bda4",
+          "targetColor": "#efb855",
+          "hazardColor": "#ef8699"
+        },
+        "runtime": "match3-v1",
+        "mobile": {
+          "status": "passed",
+          "viewport": {
+            "width": 390,
+            "height": 844
+          },
+          "input": "Chromium touch events"
+        },
+        "finished_at": "2026-09-13T04:29:52.581Z",
+        "exit_code": 0,
+        "log": "{\"passed\":true,\"build\":true,\"checks\":[{\"name\":\"TypeScript 构建\",\"passed\":true},{\"name\":\"三消参数边界\",\"passed\":true},{\"name\":\"开始游戏\",\"passed\":true},{\"name\":\"棋盘初始可玩\",\"passed\":true},{\"name\":\"无效交换回退\",\"passed\":true},{\"name\":\"禁止跨格交换\",\"passed\":true},{\"name\":\"结算期间禁止重复操作\",\"passed\":true},{\"name\":\"真实交换消除与步数\",\"passed\":true},{\"name\":\"下落补位与连锁\",\"passed\":true},{\"name\":\"无解棋盘重排\",\"passed\":true},{\"name\":\"目标达成与失败\",\"passed\":true},{\"name\":\"重新开始\",\"passed\":true},{\"name\":\"移动端布局\",\"passed\":true},{\"name\":\"触屏交换消除\",\"passed\":true},{\"name\":\"无浏览器异常\",\"passed\":true}],\"console_errors\":[],\"started_at\":\"2026-09-13T04:29:47.069Z\",\"build_log\":\"\",\"config\":{\"title\":\"糖果连锁\",\"mode\":\"match3\",\"moves\":30,\"targetScore\":1000,\"gemTypes\":4,\"background\":\"#fcf0f3\",\"playerColor\":\"#63bda4\",\"targetColor\":\"#efb855\",\"hazardColor\":\"#ef8699\"},\"runtime\":\"match3-v1\",\"mobile\":{\"status\":\"passed\",\"viewport\":{\"width\":390,\"height\":844},\"input\":\"Chromium touch events\"},\"finished_at\":\"2026-09-13T04:29:52.581Z\"}\n",
+        "runner": "gamedev-runner:1"
+      },
+      "artifact": {
+        "path": "artifacts/1f53d1a64c4a43e48add41222248aa0f/game.zip",
+        "sha256": "dab8a09deccce0f9a14d5aaf51e0ff9e8486122ae400c985fce79b95fff3997f"
+      },
+      "human_playability": null
+    }
+  ],
+  "source": "Authored templates; actual Docker desktop and mobile browser tests, not model output."
+}

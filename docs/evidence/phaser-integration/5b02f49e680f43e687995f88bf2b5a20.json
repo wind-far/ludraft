@@ -1,0 +1,21 @@
+{
+  "passed": false,
+  "build": false,
+  "scope": "phaser-integration-smoke",
+  "gameplay_verified": false,
+  "checks": [
+    {
+      "name": "固定 Phaser TypeScript/Vite 构建",
+      "passed": false
+    }
+  ],
+  "console_errors": [],
+  "resource_failures": [],
+  "started_at": "2026-09-13T11:49:40.189Z",
+  "build_log": "file:///opt/runner/phaser/build.mjs:29\n  if(checked.status!==0)throw new Error((checked.stdout||'')+(checked.stderr||'')+(checked.error?.message||''));\n                              ^\n\nError: ../../../tmp/phaser-build-p3YVgq/src/scenes/GameOverUIScene.ts(171,19): error TS2352: Conversion of type 'Scene' to type 'Record<string, unknown>' may be a mistake because neither type sufficiently overlaps with the other. If this was intentional, convert the expression to 'unknown' first.\n  Index signature for type 'string' is missing in type 'Scene'.\n\n    at file:///opt/runner/phaser/build.mjs:29:31\n    at ModuleJob.run (node:internal/modules/esm/module_job:343:25)\n    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:681:26)\n    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:117:5)\n\nNode.js v22.23.2\n",
+  "error": "检查失败: 固定 Phaser TypeScript/Vite 构建",
+  "finished_at": "2026-09-13T11:49:43.696Z",
+  "exit_code": 1,
+  "runner": "gamedev-phaser-runner:1",
+  "candidate": "5b02f49e680f43e687995f88bf2b5a20"
+}

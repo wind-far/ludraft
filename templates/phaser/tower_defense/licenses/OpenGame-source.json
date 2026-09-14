@@ -1,0 +1,77 @@
+{
+  "commit": "c9bea37786af524bf3bbe802f2b67d23816fa5c0",
+  "files": {
+    "src/StateMachine.ts": {
+      "upstream_path": "agent-test/templates/core/src/StateMachine.ts",
+      "upstream_sha256": "444a2ba3b9a950fc3a1c1bc625b0e31a3f593929cf3a0341ec142d68aa19f56c"
+    },
+    "src/main.ts": {
+      "upstream_path": "agent-test/templates/core/src/main.ts",
+      "upstream_sha256": "fac2d3bcb6d68600fda93ac82b4097a4f1f84b21ce3c33156b797269c13f146c"
+    },
+    "src/utils.ts": {
+      "upstream_path": "agent-test/templates/modules/tower_defense/src/utils.ts",
+      "upstream_sha256": "feee643227b9590b3ca35f8bdfbdd20b801d14157d4ea67a16abceb46ab2f834"
+    },
+    "src/gameConfig.json": {
+      "upstream_path": "agent-test/templates/modules/tower_defense/src/gameConfig.json",
+      "upstream_sha256": "11301fdcc14cb801f7fe77691192d5de81d306f64a0b75c441b73cc3d133a158"
+    },
+    "src/LevelManager.ts": {
+      "upstream_path": "agent-test/templates/core/src/LevelManager.ts",
+      "upstream_sha256": "cf2ebebc6ec47ee5abe3eb6789e7ccd2aa6c72de53b0a8f74ec9d38b53757daf"
+    },
+    "src/scenes/GameOverUIScene.ts": {
+      "upstream_path": "agent-test/templates/core/src/scenes/GameOverUIScene.ts",
+      "upstream_sha256": "c507f5a7bba1af6409c9e1c4b00f8db7e7c6c87f4027bb742eb3838f1050dd96"
+    },
+    "src/scenes/GameCompleteUIScene.ts": {
+      "upstream_path": "agent-test/templates/core/src/scenes/GameCompleteUIScene.ts",
+      "upstream_sha256": "1b70c6d726db35dc99798ff3005d2e9dccc77c1e11b4a28c33560ebfe6c19ddd"
+    },
+    "src/scenes/VictoryUIScene.ts": {
+      "upstream_path": "agent-test/templates/core/src/scenes/VictoryUIScene.ts",
+      "upstream_sha256": "80adfcb7085f548cc9329a254b97b84fc8a65534e80ceef9c7aa51867e21022e"
+    },
+    "src/scenes/PauseUIScene.ts": {
+      "upstream_path": "agent-test/templates/core/src/scenes/PauseUIScene.ts",
+      "upstream_sha256": "b01d30bb8898605b077b88ca4e8ebc19e1ffe4c08a41588c4ed6b11db4625efb"
+    },
+    "src/scenes/TitleScreen.ts": {
+      "upstream_path": "agent-test/templates/core/src/scenes/TitleScreen.ts",
+      "upstream_sha256": "71ba52587ee863af8ba265d353145b8e1804772e04118484dd233d8507bd3314"
+    },
+    "src/scenes/Preloader.ts": {
+      "upstream_path": "agent-test/templates/core/src/scenes/Preloader.ts",
+      "upstream_sha256": "9d7385e5e4a5cc55c61014543241c372e1d355412091cf04a729a11b1f82d38e"
+    },
+    "src/scenes/UIScene.ts": {
+      "upstream_path": "agent-test/templates/modules/tower_defense/src/scenes/UIScene.ts",
+      "upstream_sha256": "1fcfbaecdbaaacd9bbff2b6abde2d3206fb6a850f02b3ca1574370083553f992"
+    },
+    "src/scenes/BaseTDScene.ts": {
+      "upstream_path": "agent-test/templates/modules/tower_defense/src/scenes/BaseTDScene.ts",
+      "upstream_sha256": "a0d7f520f63430ddfbf92b5e69b04a872888892781f89254f0132d9b582c9ac5"
+    },
+    "src/towers/BaseTower.ts": {
+      "upstream_path": "agent-test/templates/modules/tower_defense/src/towers/BaseTower.ts",
+      "upstream_sha256": "8ccefb5595780bf3a4eeb54cd1fa2fae0b17fc76243e4f6794c7f5015442e83b"
+    },
+    "src/systems/EconomyManager.ts": {
+      "upstream_path": "agent-test/templates/modules/tower_defense/src/systems/EconomyManager.ts",
+      "upstream_sha256": "740c09c3f687d0c40b553ec8554f3cf9203d0c36bdfe62bb541c9808642b44a3"
+    },
+    "src/systems/WaveManager.ts": {
+      "upstream_path": "agent-test/templates/modules/tower_defense/src/systems/WaveManager.ts",
+      "upstream_sha256": "c7a855b7964958687cf53fe729ddbd3ff0a9f87965f6aa08a3168ce78c3b01e9"
+    },
+    "src/entities/BaseObstacle.ts": {
+      "upstream_path": "agent-test/templates/modules/tower_defense/src/entities/BaseObstacle.ts",
+      "upstream_sha256": "1bae9f3b5c291a600494414614334f4831340364d52edd85854314d398502c79"
+    },
+    "src/enemies/BaseTDEnemy.ts": {
+      "upstream_path": "agent-test/templates/modules/tower_defense/src/enemies/BaseTDEnemy.ts",
+      "upstream_sha256": "1641111a20d36f0f672427181aa996cca49687400d7b312af6c26a53cf66f357"
+    }
+  }
+}

@@ -1,0 +1,218 @@
+{
+  "date": "2026-09-14",
+  "version": "V0.1",
+  "status": "in_progress",
+  "baseline": ".studio/iteration-baselines/20260913T093431Z",
+  "implemented": [
+    "durable_budget_reservations",
+    "gateway_budget_integration",
+    "budget_cli_and_readonly_api",
+    "pinned_opengame_stream_parser",
+    "template_registry_and_multifile_transactions",
+    "artifact_bindings_and_scoped_preview",
+    "manifest_export_verification",
+    "fixed_phaser_tower_template_and_runner",
+    "opengame_cli_build_and_startup",
+    "task_scoped_mcp_tools",
+    "mcp_sdk_real_http_and_docker_repair_probe",
+    "per_request_model_proxy",
+    "fixed_response_cli_proxy_tools_docker_integration",
+    "fixed_linux_opengame_image",
+    "disconnected_cli_stdio_http_relay",
+    "real_container_model_and_build_cancellation",
+    "durable_cli_execution_records",
+    "data_root_execution_lease",
+    "verified_owned_cli_startup_cleanup",
+    "executor_status_and_recovery_api",
+    "durable_child_build_records",
+    "diagnostic_build_startup_recovery",
+    "owned_build_staging_recovery",
+    "uncertain_build_staging_retention",
+    "read_only_opengame_preflight",
+    "execution_and_budget_settings_panel",
+    "setup_and_model_settings_entries",
+    "real_browser_opengame_status_recovery_checks"
+  ],
+  "checks": [
+    {
+      "command": ".studio-venv/bin/python -m pytest -q",
+      "passed": 353,
+      "skipped": 11,
+      "seconds": 42.83,
+      "scope": "after budget integration; before separate protocol module"
+    },
+    {
+      "command": "STUDIO_DOCKER_TESTS=1 .studio-venv/bin/python -m pytest -q tests/test_docker_integration.py tests/test_mobile_docker.py",
+      "passed": 11,
+      "seconds": 110.43,
+      "scope": "real Docker with fixed model protocol responses"
+    },
+    {
+      "command": ".studio-venv/bin/python -m pytest -q tests/test_budget.py tests/test_connections.py tests/test_opengame_protocol.py",
+      "passed": 45,
+      "seconds": 0.54,
+      "scope": "final targeted regression"
+    },
+    {
+      "command": ".studio-venv/bin/python -m pytest -q",
+      "passed": 396,
+      "skipped": 11,
+      "seconds": 45.43,
+      "scope": "full Python suite after multi-file/artifact/export changes; before adding opt-in Phaser tests"
+    },
+    {
+      "command": "STUDIO_DOCKER_TESTS=1 .studio-venv/bin/python -m pytest -q tests/test_docker_integration.py tests/test_mobile_docker.py",
+      "passed": 11,
+      "seconds": 107.05,
+      "scope": "real legacy browser/container regression after file and export changes"
+    },
+    {
+      "command": "STUDIO_PHASER_TESTS=1 .studio-venv/bin/python -m pytest -q tests/test_phaser_docker.py",
+      "passed": 2,
+      "seconds": 35.97,
+      "scope": "trusted build scripts ignored candidate configuration; TypeScript failure rejected, before stronger lifecycle checks"
+    },
+    {
+      "command": ".studio-venv/bin/python scripts/verify_phaser.py",
+      "passed_checks": 11,
+      "scope": "latest fixed template: build, resources, actual purchase/upgrade, restart, second purchase; NOT full gameplay QA"
+    },
+    {
+      "command": ".studio-venv/bin/python -m pytest -q tests/test_artifacts.py tests/test_project_files.py tests/test_runner_contract.py tests/test_exports.py",
+      "passed": 30,
+      "seconds": 1.37,
+      "scope": "final targeted Python regression"
+    },
+    {
+      "command": "npm run typecheck && npm run build",
+      "cwd": "frontend",
+      "passed": true
+    },
+    {
+      "command": ".studio-venv/bin/python -m pytest -q tests/test_opengame_tools.py",
+      "passed": 17,
+      "seconds": 1.05,
+      "scope": "MCP tools, auth, transactions, replay, limits, cancellation and expiry"
+    },
+    {
+      "command": ".studio-venv/bin/python -m pytest -q",
+      "passed": 413,
+      "skipped": 13,
+      "seconds": 44.95,
+      "scope": "full Python suite after task-scoped MCP tools; real SDK+Docker checked separately"
+    },
+    {
+      "command": ".studio-venv/bin/python -m pytest -q tests/test_opengame_proxy.py tests/test_opengame_tools.py tests/test_budget.py tests/test_opengame_protocol.py",
+      "passed": 84,
+      "seconds": 2.64,
+      "scope": "proxy, budget, MCP tools and stream event regression after cancellation fixes"
+    },
+    {
+      "command": ".studio-venv/bin/python -m pytest -q",
+      "passed": 449,
+      "skipped": 13,
+      "seconds": 44.92,
+      "scope": "full Python regression after model proxy, SSE framing and early cancellation fixes"
+    },
+    {
+      "passed": 71,
+      "seconds": 3.44,
+      "command": ".studio-venv/bin/python -m pytest -q tests/test_opengame_executor.py tests/test_opengame_proxy.py tests/test_opengame_tools.py",
+      "scope": "executor, proxy and tools; includes cancellation before create acknowledgement and unknown cleanup state"
+    },
+    {
+      "command": ".studio-venv/bin/python -m pytest -q",
+      "passed": 467,
+      "skipped": 13,
+      "seconds": 46.3,
+      "scope": "final full Python regression after disconnected executor and create-cancellation cleanup fixes"
+    },
+    {
+      "command": ".studio-venv/bin/python -m pytest -q",
+      "passed": 480,
+      "skipped": 13,
+      "seconds": 63.48,
+      "scope": "full Python regression after durable CLI recovery; before final duplicate-startup guard and its regression test"
+    },
+    {
+      "command": ".studio-venv/bin/python -m pytest -q tests/test_executor_records.py tests/test_opengame_executor.py tests/test_studio.py tests/test_workbench.py tests/test_sse.py",
+      "passed": 70,
+      "seconds": 2.61,
+      "scope": "final regression after duplicate-startup guard; includes preserving live runs and startup resource cleanup"
+    },
+    {
+      "command": ".studio-venv/bin/python -m pytest -q",
+      "passed": 487,
+      "skipped": 13,
+      "seconds": 52.18,
+      "scope": "full regression after child build tracking and restart recovery; before final staging retention change"
+    },
+    {
+      "command": ".studio-venv/bin/python -m pytest -q tests/test_managed_build.py tests/test_runner_contract.py tests/test_executor_records.py tests/test_opengame_executor.py tests/test_opengame_tools.py tests/test_project_files.py tests/test_artifacts.py",
+      "passed": 85,
+      "seconds": 2.06,
+      "scope": "final regression after preserving staging while container cleanup is uncertain"
+    },
+    {
+      "command": ".studio-venv/bin/python -m pytest -q",
+      "passed": 494,
+      "skipped": 13,
+      "seconds": 46.04,
+      "scope": "full Python regression after read-only diagnostics API and budget price lookup"
+    },
+    {
+      "command": "npm run typecheck && npm run build",
+      "cwd": "frontend",
+      "passed": true,
+      "scope": "final UI after Escape and contrast corrections"
+    },
+    {
+      "command": ".studio-venv/bin/python -m pytest -q tests/test_discovery.py tests/test_verification_ui.py tests/test_opengame_diagnostics.py",
+      "passed": 41,
+      "seconds": 1.55,
+      "scope": "final related regression"
+    }
+  ],
+  "budget": {
+    "enabled": true,
+    "currency": "CNY",
+    "cap_cny": 100.0,
+    "settled_cny": 0.0,
+    "held_cny": 0.0,
+    "remaining_cny": 100.0,
+    "over_budget": false,
+    "calls": 0,
+    "image_attempts": 0,
+    "image_limit": 10,
+    "unsettled_calls": 0
+  },
+  "live_model_verified": false,
+  "missing": [
+    "configured role model credentials",
+    "verified provider prices",
+    "real model CLI/tool compatibility and modification evidence",
+    "workflow integration and template-aware role contracts",
+    "multi-file Phaser user workflow"
+  ],
+  "opengame": {
+    "commit": "c9bea37786af524bf3bbe802f2b67d23816fa5c0",
+    "install_status": "passed",
+    "build_verified": true,
+    "cli_startup_verified": true,
+    "evidence": "docs/evidence/opengame-build.json",
+    "tools_evidence": "docs/evidence/opengame-tools-integration.json",
+    "mcp_sdk_tools_verified": true,
+    "cli_model_loop_verified": false,
+    "proxy_evidence": "docs/evidence/opengame-proxy-integration.json",
+    "fixed_response_cli_loop_verified": true,
+    "process_isolation_verified": true,
+    "container_evidence": "docs/evidence/opengame-container-integration.json",
+    "container_build_evidence": "docs/evidence/opengame-container-build.json",
+    "cli_restart_recovery_verified": true,
+    "recovery_evidence": "docs/evidence/opengame-executor-recovery.json",
+    "diagnostic_build_restart_recovery_verified": true,
+    "ui_evidence": "docs/evidence/opengame-ui/summary.json"
+  },
+  "goal_complete": false,
+  "phaser_evidence": "docs/evidence/phaser-integration/summary.json"
+}

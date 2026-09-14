@@ -1,0 +1,76 @@
+{
+  "passed": true,
+  "build": true,
+  "checks": [
+    {
+      "name": "TypeScript 构建",
+      "passed": true
+    },
+    {
+      "name": "三消参数边界",
+      "passed": true
+    },
+    {
+      "name": "开始游戏",
+      "passed": true
+    },
+    {
+      "name": "棋盘初始可玩",
+      "passed": true
+    },
+    {
+      "name": "无效交换回退",
+      "passed": true
+    },
+    {
+      "name": "禁止跨格交换",
+      "passed": true
+    },
+    {
+      "name": "结算期间禁止重复操作",
+      "passed": true
+    },
+    {
+      "name": "真实交换消除与步数",
+      "passed": true
+    },
+    {
+      "name": "下落补位与连锁",
+      "passed": true
+    },
+    {
+      "name": "无解棋盘重排",
+      "passed": true
+    },
+    {
+      "name": "目标达成与失败",
+      "passed": true
+    },
+    {
+      "name": "重新开始",
+      "passed": true
+    },
+    {
+      "name": "无浏览器异常",
+      "passed": true
+    }
+  ],
+  "console_errors": [],
+  "started_at": "2026-09-12T15:31:19.046Z",
+  "build_log": "",
+  "config": {
+    "title": "糖果连锁",
+    "mode": "match3",
+    "moves": 30,
+    "targetScore": 1000,
+    "gemTypes": 4,
+    "background": "#fcf0f3",
+    "playerColor": "#63bda4",
+    "targetColor": "#efb855",
+    "hazardColor": "#ef8699"
+  },
+  "finished_at": "2026-09-12T15:31:22.567Z",
+  "exit_code": 0,
+  "log": "{\"passed\":true,\"build\":true,\"checks\":[{\"name\":\"TypeScript 构建\",\"passed\":true},{\"name\":\"三消参数边界\",\"passed\":true},{\"name\":\"开始游戏\",\"passed\":true},{\"name\":\"棋盘初始可玩\",\"passed\":true},{\"name\":\"无效交换回退\",\"passed\":true},{\"name\":\"禁止跨格交换\",\"passed\":true},{\"name\":\"结算期间禁止重复操作\",\"passed\":true},{\"name\":\"真实交换消除与步数\",\"passed\":true},{\"name\":\"下落补位与连锁\",\"passed\":true},{\"name\":\"无解棋盘重排\",\"passed\":true},{\"name\":\"目标达成与失败\",\"passed\":true},{\"name\":\"重新开始\",\"passed\":true},{\"name\":\"无浏览器异常\",\"passed\":true}],\"console_errors\":[],\"started_at\":\"2026-09-12T15:31:19.046Z\",\"build_log\":\"\",\"config\":{\"title\":\"糖果连锁\",\"mode\":\"match3\",\"moves\":30,\"targetScore\":1000,\"gemTypes\":4,\"background\":\"#fcf0f3\",\"playerColor\":\"#63bda4\",\"targetColor\":\"#efb855\",\"hazardColor\":\"#ef8699\"},\"finished_at\":\"2026-09-12T15:31:22.567Z\"}\n",
+  "runner": "gamedev-runner:1"
+}

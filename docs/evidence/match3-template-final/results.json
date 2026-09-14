@@ -1,0 +1,1300 @@
+{
+  "mode": "template-regression",
+  "created_at": "2026-09-12T15:35:57.843479+00:00",
+  "records": [
+    {
+      "status": "succeeded",
+      "repairs": 0,
+      "evidence": {
+        "passed": true,
+        "build": true,
+        "checks": [
+          {
+            "name": "TypeScript 构建",
+            "passed": true
+          },
+          {
+            "name": "三消参数边界",
+            "passed": true
+          },
+          {
+            "name": "开始游戏",
+            "passed": true
+          },
+          {
+            "name": "棋盘初始可玩",
+            "passed": true
+          },
+          {
+            "name": "无效交换回退",
+            "passed": true
+          },
+          {
+            "name": "禁止跨格交换",
+            "passed": true
+          },
+          {
+            "name": "结算期间禁止重复操作",
+            "passed": true
+          },
+          {
+            "name": "真实交换消除与步数",
+            "passed": true
+          },
+          {
+            "name": "下落补位与连锁",
+            "passed": true
+          },
+          {
+            "name": "无解棋盘重排",
+            "passed": true
+          },
+          {
+            "name": "目标达成与失败",
+            "passed": true
+          },
+          {
+            "name": "重新开始",
+            "passed": true
+          },
+          {
+            "name": "无浏览器异常",
+            "passed": true
+          }
+        ],
+        "console_errors": [],
+        "started_at": "2026-09-12T15:34:44.282Z",
+        "build_log": "",
+        "config": {
+          "title": "宝石花园",
+          "mode": "match3",
+          "moves": 20,
+          "targetScore": 1200,
+          "gemTypes": 6,
+          "background": "#f0f4fb",
+          "playerColor": "#63bda4",
+          "targetColor": "#efb855",
+          "hazardColor": "#ef8699"
+        },
+        "finished_at": "2026-09-12T15:34:48.308Z",
+        "exit_code": 0,
+        "log": "{\"passed\":true,\"build\":true,\"checks\":[{\"name\":\"TypeScript 构建\",\"passed\":true},{\"name\":\"三消参数边界\",\"passed\":true},{\"name\":\"开始游戏\",\"passed\":true},{\"name\":\"棋盘初始可玩\",\"passed\":true},{\"name\":\"无效交换回退\",\"passed\":true},{\"name\":\"禁止跨格交换\",\"passed\":true},{\"name\":\"结算期间禁止重复操作\",\"passed\":true},{\"name\":\"真实交换消除与步数\",\"passed\":true},{\"name\":\"下落补位与连锁\",\"passed\":true},{\"name\":\"无解棋盘重排\",\"passed\":true},{\"name\":\"目标达成与失败\",\"passed\":true},{\"name\":\"重新开始\",\"passed\":true},{\"name\":\"无浏览器异常\",\"passed\":true}],\"console_errors\":[],\"started_at\":\"2026-09-12T15:34:44.282Z\",\"build_log\":\"\",\"config\":{\"title\":\"宝石花园\",\"mode\":\"match3\",\"moves\":20,\"targetScore\":1200,\"gemTypes\":6,\"background\":\"#f0f4fb\",\"playerColor\":\"#63bda4\",\"targetColor\":\"#efb855\",\"hazardColor\":\"#ef8699\"},\"finished_at\":\"2026-09-12T15:34:48.308Z\"}\n",
+        "runner": "gamedev-runner:1"
+      },
+      "model_calls": [],
+      "source": "authored-template, not LLM generated",
+      "case": "classic",
+      "repeat": 1,
+      "elapsed_seconds": 4.87,
+      "human_playability": null
+    },
+    {
+      "status": "succeeded",
+      "repairs": 0,
+      "evidence": {
+        "passed": true,
+        "build": true,
+        "checks": [
+          {
+            "name": "TypeScript 构建",
+            "passed": true
+          },
+          {
+            "name": "三消参数边界",
+            "passed": true
+          },
+          {
+            "name": "开始游戏",
+            "passed": true
+          },
+          {
+            "name": "棋盘初始可玩",
+            "passed": true
+          },
+          {
+            "name": "无效交换回退",
+            "passed": true
+          },
+          {
+            "name": "禁止跨格交换",
+            "passed": true
+          },
+          {
+            "name": "结算期间禁止重复操作",
+            "passed": true
+          },
+          {
+            "name": "真实交换消除与步数",
+            "passed": true
+          },
+          {
+            "name": "下落补位与连锁",
+            "passed": true
+          },
+          {
+            "name": "无解棋盘重排",
+            "passed": true
+          },
+          {
+            "name": "目标达成与失败",
+            "passed": true
+          },
+          {
+            "name": "重新开始",
+            "passed": true
+          },
+          {
+            "name": "无浏览器异常",
+            "passed": true
+          }
+        ],
+        "console_errors": [],
+        "started_at": "2026-09-12T15:34:48.924Z",
+        "build_log": "",
+        "config": {
+          "title": "宝石花园",
+          "mode": "match3",
+          "moves": 20,
+          "targetScore": 1200,
+          "gemTypes": 6,
+          "background": "#f0f4fb",
+          "playerColor": "#63bda4",
+          "targetColor": "#efb855",
+          "hazardColor": "#ef8699"
+        },
+        "finished_at": "2026-09-12T15:34:53.214Z",
+        "exit_code": 0,
+        "log": "{\"passed\":true,\"build\":true,\"checks\":[{\"name\":\"TypeScript 构建\",\"passed\":true},{\"name\":\"三消参数边界\",\"passed\":true},{\"name\":\"开始游戏\",\"passed\":true},{\"name\":\"棋盘初始可玩\",\"passed\":true},{\"name\":\"无效交换回退\",\"passed\":true},{\"name\":\"禁止跨格交换\",\"passed\":true},{\"name\":\"结算期间禁止重复操作\",\"passed\":true},{\"name\":\"真实交换消除与步数\",\"passed\":true},{\"name\":\"下落补位与连锁\",\"passed\":true},{\"name\":\"无解棋盘重排\",\"passed\":true},{\"name\":\"目标达成与失败\",\"passed\":true},{\"name\":\"重新开始\",\"passed\":true},{\"name\":\"无浏览器异常\",\"passed\":true}],\"console_errors\":[],\"started_at\":\"2026-09-12T15:34:48.924Z\",\"build_log\":\"\",\"config\":{\"title\":\"宝石花园\",\"mode\":\"match3\",\"moves\":20,\"targetScore\":1200,\"gemTypes\":6,\"background\":\"#f0f4fb\",\"playerColor\":\"#63bda4\",\"targetColor\":\"#efb855\",\"hazardColor\":\"#ef8699\"},\"finished_at\":\"2026-09-12T15:34:53.214Z\"}\n",
+        "runner": "gamedev-runner:1"
+      },
+      "model_calls": [],
+      "source": "authored-template, not LLM generated",
+      "case": "classic",
+      "repeat": 2,
+      "elapsed_seconds": 4.87,
+      "human_playability": null
+    },
+    {
+      "status": "succeeded",
+      "repairs": 0,
+      "evidence": {
+        "passed": true,
+        "build": true,
+        "checks": [
+          {
+            "name": "TypeScript 构建",
+            "passed": true
+          },
+          {
+            "name": "三消参数边界",
+            "passed": true
+          },
+          {
+            "name": "开始游戏",
+            "passed": true
+          },
+          {
+            "name": "棋盘初始可玩",
+            "passed": true
+          },
+          {
+            "name": "无效交换回退",
+            "passed": true
+          },
+          {
+            "name": "禁止跨格交换",
+            "passed": true
+          },
+          {
+            "name": "结算期间禁止重复操作",
+            "passed": true
+          },
+          {
+            "name": "真实交换消除与步数",
+            "passed": true
+          },
+          {
+            "name": "下落补位与连锁",
+            "passed": true
+          },
+          {
+            "name": "无解棋盘重排",
+            "passed": true
+          },
+          {
+            "name": "目标达成与失败",
+            "passed": true
+          },
+          {
+            "name": "重新开始",
+            "passed": true
+          },
+          {
+            "name": "无浏览器异常",
+            "passed": true
+          }
+        ],
+        "console_errors": [],
+        "started_at": "2026-09-12T15:34:53.664Z",
+        "build_log": "",
+        "config": {
+          "title": "宝石花园",
+          "mode": "match3",
+          "moves": 20,
+          "targetScore": 1200,
+          "gemTypes": 6,
+          "background": "#f0f4fb",
+          "playerColor": "#63bda4",
+          "targetColor": "#efb855",
+          "hazardColor": "#ef8699"
+        },
+        "finished_at": "2026-09-12T15:34:57.842Z",
+        "exit_code": 0,
+        "log": "{\"passed\":true,\"build\":true,\"checks\":[{\"name\":\"TypeScript 构建\",\"passed\":true},{\"name\":\"三消参数边界\",\"passed\":true},{\"name\":\"开始游戏\",\"passed\":true},{\"name\":\"棋盘初始可玩\",\"passed\":true},{\"name\":\"无效交换回退\",\"passed\":true},{\"name\":\"禁止跨格交换\",\"passed\":true},{\"name\":\"结算期间禁止重复操作\",\"passed\":true},{\"name\":\"真实交换消除与步数\",\"passed\":true},{\"name\":\"下落补位与连锁\",\"passed\":true},{\"name\":\"无解棋盘重排\",\"passed\":true},{\"name\":\"目标达成与失败\",\"passed\":true},{\"name\":\"重新开始\",\"passed\":true},{\"name\":\"无浏览器异常\",\"passed\":true}],\"console_errors\":[],\"started_at\":\"2026-09-12T15:34:53.664Z\",\"build_log\":\"\",\"config\":{\"title\":\"宝石花园\",\"mode\":\"match3\",\"moves\":20,\"targetScore\":1200,\"gemTypes\":6,\"background\":\"#f0f4fb\",\"playerColor\":\"#63bda4\",\"targetColor\":\"#efb855\",\"hazardColor\":\"#ef8699\"},\"finished_at\":\"2026-09-12T15:34:57.842Z\"}\n",
+        "runner": "gamedev-runner:1"
+      },
+      "model_calls": [],
+      "source": "authored-template, not LLM generated",
+      "case": "classic",
+      "repeat": 3,
+      "elapsed_seconds": 4.63,
+      "human_playability": null
+    },
+    {
+      "status": "succeeded",
+      "repairs": 0,
+      "evidence": {
+        "passed": true,
+        "build": true,
+        "checks": [
+          {
+            "name": "TypeScript 构建",
+            "passed": true
+          },
+          {
+            "name": "三消参数边界",
+            "passed": true
+          },
+          {
+            "name": "开始游戏",
+            "passed": true
+          },
+          {
+            "name": "棋盘初始可玩",
+            "passed": true
+          },
+          {
+            "name": "无效交换回退",
+            "passed": true
+          },
+          {
+            "name": "禁止跨格交换",
+            "passed": true
+          },
+          {
+            "name": "结算期间禁止重复操作",
+            "passed": true
+          },
+          {
+            "name": "真实交换消除与步数",
+            "passed": true
+          },
+          {
+            "name": "下落补位与连锁",
+            "passed": true
+          },
+          {
+            "name": "无解棋盘重排",
+            "passed": true
+          },
+          {
+            "name": "目标达成与失败",
+            "passed": true
+          },
+          {
+            "name": "重新开始",
+            "passed": true
+          },
+          {
+            "name": "无浏览器异常",
+            "passed": true
+          }
+        ],
+        "console_errors": [],
+        "started_at": "2026-09-12T15:34:58.300Z",
+        "build_log": "",
+        "config": {
+          "title": "糖果连锁",
+          "mode": "match3",
+          "moves": 30,
+          "targetScore": 1000,
+          "gemTypes": 4,
+          "background": "#fcf0f3",
+          "playerColor": "#63bda4",
+          "targetColor": "#efb855",
+          "hazardColor": "#ef8699"
+        },
+        "finished_at": "2026-09-12T15:35:02.410Z",
+        "exit_code": 0,
+        "log": "{\"passed\":true,\"build\":true,\"checks\":[{\"name\":\"TypeScript 构建\",\"passed\":true},{\"name\":\"三消参数边界\",\"passed\":true},{\"name\":\"开始游戏\",\"passed\":true},{\"name\":\"棋盘初始可玩\",\"passed\":true},{\"name\":\"无效交换回退\",\"passed\":true},{\"name\":\"禁止跨格交换\",\"passed\":true},{\"name\":\"结算期间禁止重复操作\",\"passed\":true},{\"name\":\"真实交换消除与步数\",\"passed\":true},{\"name\":\"下落补位与连锁\",\"passed\":true},{\"name\":\"无解棋盘重排\",\"passed\":true},{\"name\":\"目标达成与失败\",\"passed\":true},{\"name\":\"重新开始\",\"passed\":true},{\"name\":\"无浏览器异常\",\"passed\":true}],\"console_errors\":[],\"started_at\":\"2026-09-12T15:34:58.300Z\",\"build_log\":\"\",\"config\":{\"title\":\"糖果连锁\",\"mode\":\"match3\",\"moves\":30,\"targetScore\":1000,\"gemTypes\":4,\"background\":\"#fcf0f3\",\"playerColor\":\"#63bda4\",\"targetColor\":\"#efb855\",\"hazardColor\":\"#ef8699\"},\"finished_at\":\"2026-09-12T15:35:02.410Z\"}\n",
+        "runner": "gamedev-runner:1"
+      },
+      "model_calls": [],
+      "source": "authored-template, not LLM generated",
+      "case": "relaxed",
+      "repeat": 1,
+      "elapsed_seconds": 4.62,
+      "human_playability": null
+    },
+    {
+      "status": "succeeded",
+      "repairs": 0,
+      "evidence": {
+        "passed": true,
+        "build": true,
+        "checks": [
+          {
+            "name": "TypeScript 构建",
+            "passed": true
+          },
+          {
+            "name": "三消参数边界",
+            "passed": true
+          },
+          {
+            "name": "开始游戏",
+            "passed": true
+          },
+          {
+            "name": "棋盘初始可玩",
+            "passed": true
+          },
+          {
+            "name": "无效交换回退",
+            "passed": true
+          },
+          {
+            "name": "禁止跨格交换",
+            "passed": true
+          },
+          {
+            "name": "结算期间禁止重复操作",
+            "passed": true
+          },
+          {
+            "name": "真实交换消除与步数",
+            "passed": true
+          },
+          {
+            "name": "下落补位与连锁",
+            "passed": true
+          },
+          {
+            "name": "无解棋盘重排",
+            "passed": true
+          },
+          {
+            "name": "目标达成与失败",
+            "passed": true
+          },
+          {
+            "name": "重新开始",
+            "passed": true
+          },
+          {
+            "name": "无浏览器异常",
+            "passed": true
+          }
+        ],
+        "console_errors": [],
+        "started_at": "2026-09-12T15:35:02.973Z",
+        "build_log": "",
+        "config": {
+          "title": "糖果连锁",
+          "mode": "match3",
+          "moves": 30,
+          "targetScore": 1000,
+          "gemTypes": 4,
+          "background": "#fcf0f3",
+          "playerColor": "#63bda4",
+          "targetColor": "#efb855",
+          "hazardColor": "#ef8699"
+        },
+        "finished_at": "2026-09-12T15:35:06.571Z",
+        "exit_code": 0,
+        "log": "{\"passed\":true,\"build\":true,\"checks\":[{\"name\":\"TypeScript 构建\",\"passed\":true},{\"name\":\"三消参数边界\",\"passed\":true},{\"name\":\"开始游戏\",\"passed\":true},{\"name\":\"棋盘初始可玩\",\"passed\":true},{\"name\":\"无效交换回退\",\"passed\":true},{\"name\":\"禁止跨格交换\",\"passed\":true},{\"name\":\"结算期间禁止重复操作\",\"passed\":true},{\"name\":\"真实交换消除与步数\",\"passed\":true},{\"name\":\"下落补位与连锁\",\"passed\":true},{\"name\":\"无解棋盘重排\",\"passed\":true},{\"name\":\"目标达成与失败\",\"passed\":true},{\"name\":\"重新开始\",\"passed\":true},{\"name\":\"无浏览器异常\",\"passed\":true}],\"console_errors\":[],\"started_at\":\"2026-09-12T15:35:02.973Z\",\"build_log\":\"\",\"config\":{\"title\":\"糖果连锁\",\"mode\":\"match3\",\"moves\":30,\"targetScore\":1000,\"gemTypes\":4,\"background\":\"#fcf0f3\",\"playerColor\":\"#63bda4\",\"targetColor\":\"#efb855\",\"hazardColor\":\"#ef8699\"},\"finished_at\":\"2026-09-12T15:35:06.571Z\"}\n",
+        "runner": "gamedev-runner:1"
+      },
+      "model_calls": [],
+      "source": "authored-template, not LLM generated",
+      "case": "relaxed",
+      "repeat": 2,
+      "elapsed_seconds": 4.11,
+      "human_playability": null
+    },
+    {
+      "status": "succeeded",
+      "repairs": 0,
+      "evidence": {
+        "passed": true,
+        "build": true,
+        "checks": [
+          {
+            "name": "TypeScript 构建",
+            "passed": true
+          },
+          {
+            "name": "三消参数边界",
+            "passed": true
+          },
+          {
+            "name": "开始游戏",
+            "passed": true
+          },
+          {
+            "name": "棋盘初始可玩",
+            "passed": true
+          },
+          {
+            "name": "无效交换回退",
+            "passed": true
+          },
+          {
+            "name": "禁止跨格交换",
+            "passed": true
+          },
+          {
+            "name": "结算期间禁止重复操作",
+            "passed": true
+          },
+          {
+            "name": "真实交换消除与步数",
+            "passed": true
+          },
+          {
+            "name": "下落补位与连锁",
+            "passed": true
+          },
+          {
+            "name": "无解棋盘重排",
+            "passed": true
+          },
+          {
+            "name": "目标达成与失败",
+            "passed": true
+          },
+          {
+            "name": "重新开始",
+            "passed": true
+          },
+          {
+            "name": "无浏览器异常",
+            "passed": true
+          }
+        ],
+        "console_errors": [],
+        "started_at": "2026-09-12T15:35:06.999Z",
+        "build_log": "",
+        "config": {
+          "title": "糖果连锁",
+          "mode": "match3",
+          "moves": 30,
+          "targetScore": 1000,
+          "gemTypes": 4,
+          "background": "#fcf0f3",
+          "playerColor": "#63bda4",
+          "targetColor": "#efb855",
+          "hazardColor": "#ef8699"
+        },
+        "finished_at": "2026-09-12T15:35:11.240Z",
+        "exit_code": 0,
+        "log": "{\"passed\":true,\"build\":true,\"checks\":[{\"name\":\"TypeScript 构建\",\"passed\":true},{\"name\":\"三消参数边界\",\"passed\":true},{\"name\":\"开始游戏\",\"passed\":true},{\"name\":\"棋盘初始可玩\",\"passed\":true},{\"name\":\"无效交换回退\",\"passed\":true},{\"name\":\"禁止跨格交换\",\"passed\":true},{\"name\":\"结算期间禁止重复操作\",\"passed\":true},{\"name\":\"真实交换消除与步数\",\"passed\":true},{\"name\":\"下落补位与连锁\",\"passed\":true},{\"name\":\"无解棋盘重排\",\"passed\":true},{\"name\":\"目标达成与失败\",\"passed\":true},{\"name\":\"重新开始\",\"passed\":true},{\"name\":\"无浏览器异常\",\"passed\":true}],\"console_errors\":[],\"started_at\":\"2026-09-12T15:35:06.999Z\",\"build_log\":\"\",\"config\":{\"title\":\"糖果连锁\",\"mode\":\"match3\",\"moves\":30,\"targetScore\":1000,\"gemTypes\":4,\"background\":\"#fcf0f3\",\"playerColor\":\"#63bda4\",\"targetColor\":\"#efb855\",\"hazardColor\":\"#ef8699\"},\"finished_at\":\"2026-09-12T15:35:11.240Z\"}\n",
+        "runner": "gamedev-runner:1"
+      },
+      "model_calls": [],
+      "source": "authored-template, not LLM generated",
+      "case": "relaxed",
+      "repeat": 3,
+      "elapsed_seconds": 4.72,
+      "human_playability": null
+    },
+    {
+      "status": "succeeded",
+      "repairs": 0,
+      "evidence": {
+        "passed": true,
+        "build": true,
+        "checks": [
+          {
+            "name": "TypeScript 构建",
+            "passed": true
+          },
+          {
+            "name": "三消参数边界",
+            "passed": true
+          },
+          {
+            "name": "开始游戏",
+            "passed": true
+          },
+          {
+            "name": "棋盘初始可玩",
+            "passed": true
+          },
+          {
+            "name": "无效交换回退",
+            "passed": true
+          },
+          {
+            "name": "禁止跨格交换",
+            "passed": true
+          },
+          {
+            "name": "结算期间禁止重复操作",
+            "passed": true
+          },
+          {
+            "name": "真实交换消除与步数",
+            "passed": true
+          },
+          {
+            "name": "下落补位与连锁",
+            "passed": true
+          },
+          {
+            "name": "无解棋盘重排",
+            "passed": true
+          },
+          {
+            "name": "目标达成与失败",
+            "passed": true
+          },
+          {
+            "name": "重新开始",
+            "passed": true
+          },
+          {
+            "name": "无浏览器异常",
+            "passed": true
+          }
+        ],
+        "console_errors": [],
+        "started_at": "2026-09-12T15:35:11.902Z",
+        "build_log": "",
+        "config": {
+          "title": "五色花园",
+          "mode": "match3",
+          "moves": 25,
+          "targetScore": 1500,
+          "gemTypes": 5,
+          "background": "#edf6f0",
+          "playerColor": "#63bda4",
+          "targetColor": "#efb855",
+          "hazardColor": "#ef8699"
+        },
+        "finished_at": "2026-09-12T15:35:16.294Z",
+        "exit_code": 0,
+        "log": "{\"passed\":true,\"build\":true,\"checks\":[{\"name\":\"TypeScript 构建\",\"passed\":true},{\"name\":\"三消参数边界\",\"passed\":true},{\"name\":\"开始游戏\",\"passed\":true},{\"name\":\"棋盘初始可玩\",\"passed\":true},{\"name\":\"无效交换回退\",\"passed\":true},{\"name\":\"禁止跨格交换\",\"passed\":true},{\"name\":\"结算期间禁止重复操作\",\"passed\":true},{\"name\":\"真实交换消除与步数\",\"passed\":true},{\"name\":\"下落补位与连锁\",\"passed\":true},{\"name\":\"无解棋盘重排\",\"passed\":true},{\"name\":\"目标达成与失败\",\"passed\":true},{\"name\":\"重新开始\",\"passed\":true},{\"name\":\"无浏览器异常\",\"passed\":true}],\"console_errors\":[],\"started_at\":\"2026-09-12T15:35:11.902Z\",\"build_log\":\"\",\"config\":{\"title\":\"五色花园\",\"mode\":\"match3\",\"moves\":25,\"targetScore\":1500,\"gemTypes\":5,\"background\":\"#edf6f0\",\"playerColor\":\"#63bda4\",\"targetColor\":\"#efb855\",\"hazardColor\":\"#ef8699\"},\"finished_at\":\"2026-09-12T15:35:16.294Z\"}\n",
+        "runner": "gamedev-runner:1"
+      },
+      "model_calls": [],
+      "source": "authored-template, not LLM generated",
+      "case": "five-gems",
+      "repeat": 1,
+      "elapsed_seconds": 5.02,
+      "human_playability": null
+    },
+    {
+      "status": "succeeded",
+      "repairs": 0,
+      "evidence": {
+        "passed": true,
+        "build": true,
+        "checks": [
+          {
+            "name": "TypeScript 构建",
+            "passed": true
+          },
+          {
+            "name": "三消参数边界",
+            "passed": true
+          },
+          {
+            "name": "开始游戏",
+            "passed": true
+          },
+          {
+            "name": "棋盘初始可玩",
+            "passed": true
+          },
+          {
+            "name": "无效交换回退",
+            "passed": true
+          },
+          {
+            "name": "禁止跨格交换",
+            "passed": true
+          },
+          {
+            "name": "结算期间禁止重复操作",
+            "passed": true
+          },
+          {
+            "name": "真实交换消除与步数",
+            "passed": true
+          },
+          {
+            "name": "下落补位与连锁",
+            "passed": true
+          },
+          {
+            "name": "无解棋盘重排",
+            "passed": true
+          },
+          {
+            "name": "目标达成与失败",
+            "passed": true
+          },
+          {
+            "name": "重新开始",
+            "passed": true
+          },
+          {
+            "name": "无浏览器异常",
+            "passed": true
+          }
+        ],
+        "console_errors": [],
+        "started_at": "2026-09-12T15:35:16.740Z",
+        "build_log": "",
+        "config": {
+          "title": "五色花园",
+          "mode": "match3",
+          "moves": 25,
+          "targetScore": 1500,
+          "gemTypes": 5,
+          "background": "#edf6f0",
+          "playerColor": "#63bda4",
+          "targetColor": "#efb855",
+          "hazardColor": "#ef8699"
+        },
+        "finished_at": "2026-09-12T15:35:20.733Z",
+        "exit_code": 0,
+        "log": "{\"passed\":true,\"build\":true,\"checks\":[{\"name\":\"TypeScript 构建\",\"passed\":true},{\"name\":\"三消参数边界\",\"passed\":true},{\"name\":\"开始游戏\",\"passed\":true},{\"name\":\"棋盘初始可玩\",\"passed\":true},{\"name\":\"无效交换回退\",\"passed\":true},{\"name\":\"禁止跨格交换\",\"passed\":true},{\"name\":\"结算期间禁止重复操作\",\"passed\":true},{\"name\":\"真实交换消除与步数\",\"passed\":true},{\"name\":\"下落补位与连锁\",\"passed\":true},{\"name\":\"无解棋盘重排\",\"passed\":true},{\"name\":\"目标达成与失败\",\"passed\":true},{\"name\":\"重新开始\",\"passed\":true},{\"name\":\"无浏览器异常\",\"passed\":true}],\"console_errors\":[],\"started_at\":\"2026-09-12T15:35:16.740Z\",\"build_log\":\"\",\"config\":{\"title\":\"五色花园\",\"mode\":\"match3\",\"moves\":25,\"targetScore\":1500,\"gemTypes\":5,\"background\":\"#edf6f0\",\"playerColor\":\"#63bda4\",\"targetColor\":\"#efb855\",\"hazardColor\":\"#ef8699\"},\"finished_at\":\"2026-09-12T15:35:20.733Z\"}\n",
+        "runner": "gamedev-runner:1"
+      },
+      "model_calls": [],
+      "source": "authored-template, not LLM generated",
+      "case": "five-gems",
+      "repeat": 2,
+      "elapsed_seconds": 4.43,
+      "human_playability": null
+    },
+    {
+      "status": "succeeded",
+      "repairs": 0,
+      "evidence": {
+        "passed": true,
+        "build": true,
+        "checks": [
+          {
+            "name": "TypeScript 构建",
+            "passed": true
+          },
+          {
+            "name": "三消参数边界",
+            "passed": true
+          },
+          {
+            "name": "开始游戏",
+            "passed": true
+          },
+          {
+            "name": "棋盘初始可玩",
+            "passed": true
+          },
+          {
+            "name": "无效交换回退",
+            "passed": true
+          },
+          {
+            "name": "禁止跨格交换",
+            "passed": true
+          },
+          {
+            "name": "结算期间禁止重复操作",
+            "passed": true
+          },
+          {
+            "name": "真实交换消除与步数",
+            "passed": true
+          },
+          {
+            "name": "下落补位与连锁",
+            "passed": true
+          },
+          {
+            "name": "无解棋盘重排",
+            "passed": true
+          },
+          {
+            "name": "目标达成与失败",
+            "passed": true
+          },
+          {
+            "name": "重新开始",
+            "passed": true
+          },
+          {
+            "name": "无浏览器异常",
+            "passed": true
+          }
+        ],
+        "console_errors": [],
+        "started_at": "2026-09-12T15:35:21.284Z",
+        "build_log": "",
+        "config": {
+          "title": "五色花园",
+          "mode": "match3",
+          "moves": 25,
+          "targetScore": 1500,
+          "gemTypes": 5,
+          "background": "#edf6f0",
+          "playerColor": "#63bda4",
+          "targetColor": "#efb855",
+          "hazardColor": "#ef8699"
+        },
+        "finished_at": "2026-09-12T15:35:25.012Z",
+        "exit_code": 0,
+        "log": "{\"passed\":true,\"build\":true,\"checks\":[{\"name\":\"TypeScript 构建\",\"passed\":true},{\"name\":\"三消参数边界\",\"passed\":true},{\"name\":\"开始游戏\",\"passed\":true},{\"name\":\"棋盘初始可玩\",\"passed\":true},{\"name\":\"无效交换回退\",\"passed\":true},{\"name\":\"禁止跨格交换\",\"passed\":true},{\"name\":\"结算期间禁止重复操作\",\"passed\":true},{\"name\":\"真实交换消除与步数\",\"passed\":true},{\"name\":\"下落补位与连锁\",\"passed\":true},{\"name\":\"无解棋盘重排\",\"passed\":true},{\"name\":\"目标达成与失败\",\"passed\":true},{\"name\":\"重新开始\",\"passed\":true},{\"name\":\"无浏览器异常\",\"passed\":true}],\"console_errors\":[],\"started_at\":\"2026-09-12T15:35:21.284Z\",\"build_log\":\"\",\"config\":{\"title\":\"五色花园\",\"mode\":\"match3\",\"moves\":25,\"targetScore\":1500,\"gemTypes\":5,\"background\":\"#edf6f0\",\"playerColor\":\"#63bda4\",\"targetColor\":\"#efb855\",\"hazardColor\":\"#ef8699\"},\"finished_at\":\"2026-09-12T15:35:25.012Z\"}\n",
+        "runner": "gamedev-runner:1"
+      },
+      "model_calls": [],
+      "source": "authored-template, not LLM generated",
+      "case": "five-gems",
+      "repeat": 3,
+      "elapsed_seconds": 4.27,
+      "human_playability": null
+    },
+    {
+      "status": "succeeded",
+      "repairs": 0,
+      "evidence": {
+        "passed": true,
+        "build": true,
+        "checks": [
+          {
+            "name": "TypeScript 构建",
+            "passed": true
+          },
+          {
+            "name": "三消参数边界",
+            "passed": true
+          },
+          {
+            "name": "开始游戏",
+            "passed": true
+          },
+          {
+            "name": "棋盘初始可玩",
+            "passed": true
+          },
+          {
+            "name": "无效交换回退",
+            "passed": true
+          },
+          {
+            "name": "禁止跨格交换",
+            "passed": true
+          },
+          {
+            "name": "结算期间禁止重复操作",
+            "passed": true
+          },
+          {
+            "name": "真实交换消除与步数",
+            "passed": true
+          },
+          {
+            "name": "下落补位与连锁",
+            "passed": true
+          },
+          {
+            "name": "无解棋盘重排",
+            "passed": true
+          },
+          {
+            "name": "目标达成与失败",
+            "passed": true
+          },
+          {
+            "name": "重新开始",
+            "passed": true
+          },
+          {
+            "name": "无浏览器异常",
+            "passed": true
+          }
+        ],
+        "console_errors": [],
+        "started_at": "2026-09-12T15:35:25.410Z",
+        "build_log": "",
+        "config": {
+          "title": "星夜挑战",
+          "mode": "match3",
+          "moves": 15,
+          "targetScore": 1800,
+          "gemTypes": 6,
+          "background": "#17233d",
+          "playerColor": "#63bda4",
+          "targetColor": "#efb855",
+          "hazardColor": "#ef8699"
+        },
+        "finished_at": "2026-09-12T15:35:29.096Z",
+        "exit_code": 0,
+        "log": "{\"passed\":true,\"build\":true,\"checks\":[{\"name\":\"TypeScript 构建\",\"passed\":true},{\"name\":\"三消参数边界\",\"passed\":true},{\"name\":\"开始游戏\",\"passed\":true},{\"name\":\"棋盘初始可玩\",\"passed\":true},{\"name\":\"无效交换回退\",\"passed\":true},{\"name\":\"禁止跨格交换\",\"passed\":true},{\"name\":\"结算期间禁止重复操作\",\"passed\":true},{\"name\":\"真实交换消除与步数\",\"passed\":true},{\"name\":\"下落补位与连锁\",\"passed\":true},{\"name\":\"无解棋盘重排\",\"passed\":true},{\"name\":\"目标达成与失败\",\"passed\":true},{\"name\":\"重新开始\",\"passed\":true},{\"name\":\"无浏览器异常\",\"passed\":true}],\"console_errors\":[],\"started_at\":\"2026-09-12T15:35:25.410Z\",\"build_log\":\"\",\"config\":{\"title\":\"星夜挑战\",\"mode\":\"match3\",\"moves\":15,\"targetScore\":1800,\"gemTypes\":6,\"background\":\"#17233d\",\"playerColor\":\"#63bda4\",\"targetColor\":\"#efb855\",\"hazardColor\":\"#ef8699\"},\"finished_at\":\"2026-09-12T15:35:29.096Z\"}\n",
+        "runner": "gamedev-runner:1"
+      },
+      "model_calls": [],
+      "source": "authored-template, not LLM generated",
+      "case": "challenge",
+      "repeat": 1,
+      "elapsed_seconds": 4.11,
+      "human_playability": null
+    },
+    {
+      "status": "succeeded",
+      "repairs": 0,
+      "evidence": {
+        "passed": true,
+        "build": true,
+        "checks": [
+          {
+            "name": "TypeScript 构建",
+            "passed": true
+          },
+          {
+            "name": "三消参数边界",
+            "passed": true
+          },
+          {
+            "name": "开始游戏",
+            "passed": true
+          },
+          {
+            "name": "棋盘初始可玩",
+            "passed": true
+          },
+          {
+            "name": "无效交换回退",
+            "passed": true
+          },
+          {
+            "name": "禁止跨格交换",
+            "passed": true
+          },
+          {
+            "name": "结算期间禁止重复操作",
+            "passed": true
+          },
+          {
+            "name": "真实交换消除与步数",
+            "passed": true
+          },
+          {
+            "name": "下落补位与连锁",
+            "passed": true
+          },
+          {
+            "name": "无解棋盘重排",
+            "passed": true
+          },
+          {
+            "name": "目标达成与失败",
+            "passed": true
+          },
+          {
+            "name": "重新开始",
+            "passed": true
+          },
+          {
+            "name": "无浏览器异常",
+            "passed": true
+          }
+        ],
+        "console_errors": [],
+        "started_at": "2026-09-12T15:35:29.526Z",
+        "build_log": "",
+        "config": {
+          "title": "星夜挑战",
+          "mode": "match3",
+          "moves": 15,
+          "targetScore": 1800,
+          "gemTypes": 6,
+          "background": "#17233d",
+          "playerColor": "#63bda4",
+          "targetColor": "#efb855",
+          "hazardColor": "#ef8699"
+        },
+        "finished_at": "2026-09-12T15:35:33.395Z",
+        "exit_code": 0,
+        "log": "{\"passed\":true,\"build\":true,\"checks\":[{\"name\":\"TypeScript 构建\",\"passed\":true},{\"name\":\"三消参数边界\",\"passed\":true},{\"name\":\"开始游戏\",\"passed\":true},{\"name\":\"棋盘初始可玩\",\"passed\":true},{\"name\":\"无效交换回退\",\"passed\":true},{\"name\":\"禁止跨格交换\",\"passed\":true},{\"name\":\"结算期间禁止重复操作\",\"passed\":true},{\"name\":\"真实交换消除与步数\",\"passed\":true},{\"name\":\"下落补位与连锁\",\"passed\":true},{\"name\":\"无解棋盘重排\",\"passed\":true},{\"name\":\"目标达成与失败\",\"passed\":true},{\"name\":\"重新开始\",\"passed\":true},{\"name\":\"无浏览器异常\",\"passed\":true}],\"console_errors\":[],\"started_at\":\"2026-09-12T15:35:29.526Z\",\"build_log\":\"\",\"config\":{\"title\":\"星夜挑战\",\"mode\":\"match3\",\"moves\":15,\"targetScore\":1800,\"gemTypes\":6,\"background\":\"#17233d\",\"playerColor\":\"#63bda4\",\"targetColor\":\"#efb855\",\"hazardColor\":\"#ef8699\"},\"finished_at\":\"2026-09-12T15:35:33.395Z\"}\n",
+        "runner": "gamedev-runner:1"
+      },
+      "model_calls": [],
+      "source": "authored-template, not LLM generated",
+      "case": "challenge",
+      "repeat": 2,
+      "elapsed_seconds": 4.28,
+      "human_playability": null
+    },
+    {
+      "status": "succeeded",
+      "repairs": 0,
+      "evidence": {
+        "passed": true,
+        "build": true,
+        "checks": [
+          {
+            "name": "TypeScript 构建",
+            "passed": true
+          },
+          {
+            "name": "三消参数边界",
+            "passed": true
+          },
+          {
+            "name": "开始游戏",
+            "passed": true
+          },
+          {
+            "name": "棋盘初始可玩",
+            "passed": true
+          },
+          {
+            "name": "无效交换回退",
+            "passed": true
+          },
+          {
+            "name": "禁止跨格交换",
+            "passed": true
+          },
+          {
+            "name": "结算期间禁止重复操作",
+            "passed": true
+          },
+          {
+            "name": "真实交换消除与步数",
+            "passed": true
+          },
+          {
+            "name": "下落补位与连锁",
+            "passed": true
+          },
+          {
+            "name": "无解棋盘重排",
+            "passed": true
+          },
+          {
+            "name": "目标达成与失败",
+            "passed": true
+          },
+          {
+            "name": "重新开始",
+            "passed": true
+          },
+          {
+            "name": "无浏览器异常",
+            "passed": true
+          }
+        ],
+        "console_errors": [],
+        "started_at": "2026-09-12T15:35:33.870Z",
+        "build_log": "",
+        "config": {
+          "title": "星夜挑战",
+          "mode": "match3",
+          "moves": 15,
+          "targetScore": 1800,
+          "gemTypes": 6,
+          "background": "#17233d",
+          "playerColor": "#63bda4",
+          "targetColor": "#efb855",
+          "hazardColor": "#ef8699"
+        },
+        "finished_at": "2026-09-12T15:35:38.145Z",
+        "exit_code": 0,
+        "log": "{\"passed\":true,\"build\":true,\"checks\":[{\"name\":\"TypeScript 构建\",\"passed\":true},{\"name\":\"三消参数边界\",\"passed\":true},{\"name\":\"开始游戏\",\"passed\":true},{\"name\":\"棋盘初始可玩\",\"passed\":true},{\"name\":\"无效交换回退\",\"passed\":true},{\"name\":\"禁止跨格交换\",\"passed\":true},{\"name\":\"结算期间禁止重复操作\",\"passed\":true},{\"name\":\"真实交换消除与步数\",\"passed\":true},{\"name\":\"下落补位与连锁\",\"passed\":true},{\"name\":\"无解棋盘重排\",\"passed\":true},{\"name\":\"目标达成与失败\",\"passed\":true},{\"name\":\"重新开始\",\"passed\":true},{\"name\":\"无浏览器异常\",\"passed\":true}],\"console_errors\":[],\"started_at\":\"2026-09-12T15:35:33.870Z\",\"build_log\":\"\",\"config\":{\"title\":\"星夜挑战\",\"mode\":\"match3\",\"moves\":15,\"targetScore\":1800,\"gemTypes\":6,\"background\":\"#17233d\",\"playerColor\":\"#63bda4\",\"targetColor\":\"#efb855\",\"hazardColor\":\"#ef8699\"},\"finished_at\":\"2026-09-12T15:35:38.145Z\"}\n",
+        "runner": "gamedev-runner:1"
+      },
+      "model_calls": [],
+      "source": "authored-template, not LLM generated",
+      "case": "challenge",
+      "repeat": 3,
+      "elapsed_seconds": 4.78,
+      "human_playability": null
+    },
+    {
+      "status": "succeeded",
+      "repairs": 0,
+      "evidence": {
+        "passed": true,
+        "build": true,
+        "checks": [
+          {
+            "name": "TypeScript 构建",
+            "passed": true
+          },
+          {
+            "name": "三消参数边界",
+            "passed": true
+          },
+          {
+            "name": "开始游戏",
+            "passed": true
+          },
+          {
+            "name": "棋盘初始可玩",
+            "passed": true
+          },
+          {
+            "name": "无效交换回退",
+            "passed": true
+          },
+          {
+            "name": "禁止跨格交换",
+            "passed": true
+          },
+          {
+            "name": "结算期间禁止重复操作",
+            "passed": true
+          },
+          {
+            "name": "真实交换消除与步数",
+            "passed": true
+          },
+          {
+            "name": "下落补位与连锁",
+            "passed": true
+          },
+          {
+            "name": "无解棋盘重排",
+            "passed": true
+          },
+          {
+            "name": "目标达成与失败",
+            "passed": true
+          },
+          {
+            "name": "重新开始",
+            "passed": true
+          },
+          {
+            "name": "无浏览器异常",
+            "passed": true
+          }
+        ],
+        "console_errors": [],
+        "started_at": "2026-09-12T15:35:39.021Z",
+        "build_log": "",
+        "config": {
+          "title": "午后消消乐",
+          "mode": "match3",
+          "moves": 10,
+          "targetScore": 500,
+          "gemTypes": 4,
+          "background": "#faf3e6",
+          "playerColor": "#63bda4",
+          "targetColor": "#efb855",
+          "hazardColor": "#ef8699"
+        },
+        "finished_at": "2026-09-12T15:35:43.732Z",
+        "exit_code": 0,
+        "log": "{\"passed\":true,\"build\":true,\"checks\":[{\"name\":\"TypeScript 构建\",\"passed\":true},{\"name\":\"三消参数边界\",\"passed\":true},{\"name\":\"开始游戏\",\"passed\":true},{\"name\":\"棋盘初始可玩\",\"passed\":true},{\"name\":\"无效交换回退\",\"passed\":true},{\"name\":\"禁止跨格交换\",\"passed\":true},{\"name\":\"结算期间禁止重复操作\",\"passed\":true},{\"name\":\"真实交换消除与步数\",\"passed\":true},{\"name\":\"下落补位与连锁\",\"passed\":true},{\"name\":\"无解棋盘重排\",\"passed\":true},{\"name\":\"目标达成与失败\",\"passed\":true},{\"name\":\"重新开始\",\"passed\":true},{\"name\":\"无浏览器异常\",\"passed\":true}],\"console_errors\":[],\"started_at\":\"2026-09-12T15:35:39.021Z\",\"build_log\":\"\",\"config\":{\"title\":\"午后消消乐\",\"mode\":\"match3\",\"moves\":10,\"targetScore\":500,\"gemTypes\":4,\"background\":\"#faf3e6\",\"playerColor\":\"#63bda4\",\"targetColor\":\"#efb855\",\"hazardColor\":\"#ef8699\"},\"finished_at\":\"2026-09-12T15:35:43.732Z\"}\n",
+        "runner": "gamedev-runner:1"
+      },
+      "model_calls": [],
+      "source": "authored-template, not LLM generated",
+      "case": "short",
+      "repeat": 1,
+      "elapsed_seconds": 5.58,
+      "human_playability": null
+    },
+    {
+      "status": "succeeded",
+      "repairs": 0,
+      "evidence": {
+        "passed": true,
+        "build": true,
+        "checks": [
+          {
+            "name": "TypeScript 构建",
+            "passed": true
+          },
+          {
+            "name": "三消参数边界",
+            "passed": true
+          },
+          {
+            "name": "开始游戏",
+            "passed": true
+          },
+          {
+            "name": "棋盘初始可玩",
+            "passed": true
+          },
+          {
+            "name": "无效交换回退",
+            "passed": true
+          },
+          {
+            "name": "禁止跨格交换",
+            "passed": true
+          },
+          {
+            "name": "结算期间禁止重复操作",
+            "passed": true
+          },
+          {
+            "name": "真实交换消除与步数",
+            "passed": true
+          },
+          {
+            "name": "下落补位与连锁",
+            "passed": true
+          },
+          {
+            "name": "无解棋盘重排",
+            "passed": true
+          },
+          {
+            "name": "目标达成与失败",
+            "passed": true
+          },
+          {
+            "name": "重新开始",
+            "passed": true
+          },
+          {
+            "name": "无浏览器异常",
+            "passed": true
+          }
+        ],
+        "console_errors": [],
+        "started_at": "2026-09-12T15:35:44.240Z",
+        "build_log": "",
+        "config": {
+          "title": "午后消消乐",
+          "mode": "match3",
+          "moves": 10,
+          "targetScore": 500,
+          "gemTypes": 4,
+          "background": "#faf3e6",
+          "playerColor": "#63bda4",
+          "targetColor": "#efb855",
+          "hazardColor": "#ef8699"
+        },
+        "finished_at": "2026-09-12T15:35:50.732Z",
+        "exit_code": 0,
+        "log": "{\"passed\":true,\"build\":true,\"checks\":[{\"name\":\"TypeScript 构建\",\"passed\":true},{\"name\":\"三消参数边界\",\"passed\":true},{\"name\":\"开始游戏\",\"passed\":true},{\"name\":\"棋盘初始可玩\",\"passed\":true},{\"name\":\"无效交换回退\",\"passed\":true},{\"name\":\"禁止跨格交换\",\"passed\":true},{\"name\":\"结算期间禁止重复操作\",\"passed\":true},{\"name\":\"真实交换消除与步数\",\"passed\":true},{\"name\":\"下落补位与连锁\",\"passed\":true},{\"name\":\"无解棋盘重排\",\"passed\":true},{\"name\":\"目标达成与失败\",\"passed\":true},{\"name\":\"重新开始\",\"passed\":true},{\"name\":\"无浏览器异常\",\"passed\":true}],\"console_errors\":[],\"started_at\":\"2026-09-12T15:35:44.240Z\",\"build_log\":\"\",\"config\":{\"title\":\"午后消消乐\",\"mode\":\"match3\",\"moves\":10,\"targetScore\":500,\"gemTypes\":4,\"background\":\"#faf3e6\",\"playerColor\":\"#63bda4\",\"targetColor\":\"#efb855\",\"hazardColor\":\"#ef8699\"},\"finished_at\":\"2026-09-12T15:35:50.732Z\"}\n",
+        "runner": "gamedev-runner:1"
+      },
+      "model_calls": [],
+      "source": "authored-template, not LLM generated",
+      "case": "short",
+      "repeat": 2,
+      "elapsed_seconds": 7.09,
+      "human_playability": null
+    },
+    {
+      "status": "succeeded",
+      "repairs": 0,
+      "evidence": {
+        "passed": true,
+        "build": true,
+        "checks": [
+          {
+            "name": "TypeScript 构建",
+            "passed": true
+          },
+          {
+            "name": "三消参数边界",
+            "passed": true
+          },
+          {
+            "name": "开始游戏",
+            "passed": true
+          },
+          {
+            "name": "棋盘初始可玩",
+            "passed": true
+          },
+          {
+            "name": "无效交换回退",
+            "passed": true
+          },
+          {
+            "name": "禁止跨格交换",
+            "passed": true
+          },
+          {
+            "name": "结算期间禁止重复操作",
+            "passed": true
+          },
+          {
+            "name": "真实交换消除与步数",
+            "passed": true
+          },
+          {
+            "name": "下落补位与连锁",
+            "passed": true
+          },
+          {
+            "name": "无解棋盘重排",
+            "passed": true
+          },
+          {
+            "name": "目标达成与失败",
+            "passed": true
+          },
+          {
+            "name": "重新开始",
+            "passed": true
+          },
+          {
+            "name": "无浏览器异常",
+            "passed": true
+          }
+        ],
+        "console_errors": [],
+        "started_at": "2026-09-12T15:35:52.524Z",
+        "build_log": "",
+        "config": {
+          "title": "午后消消乐",
+          "mode": "match3",
+          "moves": 10,
+          "targetScore": 500,
+          "gemTypes": 4,
+          "background": "#faf3e6",
+          "playerColor": "#63bda4",
+          "targetColor": "#efb855",
+          "hazardColor": "#ef8699"
+        },
+        "finished_at": "2026-09-12T15:35:57.716Z",
+        "exit_code": 0,
+        "log": "{\"passed\":true,\"build\":true,\"checks\":[{\"name\":\"TypeScript 构建\",\"passed\":true},{\"name\":\"三消参数边界\",\"passed\":true},{\"name\":\"开始游戏\",\"passed\":true},{\"name\":\"棋盘初始可玩\",\"passed\":true},{\"name\":\"无效交换回退\",\"passed\":true},{\"name\":\"禁止跨格交换\",\"passed\":true},{\"name\":\"结算期间禁止重复操作\",\"passed\":true},{\"name\":\"真实交换消除与步数\",\"passed\":true},{\"name\":\"下落补位与连锁\",\"passed\":true},{\"name\":\"无解棋盘重排\",\"passed\":true},{\"name\":\"目标达成与失败\",\"passed\":true},{\"name\":\"重新开始\",\"passed\":true},{\"name\":\"无浏览器异常\",\"passed\":true}],\"console_errors\":[],\"started_at\":\"2026-09-12T15:35:52.524Z\",\"build_log\":\"\",\"config\":{\"title\":\"午后消消乐\",\"mode\":\"match3\",\"moves\":10,\"targetScore\":500,\"gemTypes\":4,\"background\":\"#faf3e6\",\"playerColor\":\"#63bda4\",\"targetColor\":\"#efb855\",\"hazardColor\":\"#ef8699\"},\"finished_at\":\"2026-09-12T15:35:57.716Z\"}\n",
+        "runner": "gamedev-runner:1"
+      },
+      "model_calls": [],
+      "source": "authored-template, not LLM generated",
+      "case": "short",
+      "repeat": 3,
+      "elapsed_seconds": 6.91,
+      "human_playability": null
+    }
+  ],
+  "completed": 15,
+  "expected": 15,
+  "build_passed": 15,
+  "interaction_passed": 15
+}

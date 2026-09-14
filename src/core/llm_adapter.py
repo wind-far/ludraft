@@ -94,6 +94,7 @@ class AgentModelConfig:
             d["api_key_masked"] = key[:8] + "****" + key[-4:] if len(key) > 12 else "****"
         else:
             d["api_key_masked"] = ""
+        d.pop("api_key", None)
         return d
 
     def to_dict_full(self) -> dict:
@@ -236,7 +237,7 @@ class ModelConfigManager:
         result = []
         for agent_id, cfg in self._configs.items():
             d = cfg.to_dict()
-            del d["api_key"]  # 删除原始密钥
+            d.pop("api_key", None)  # 删除原始密钥
             result.append(d)
         return result
 

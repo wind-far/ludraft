@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="ludraft-runtime" content="canvas-input-v2" />
+    <title>Canvas Game</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main>
+      <header>
+        <h1 id="title"></h1>
+        <div class="stats">
+          <span>得分 <b id="score">0</b></span
+          ><span>生命 <b id="lives">3</b></span>
+          <span>剩余 <b id="remaining">60</b> 秒</span>
+        </div>
+      </header>
+      <canvas
+        id="game"
+        width="640"
+        height="440"
+        tabindex="0"
+        aria-label="游戏画布"
+      ></canvas>
+      <footer>
+        <p id="instructions"></p>
+        <button id="start">开始游戏</button><span id="status">准备开始</span>
+      </footer>
+    </main>
+    <script type="module" src="dist/main.js"></script>
+  </body>
+</html>

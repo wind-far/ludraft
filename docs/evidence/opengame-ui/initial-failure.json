@@ -1,0 +1,7 @@
+{
+  "passed": false,
+  "scenario": "empty",
+  "failure": "Escape did not close setup dialog after refresh disabled the focused button",
+  "timeout_ms": 30000,
+  "fixed_by": "document-level Escape handler scoped to the mounted setup dialog"
+}

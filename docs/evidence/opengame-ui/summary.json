@@ -1,0 +1,41 @@
+{
+  "checked_at": "2026-09-13T17:51:10.799169+00:00",
+  "scope": "real local Chrome and FastAPI; isolated synthetic UI records and prices",
+  "passed": true,
+  "paid_model_calls": 0,
+  "screenshots": [
+    "empty-desktop.png",
+    "empty-mobile.png",
+    "history-desktop.png",
+    "history-mobile.png",
+    "history-records-mobile.png"
+  ],
+  "browser_checks": [
+    "empty-ui.json",
+    "history-ui.json"
+  ],
+  "initial_failure": "initial-failure.json",
+  "viewport_sizes": [
+    [
+      1280,
+      900
+    ],
+    [
+      390,
+      844
+    ]
+  ],
+  "limitations": [
+    "UI execution records and budget amounts are fixtures, not generation evidence",
+    "No full accessibility audit or live model tool-call verification"
+  ],
+  "frontend_build": {
+    "assets/garden-banner.png": "cd65b080b99c8c76eb6e50c895f3257e669a21020d89116c09d00762c66f107d",
+    "assets/index-0tsjpVh8.css": "3b26e1ca0af4b6dc094ab3607bad8a0e65e0c8fad5d0202fef987808beb1c613",
+    "assets/index-DYdcOnbJ.js": "4a3d93e1e6b5e14c5f3891d13e7d83ff200f2361a25b6180808104f58c6a5fca",
+    "assets/state-h6ncRSsj.js": "865fcd955d0ff156b86b163e656fbce2455fe0a188fe1bc28597792a71d0ce26",
+    "assets/vendor-CRB3T2We.js": "d6e19b9337015431b5c05f76c64217d4d00652cdf69c506c9503068d0c6dd094",
+    "favicon.svg": "250d565abdb707fc7ce928987e1ed2c49245a5d9f332fac43e8e85501592913a",
+    "index.html": "7bb9475cd6ba7bae50c68e5067c5a81a93f8503c1590305e581772d07d68b538"
+  }
+}

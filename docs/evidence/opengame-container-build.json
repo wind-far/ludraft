@@ -1,0 +1,16 @@
+{
+  "commit": "c9bea37786af524bf3bbe802f2b67d23816fa5c0",
+  "cli_sha256": "10d1201f0b1ad1415360c1d7cd9ca3ac307deef4c9e10d696931abc174e6b0bb",
+  "base_image": "sha256:b571958df143d69e572ba4b33fef659b21e85e8b2945a2d53886d17ff5321858",
+  "architecture": "arm64",
+  "bundle_source": "previously verified host build; Linux runtime dependencies installed from upstream lockfile",
+  "bridge_sha256": "2db03515a7433a97362657cf4e2f4612520ba7c63d21de1672ea00c3394c601f",
+  "build_exit_code": 0,
+  "image_id": "sha256:c6d86f55e98adc3974079acdf814da563a6e187d6133fdfb6ef4a45985049e1d",
+  "initial_failure": {
+    "phase": "npm ci",
+    "code": "ECONNRESET",
+    "evidence": ".studio/opengame-image-build-attempts/initial-network-reset.json"
+  },
+  "retry": "seed public package content cache; omit dev dependencies; npm ci --ignore-scripts; separately rebuild sharp for Linux ARM64"
+}
